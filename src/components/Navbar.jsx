@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sun, Moon, Lock } from 'lucide-react';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
@@ -184,6 +184,28 @@ export default function Navbar() {
           >
             {theme === 'dark' ? <Sun size={18} className="text-lime" /> : <Moon size={18} className="text-lime" />}
           </button>
+
+          {/* Admin Dashboard CMS Link */}
+          <a
+            href="/admin"
+            style={{
+              width: '38px',
+              height: '38px',
+              borderRadius: '50%',
+              backgroundColor: 'var(--bg-surface-secondary)',
+              border: '1px solid var(--border-thin)',
+              color: 'var(--accent-lime)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              textDecoration: 'none'
+            }}
+            data-cursor="ADMIN"
+            title="Admin CMS Dashboard"
+          >
+            <Lock size={16} />
+          </a>
 
           <a
             href="#contact"

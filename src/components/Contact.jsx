@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle, Mail, MapPin, Linkedin, Github } from 'lucide-react';
+import { Send, CheckCircle, Mail, MapPin } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -9,15 +9,31 @@ export default function Contact() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', subject: 'Full-Stack Development / AI Project', message: '' });
-    }, 4000);
+    
+    setSending(true);
+    try {
+      const res = await fetch('/api/public/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', subject: 'Full-Stack Development / AI Project', message: '' });
+      }
+    } catch (err) {
+      console.error('Contact form error:', err);
+      // Fallback display
+      setSubmitted(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -231,11 +247,12 @@ export default function Contact() {
 
                 <button
                   type="submit"
+                  disabled={sending}
                   className="btn-primary"
                   style={{ width: '100%', marginTop: '0.5rem', padding: '1rem' }}
                   data-cursor="SEND"
                 >
-                  START A CONVERSATION <Send size={16} />
+                  {sending ? 'SENDING MESSAGE...' : 'START A CONVERSATION'} <Send size={16} />
                 </button>
 
               </form>

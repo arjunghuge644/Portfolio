@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Github, ArrowUpRight } from 'lucide-react';
 
@@ -103,7 +103,7 @@ function StickyProjectCaseStudy({ project, index, total }) {
 
             {/* Tech Stack Badges */}
             <div className="project-tech-stack-row">
-              {project.techStack.map((tech, t) => (
+              {(Array.isArray(project.techStack) ? project.techStack : []).map((tech, t) => (
                 <span key={t} className="project-tech-tag">
                   {tech}
                 </span>
@@ -113,29 +113,33 @@ function StickyProjectCaseStudy({ project, index, total }) {
 
           {/* Action Buttons Row */}
           <div className="project-actions">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-secondary"
-              data-cursor="GITHUB"
-              onClick={(e) => e.stopPropagation()}
-              style={{ padding: '0.55rem 1.2rem', fontSize: '0.75rem' }}
-            >
-              <Github size={14} /> REPO
-            </a>
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary"
+                data-cursor="GITHUB"
+                onClick={(e) => e.stopPropagation()}
+                style={{ padding: '0.55rem 1.2rem', fontSize: '0.75rem' }}
+              >
+                <Github size={14} /> REPO
+              </a>
+            )}
 
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary"
-              data-cursor="LIVE DEMO"
-              onClick={(e) => e.stopPropagation()}
-              style={{ padding: '0.55rem 1.2rem', fontSize: '0.75rem' }}
-            >
-              LIVE DEMO <ArrowUpRight size={14} />
-            </a>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary"
+                data-cursor="LIVE DEMO"
+                onClick={(e) => e.stopPropagation()}
+                style={{ padding: '0.55rem 1.2rem', fontSize: '0.75rem' }}
+              >
+                LIVE DEMO <ArrowUpRight size={14} />
+              </a>
+            )}
           </div>
         </div>
       </motion.div>
@@ -144,7 +148,7 @@ function StickyProjectCaseStudy({ project, index, total }) {
 }
 
 export default function Projects() {
-  const projects = [
+  const defaultProjects = [
     {
       id: 1,
       title: 'NEURAL-SYNC AI RAG ENGINE',
@@ -187,6 +191,19 @@ export default function Projects() {
     }
   ];
 
+  const [projectsList, setProjectsList] = useState(defaultProjects);
+
+  useEffect(() => {
+    fetch('/api/public/projects')
+      .then(res => res.json())
+      .then(data => {
+        if (data.projects && data.projects.length > 0) {
+          setProjectsList(data.projects);
+        }
+      })
+      .catch(err => console.error('Loaded default portfolio projects:', err));
+  }, []);
+
   return (
     <section id="projects" className="section-padding" style={{ paddingBottom: '10rem' }}>
       <div className="container">
@@ -204,12 +221,12 @@ export default function Projects() {
 
         {/* Pinned Sticky Stacking Visual Gallery */}
         <div className="projects-stacking-container">
-          {projects.map((project, index) => (
+          {projectsList.map((project, index) => (
             <StickyProjectCaseStudy
-              key={project.id}
+              key={project.id || index}
               project={project}
               index={index}
-              total={projects.length}
+              total={projectsList.length}
             />
           ))}
         </div>
