@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await fetchPublicSeo();
 
-  const title = seo?.siteTitle || 'Arjun — IT Engineer & AI Builder Portfolio';
+  const title = seo?.siteTitle || 'Arjun Ghuge | Full Stack Web Developer & AI Solutions';
   const description = seo?.metaDescription || 'Telemetry engineering portfolio of Arjun, featuring Full-Stack Web Development, AI systems, RAG engines, and Machine Learning models.';
   const canonicalUrl = seo?.canonicalUrl || 'https://arjun.dev';
   const ogImage = seo?.ogImage || '/assets/portrait.png';
