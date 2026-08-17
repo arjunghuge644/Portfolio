@@ -31,9 +31,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Trust reverse proxies (Vercel / Render) for secure cookies over HTTPS
+app.set('trust proxy', 1);
+
 // Security Headers with Helmet
 app.use(helmet({
-  contentSecurityPolicy: false, // Allow local dev preview
+  contentSecurityPolicy: false, // Allow preview assets
   crossOriginResourcePolicy: { policy: "cross-origin" }
 }));
 
@@ -48,6 +51,8 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
 
 // Server-managed Secure Sessions
+const isProduction = process.env.NODE_ENV === 'production';
+
 app.use(session({
   name: 'portfolio.sid',
   secret: process.env.SESSION_SECRET || 'crypto_secure_session_secret_portfolio_2026',
@@ -55,8 +60,8 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     httpOnly: true, // Prevents XSS cookie theft
-    secure: false, // Set to true in production HTTPS
-    sameSite: 'lax',
+    secure: isProduction, // Secure in HTTPS production
+    sameSite: isProduction ? 'none' : 'lax', // Allow cross-site cookies in production
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
   }
 }));
