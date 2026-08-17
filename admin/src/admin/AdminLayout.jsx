@@ -65,7 +65,7 @@ export default function AdminLayout() {
             </div>
               <div>
                 <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', letterSpacing: '0.08em', color: '#fff' }}>
-                  ARJUN<span style={{ color: '#00d9ff' }}>.DEV</span>
+                  <span style={{ color: '#00d9ff' }}>ARJUN</span>
                 </div>
                 <div style={{ fontSize: '0.62rem', color: '#8b949e', letterSpacing: '0.12em', fontFamily: 'var(--font-mono)' }}>
                   PORTFOLIO STUDIO // ADMIN

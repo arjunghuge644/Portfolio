@@ -67,12 +67,12 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { id: 'capabilities', num: '01', label: 'CAPABILITIES' },
-    { id: 'about', num: '02', label: 'ABOUT' },
-    { id: 'projects', num: '03', label: 'PROJECTS' },
-    { id: 'achievements', num: '04', label: 'TIMELINE' },
-    { id: 'faq', num: '05', label: 'FAQ' },
-    { id: 'contact', num: '06', label: 'CONTACT' },
+    { id: 'capabilities', label: 'CAPABILITIES' },
+    { id: 'about', label: 'ABOUT' },
+    { id: 'projects', label: 'PROJECTS' },
+    { id: 'achievements', label: 'TIMELINE' },
+    { id: 'faq', label: 'FAQ' },
+    { id: 'contact', label: 'CONTACT' },
   ];
 
   useEffect(() => {
@@ -160,7 +160,7 @@ export default function Navbar() {
             }}
             onMouseEnter={() => hudAudio.playHover()}
           >
-            <span style={{ color: 'var(--accent-cyan)' }}>ARJUN</span>.DEV
+            <span style={{ color: 'var(--accent-cyan)' }}>ARJUN</span>
             <span className="hud-status-dot" style={{ marginLeft: '2px' }} />
           </a>
 
@@ -196,9 +196,6 @@ export default function Navbar() {
                     gap: '5px'
                   }}
                 >
-                  <span style={{ color: isActive ? 'var(--accent-cyan)' : 'var(--text-muted)', fontSize: '0.62rem' }}>
-                    {link.num}
-                  </span>
                   {link.label}
                   {isActive && (
                     <span
@@ -406,7 +403,6 @@ export default function Navbar() {
                   gap: '10px'
                 }}
               >
-                <span style={{ color: 'var(--accent-cyan)' }}>{link.num} //</span>
                 {link.label}
               </a>
             ))}
