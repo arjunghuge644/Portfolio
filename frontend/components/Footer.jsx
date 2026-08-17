@@ -33,7 +33,7 @@ export default function Footer() {
         >
           <div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.2rem', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '0.06em' }}>
-              ARJUN<span style={{ color: 'var(--accent-cyan)' }}>.DEV</span>
+              ARJUN
             </h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
               <span className="hud-status-dot" />
