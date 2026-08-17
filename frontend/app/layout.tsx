@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const seo = await fetchPublicSeo();
 
   const title = seo?.siteTitle || 'Arjun — IT Engineer & AI Builder Portfolio';
-  const description = seo?.metaDescription || 'Stark Industries inspired HUD command interface portfolio of Arjun, featuring Full-Stack Web Development, AI systems, RAG engines, and Machine Learning models.';
+  const description = seo?.metaDescription || 'Telemetry engineering portfolio of Arjun, featuring Full-Stack Web Development, AI systems, RAG engines, and Machine Learning models.';
   const canonicalUrl = seo?.canonicalUrl || 'https://arjun.dev';
   const ogImage = seo?.ogImage || '/assets/portrait.png';
 
@@ -47,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url: canonicalUrl,
-      siteName: 'Arjun Portfolio // Stark Engineering HUD',
+      siteName: 'Arjun Portfolio // Engineering System',
       images: [
         {
           url: ogImage,

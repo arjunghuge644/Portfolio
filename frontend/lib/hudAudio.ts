@@ -1,4 +1,4 @@
-// Synthesized Web Audio API Sound Effects for Stark HUD Interface
+// Synthesized Web Audio API Sound Effects for HUD Interface
 // Pure browser synthesis - zero external audio asset files required
 
 class HUDAudioManager {

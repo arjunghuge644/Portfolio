@@ -63,14 +63,14 @@ export default function AdminLayout() {
             <div style={{ width: '36px', height: '36px', borderRadius: '4px', backgroundColor: 'rgba(0, 217, 255, 0.12)', color: '#00d9ff', border: '1px solid rgba(0, 217, 255, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Lock size={20} />
             </div>
-            <div>
-              <div style={{ fontWeight: 800, fontSize: '0.95rem', letterSpacing: '0.05em', color: '#f5f7fa', fontFamily: 'var(--font-display)' }}>
-                <span style={{ color: '#00d9ff' }}>ARJUN</span>.DEV
+              <div>
+                <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.05rem', letterSpacing: '0.08em', color: '#fff' }}>
+                  ARJUN<span style={{ color: '#00d9ff' }}>.DEV</span>
+                </div>
+                <div style={{ fontSize: '0.62rem', color: '#8b949e', letterSpacing: '0.12em', fontFamily: 'var(--font-mono)' }}>
+                  PORTFOLIO STUDIO // ADMIN
+                </div>
               </div>
-              <div style={{ fontSize: '0.65rem', color: '#8b95a5', textTransform: 'uppercase', letterSpacing: '0.12em', fontFamily: 'var(--font-mono)' }}>
-                STARK HUD // ADMIN
-              </div>
-            </div>
           </div>
 
           {/* Navigation Links */}
@@ -161,7 +161,7 @@ export default function AdminLayout() {
         {/* Top Bar */}
         <header style={{ height: '64px', backgroundColor: '#0d1117', borderBottom: '1px solid #252b33', padding: '0 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ fontSize: '0.8rem', color: '#8b95a5', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>
-            STATUS: <span style={{ color: '#00e676', fontWeight: 700 }}>● AUTHENTICATED</span> // STARK HUD V4.0
+            STATUS: <span style={{ color: '#00e676', fontWeight: 700 }}>● AUTHENTICATED</span> // SYSTEM TELEMETRY V4.0
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>

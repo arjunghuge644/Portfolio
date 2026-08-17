@@ -172,7 +172,7 @@ export default function Hero() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span className="hud-status-dot" />
               <span style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>SYS_ONLINE</span>
-              <span>// STARK HUD V4.0</span>
+              <span>// SYSTEM TELEMETRY V4.0</span>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }} className="hud-telemetry-meta">

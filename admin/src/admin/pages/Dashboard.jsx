@@ -65,7 +65,7 @@ export default function Dashboard({ onNavigate }) {
       <div style={{ backgroundColor: '#0d1117', border: '1px solid #252b33', borderRadius: '6px', padding: '1.8rem 2.2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div>
           <h1 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#f5f7fa', margin: 0, fontFamily: 'var(--font-display)', letterSpacing: '0.04em' }}>
-            STARK HUD // <span style={{ color: '#00d9ff' }}>ADMINISTRATION COMMAND</span>
+            PORTFOLIO STUDIO // <span style={{ color: '#00d9ff' }}>ADMINISTRATION COMMAND</span>
           </h1>
           <p style={{ color: '#8b95a5', fontSize: '0.85rem', marginTop: '0.3rem', fontFamily: 'var(--font-mono)' }}>
             SYS_STATUS: ALL SECURITY BOUNDARIES ACTIVE & OPERATIONAL

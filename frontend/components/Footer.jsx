@@ -130,7 +130,7 @@ export default function Footer() {
           }}
         >
           <div>
-            © {new Date().getFullYear()} ARJUN.DEV // STARK ENGINEERING HUD ARCHIVE
+            © {new Date().getFullYear()} ARJUN.DEV // ENGINEERING ARCHIVE
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.8rem' }}>

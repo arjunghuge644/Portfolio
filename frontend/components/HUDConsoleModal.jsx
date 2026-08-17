@@ -6,7 +6,7 @@ import { hudAudio } from '../lib/hudAudio';
 export default function HUDConsoleModal({ isOpen, onClose }) {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState([
-    { text: 'STARK INDUSTRIES OS // COMMAND TELEMETRY INTERFACE [V4.2.0]', type: 'system' },
+    { text: 'SYSTEM OS // COMMAND TELEMETRY INTERFACE [V4.2.0]', type: 'system' },
     { text: 'Type "help" to list available system commands.', type: 'system' }
   ]);
 
@@ -159,7 +159,7 @@ export default function HUDConsoleModal({ isOpen, onClose }) {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Terminal size={15} />
-            <span style={{ fontWeight: 800, letterSpacing: '0.1em' }}>SYS_CONSOLE // STARK HUD TELEMETRY</span>
+            <span style={{ fontWeight: 800, letterSpacing: '0.1em' }}>SYS_CONSOLE // COMMAND TELEMETRY</span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
