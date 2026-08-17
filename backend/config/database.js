@@ -144,7 +144,7 @@ const defaultData = {
     siteTitle: 'Arjun Ghuge | Full Stack Web Developer & AI Solutions',
     metaDescription: 'Editorial digital portfolio of Arjun, featuring Full-Stack Web Development, Artificial Intelligence systems, RAG engines, and Machine Learning models.',
     ogImage: '/assets/portrait.png',
-    canonicalUrl: 'https://arjunghuge.me'
+    canonicalUrl: 'https://arjun.dev'
   }
 };
 

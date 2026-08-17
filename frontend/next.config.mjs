@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5000';
+const BACKEND_URL = process.env.BACKEND_URL || 'https://portfolio-backend-bhqb.onrender.com';
 
 const nextConfig = {
   reactStrictMode: true,
