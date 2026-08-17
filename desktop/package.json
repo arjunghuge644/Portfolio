@@ -2,6 +2,7 @@
   "name": "portfolio-desktop",
   "version": "1.0.0",
   "description": "Secure Electron Desktop Admin Container for Portfolio Studio",
+  "author": "Arjun Ghuge <arjunghuge644@gmail.com>",
   "main": "main/main.js",
   "scripts": {
     "start": "electron .",
@@ -12,6 +13,7 @@
   "build": {
     "appId": "dev.arjun.portfoliostudio",
     "productName": "Portfolio Studio",
+    "electronVersion": "29.4.6",
     "files": [
       "main/**/*",
       "preload/**/*",
@@ -30,7 +32,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "electron": "^29.1.0",
+    "electron": "29.4.6",
     "electron-builder": "^24.13.3"
   }
 }
