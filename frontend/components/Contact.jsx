@@ -111,9 +111,9 @@ export default function Contact() {
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <Mail size={14} className="text-cyan" /> arjun.engineering@example.com
-                  </span>
+                  <a href="mailto:arjunghuge644@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'inherit', textDecoration: 'none' }}>
+                    <Mail size={14} className="text-cyan" /> arjunghuge644@gmail.com
+                  </a>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <MapPin size={14} className="text-cyan" /> PUNE, INDIA (REMOTE / HYBRID)
                   </span>
