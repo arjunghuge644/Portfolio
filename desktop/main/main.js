@@ -33,18 +33,27 @@ function createWindow() {
   });
 
   mainWindow.webContents.on('will-navigate', (event, url) => {
-    const currentOrigin = isDev ? 'http://localhost:5173' : 'file://';
-    if (!url.startsWith(currentOrigin)) {
-      event.preventDefault();
-      shell.openExternal(url);
+    if (url.startsWith('file://') || url.startsWith('http://localhost') || url.startsWith('https://admin.arjunghuge.me')) {
+      return;
     }
+    event.preventDefault();
+    shell.openExternal(url);
   });
 
   // Load Admin App
+  const localFile = path.join(__dirname, '../admin/dist/index.html');
+  const fallbackFile = path.join(__dirname, '../../admin/dist/index.html');
+  let targetFile = null;
+  if (fs.existsSync(localFile)) {
+    targetFile = localFile;
+  } else if (fs.existsSync(fallbackFile)) {
+    targetFile = fallbackFile;
+  }
+
   const startUrl = process.env.ELECTRON_START_URL || (
     isDev
       ? 'http://localhost:5173'
-      : `file://${path.join(__dirname, '../../admin/dist/index.html')}`
+      : (targetFile ? `file://${targetFile}` : 'https://admin.arjunghuge.me')
   );
 
   mainWindow.loadURL(startUrl);
