@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Secure Electron Desktop Admin Container for Portfolio Studio",
   "author": "Arjun Ghuge <arjunghuge644@gmail.com>",
+  "homepage": "https://arjunghuge.me",
   "main": "main/main.js",
   "scripts": {
     "start": "electron .",
