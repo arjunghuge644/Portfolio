@@ -38,10 +38,10 @@ const defaultData = {
     status: 'AVAILABLE FOR SUMMER 2026 INTERNSHIPS & ROLES',
     subtext: 'Crafting production software architectures, AI systems, and high-performance editorial digital experiences.',
     bio: 'IT engineering student building scalable software, AI systems, and creative digital web applications with minimal clutter and maximum visual impact.',
-    email: 'arjun@example.com',
+    email: 'arjunghuge644@gmail.com',
     location: 'Mumbai, India',
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
+    github: 'https://github.com/arjunghuge644',
+    linkedin: 'https://in.linkedin.com/in/arjun-ghuge-18903a2b8',
     twitter: 'https://twitter.com'
   },
   skills: [

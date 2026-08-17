@@ -45,7 +45,7 @@ export default function Footer() {
           {/* Social Links */}
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
             <a
-              href="https://github.com"
+              href="https://github.com/arjunghuge644"
               target="_blank"
               rel="noreferrer"
               style={{
@@ -68,7 +68,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://in.linkedin.com/in/arjun-ghuge-18903a2b8"
               target="_blank"
               rel="noreferrer"
               style={{
@@ -91,7 +91,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:arjun.engineering@example.com"
+              href="mailto:arjunghuge644@gmail.com"
               style={{
                 width: '40px',
                 height: '40px',
