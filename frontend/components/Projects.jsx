@@ -329,7 +329,7 @@ export default function Projects() {
           border: 1px solid var(--border-primary);
           border-radius: var(--radius-sm);
           padding: 1.2rem 1.5rem;
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
           display: flex;
           flex-direction: column;
           gap: 0.9rem;
@@ -341,7 +341,7 @@ export default function Projects() {
 
         .project-case-study-card:hover {
           border-color: var(--accent-cyan);
-          box-shadow: 0 35px 80px rgba(0, 0, 0, 0.95), 0 0 25px rgba(0, 217, 255, 0.15);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 12px rgba(0, 217, 255, 0.08);
         }
 
         .case-study-top-bar {
