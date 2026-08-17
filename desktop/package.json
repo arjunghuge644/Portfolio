@@ -1,0 +1,36 @@
+{
+  "name": "portfolio-desktop",
+  "version": "1.0.0",
+  "description": "Secure Electron Desktop Admin Container for Portfolio Studio",
+  "main": "main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "dev.arjun.portfoliostudio",
+    "productName": "Portfolio Studio",
+    "files": [
+      "main/**/*",
+      "preload/**/*",
+      "../admin/dist/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Development"
+    },
+    "win": {
+      "target": ["nsis"]
+    }
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3"
+  }
+}

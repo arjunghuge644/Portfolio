@@ -1,0 +1,838 @@
+{
+  "adminUser": {
+    "id": "admin_1",
+    "email": "admin@arjun.dev",
+    "passwordHash": "$2a$10$bMpeqIQ1z34s.Jq98w0AdegYrYhySSYxpSH3TGZQj8X9EDIoAsZsG",
+    "mfaEnabled": false,
+    "mfaSecret": null,
+    "role": "SUPER_ADMIN",
+    "createdAt": "2026-08-11T22:18:30.128Z",
+    "updatedAt": "2026-08-11T22:18:30.128Z"
+  },
+  "sessions": [
+    {
+      "id": "ENJWEDjpIPfIayn5nsdQw4UGuG5UqhAp",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "curl/8.21.0",
+      "createdAt": "2026-08-11T22:20:12.463Z",
+      "lastActive": "2026-08-11T22:20:12.463Z"
+    },
+    {
+      "id": "_k9Y35fEIe7m8pKWSAoD-sLXjEEsm0Qi",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-11T22:21:47.464Z",
+      "lastActive": "2026-08-11T22:31:47.652Z"
+    },
+    {
+      "id": "m6qrAex8dAqlpIGNxLg-GGu4xCH9z5zQ",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "curl/8.21.0",
+      "createdAt": "2026-08-12T05:57:13.239Z",
+      "lastActive": "2026-08-12T05:57:13.239Z"
+    },
+    {
+      "id": "DgxNTk2bJxjlijxD1-8_yJWxUazmcbki",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-12T19:21:35.080Z",
+      "lastActive": "2026-08-12T19:36:01.462Z"
+    },
+    {
+      "id": "6zt9Gt5wBt2rj7TGxXem_I8RaY7D_DqD",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) portfolio-desktop/1.0.0 Chrome/122.0.6261.156 Electron/29.4.6 Safari/537.36",
+      "createdAt": "2026-08-12T19:33:48.983Z",
+      "lastActive": "2026-08-12T19:34:11.658Z"
+    },
+    {
+      "id": "IFimX2DU5M5zeLDPZMdrK38vsh36lc7F",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-12T20:02:10.775Z",
+      "lastActive": "2026-08-12T20:02:40.081Z"
+    },
+    {
+      "id": "ur7NHufg18Nsi4L7vyGUWNg5VjAu3BLW",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-12T20:05:28.646Z",
+      "lastActive": "2026-08-12T20:06:09.607Z"
+    },
+    {
+      "id": "ygFTZUPTdqElA3MdnsWnouerzJcXWWCE",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) portfolio-desktop/1.0.0 Chrome/122.0.6261.156 Electron/29.4.6 Safari/537.36",
+      "createdAt": "2026-08-13T07:17:33.421Z",
+      "lastActive": "2026-08-13T07:17:33.499Z"
+    },
+    {
+      "id": "O2dC8F4FqhNcOp7nqTFXDAjiwrzcFxZr",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-15T19:07:00.282Z",
+      "lastActive": "2026-08-15T19:12:42.685Z"
+    },
+    {
+      "id": "CfNrfl1EZiid9LwI6Eu615Ym1yTlChCd",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-15T19:17:43.986Z",
+      "lastActive": "2026-08-15T20:01:11.147Z"
+    },
+    {
+      "id": "WSw6YT561P5DZP3aQpQmaZEq1WFRoL08",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-16T12:13:00.190Z",
+      "lastActive": "2026-08-16T12:13:00.266Z"
+    },
+    {
+      "id": "t83XRkJd1hopAAg_Uwic_6OkdyJ2iRBZ",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-17T12:20:05.914Z",
+      "lastActive": "2026-08-17T13:08:54.230Z"
+    },
+    {
+      "id": "YwTiPXlulEOBRbiXkrP--bHIWAIRlhUY",
+      "userId": "admin_1",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "createdAt": "2026-08-17T13:12:49.990Z",
+      "lastActive": "2026-08-17T13:13:17.966Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "audit_1786972397970_uq8q9",
+      "timestamp": "2026-08-17T13:13:17.970Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786972369991_gk6ix",
+      "timestamp": "2026-08-17T13:12:49.991Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786972129401_6r504",
+      "timestamp": "2026-08-17T13:08:49.401Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786971678281_6iwp3",
+      "timestamp": "2026-08-17T13:01:18.281Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786970687183_svdyu",
+      "timestamp": "2026-08-17T12:44:47.183Z",
+      "event": "ARTICLE_CREATED",
+      "details": "Admin created article: \"test article \"",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786970610216_8hmch",
+      "timestamp": "2026-08-17T12:43:30.216Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786970462271_63ioc",
+      "timestamp": "2026-08-17T12:41:02.271Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786969991717_o2ntq",
+      "timestamp": "2026-08-17T12:33:11.717Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786969847227_vf4gl",
+      "timestamp": "2026-08-17T12:30:47.227Z",
+      "event": "PROJECT_CREATED",
+      "details": "Admin created project: \"QUANTUM-AI RETRIEVAL ENGINE\"",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786969677706_pmcgh",
+      "timestamp": "2026-08-17T12:27:57.706Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786969654776_udpev",
+      "timestamp": "2026-08-17T12:27:34.776Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786969205918_b2sfw",
+      "timestamp": "2026-08-17T12:20:05.918Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786882897670_9rico",
+      "timestamp": "2026-08-16T12:21:37.670Z",
+      "event": "FAILED_LOGIN",
+      "details": "Incorrect password for admin@arjun.dev",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786882836784_tozhm",
+      "timestamp": "2026-08-16T12:20:36.785Z",
+      "event": "FAILED_LOGIN",
+      "details": "Incorrect password for admin@arjun.dev",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786882380191_2o6ur",
+      "timestamp": "2026-08-16T12:13:00.191Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786821463987_6u0i1",
+      "timestamp": "2026-08-15T19:17:43.987Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786821043573_t2lyr",
+      "timestamp": "2026-08-15T19:10:43.573Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786820965561_upay8",
+      "timestamp": "2026-08-15T19:09:25.561Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786820892386_jx1va",
+      "timestamp": "2026-08-15T19:08:12.386Z",
+      "event": "PROFILE_UPDATED",
+      "details": "Admin updated profile details",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786820820283_w0j20",
+      "timestamp": "2026-08-15T19:07:00.283Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786605453422_th8ey",
+      "timestamp": "2026-08-13T07:17:33.422Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) portfolio-desktop/1.0.0 Chrome/122.0.6261.156 Electron/29.4.6 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786565128647_wswwk",
+      "timestamp": "2026-08-12T20:05:28.647Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786564960070_h59q6",
+      "timestamp": "2026-08-12T20:02:40.070Z",
+      "event": "MESSAGE_STATUS_UPDATED",
+      "details": "Message msg_1786564916920 marked as REPLIED",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786564956989_ol3wl",
+      "timestamp": "2026-08-12T20:02:36.989Z",
+      "event": "MESSAGE_STATUS_UPDATED",
+      "details": "Message msg_1786564916920 marked as REPLIED",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786564948262_oafni",
+      "timestamp": "2026-08-12T20:02:28.262Z",
+      "event": "MESSAGE_STATUS_UPDATED",
+      "details": "Message msg_1786564916920 marked as ARCHIVED",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786564947406_yednk",
+      "timestamp": "2026-08-12T20:02:27.406Z",
+      "event": "MESSAGE_STATUS_UPDATED",
+      "details": "Message msg_1786564916920 marked as REPLIED",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786564946784_kyju2",
+      "timestamp": "2026-08-12T20:02:26.784Z",
+      "event": "MESSAGE_STATUS_UPDATED",
+      "details": "Message msg_1786564916920 marked as REPLIED",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786564946598_lw9hu",
+      "timestamp": "2026-08-12T20:02:26.598Z",
+      "event": "MESSAGE_STATUS_UPDATED",
+      "details": "Message msg_1786564916920 marked as REPLIED",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786564946156_m93zc",
+      "timestamp": "2026-08-12T20:02:26.156Z",
+      "event": "MESSAGE_STATUS_UPDATED",
+      "details": "Message msg_1786564916920 marked as REPLIED",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786564945280_37o0g",
+      "timestamp": "2026-08-12T20:02:25.280Z",
+      "event": "MESSAGE_STATUS_UPDATED",
+      "details": "Message msg_1786564916920 marked as REPLIED",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786564940759_av1h3",
+      "timestamp": "2026-08-12T20:02:20.759Z",
+      "event": "MESSAGE_STATUS_UPDATED",
+      "details": "Message msg_1786564916920 marked as READ",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786564930776_4x06h",
+      "timestamp": "2026-08-12T20:02:10.776Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786563228984_iv05w",
+      "timestamp": "2026-08-12T19:33:48.984Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) portfolio-desktop/1.0.0 Chrome/122.0.6261.156 Electron/29.4.6 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786563016371_72heo",
+      "timestamp": "2026-08-12T19:30:16.371Z",
+      "event": "FILE_UPLOADED",
+      "details": "Uploaded file: Landing Page-1.png (image/png)",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786562879846_wjfos",
+      "timestamp": "2026-08-12T19:27:59.846Z",
+      "event": "PROJECT_CREATED",
+      "details": "Admin created project: \"Test Mongo connection\"",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786562495081_7e1de",
+      "timestamp": "2026-08-12T19:21:35.081Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786562475595_45ram",
+      "timestamp": "2026-08-12T19:21:15.595Z",
+      "event": "FAILED_LOGIN",
+      "details": "Incorrect password for admin@arjun.dev",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786518266085_s8lyg",
+      "timestamp": "2026-08-12T07:04:26.085Z",
+      "event": "LOGOUT",
+      "details": "User logged out",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786514532285_864eu",
+      "timestamp": "2026-08-12T06:02:12.285Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786514325424_jic9i",
+      "timestamp": "2026-08-12T05:58:45.424Z",
+      "event": "FAILED_LOGIN",
+      "details": "Incorrect password for admin@arjun.dev",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (Linux; Android 15; Pixel 9) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Mobile Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786514233240_z10ni",
+      "timestamp": "2026-08-12T05:57:13.240Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "curl/8.21.0",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786487132594_tl557",
+      "timestamp": "2026-08-11T22:25:32.594Z",
+      "event": "PROJECT_DELETED",
+      "details": "Admin deleted project: \"MathTube\"",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786487084086_sk1jk",
+      "timestamp": "2026-08-11T22:24:44.086Z",
+      "event": "PROJECT_CREATED",
+      "details": "Admin created project: \"MathTube\"",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786486952754_7frte",
+      "timestamp": "2026-08-11T22:22:32.754Z",
+      "event": "MESSAGE_STATUS_UPDATED",
+      "details": "Message msg_1 marked as READ",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "admin@arjun.dev"
+    },
+    {
+      "id": "audit_1786486907464_o9otb",
+      "timestamp": "2026-08-11T22:21:47.464Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "audit_1786486812464_mqdon",
+      "timestamp": "2026-08-11T22:20:12.464Z",
+      "event": "SUCCESSFUL_LOGIN",
+      "details": "Admin authenticated successfully",
+      "ip": "::1",
+      "userAgent": "curl/8.21.0",
+      "user": "Unauthenticated"
+    },
+    {
+      "id": "log_init",
+      "timestamp": "2026-08-11T22:18:30.128Z",
+      "event": "SYSTEM_INITIALIZED",
+      "details": "Portfolio Security Database and Admin CMS initialized",
+      "ip": "127.0.0.1",
+      "userAgent": "System Core"
+    }
+  ],
+  "profile": {
+    "name": "Arjun",
+    "title": "FULL STACK ARCHITECT & AI ENGINEER",
+    "status": "AVAILABLE FOR SUMMER 2026 INTERNSHIPS & ROLES",
+    "subtext": "Engineering autonomous AI agents, RAG vector systems, and scalable cloud architectures.//",
+    "bio": "IT engineering student building scalable software, AI systems, and creative digital web applications with minimal clutter and maximum visual impact.",
+    "email": "arjunghuge644@gmail.com",
+    "location": "MUMBAI // INDIA",
+    "github": " htpps://arjunghuge04.github.com",
+    "linkedin": "https://linkedin.com",
+    "twitter": "https://twitter.com"
+  },
+  "skills": [
+    {
+      "id": "1",
+      "category": "FULL-STACK",
+      "name": "React.js / Node.js / Express",
+      "level": 95
+    },
+    {
+      "id": "2",
+      "category": "AI & ML",
+      "name": "Python / LangChain / RAG / Pinecone",
+      "level": 90
+    },
+    {
+      "id": "3",
+      "category": "DATABASES",
+      "name": "MongoDB / PostgreSQL / Redis",
+      "level": 88
+    },
+    {
+      "id": "4",
+      "category": "CLOUD & INFRA",
+      "name": "AWS / Docker / GitHub Actions",
+      "level": 85
+    }
+  ],
+  "education": [
+    {
+      "id": "1",
+      "degree": "B.Tech in Information Technology",
+      "institution": "University College of Engineering",
+      "period": "2023 - 2027",
+      "grade": "8.8/10 CGPA"
+    }
+  ],
+  "experience": [
+    {
+      "id": "1",
+      "role": "Full-Stack & AI Engineering Intern",
+      "company": "Tech Innovation Labs",
+      "period": "Jan 2026 - Present",
+      "description": "Engineered RAG search pipeline and microservices dashboard."
+    }
+  ],
+  "achievements": [
+    {
+      "id": "1",
+      "title": "Winner - National Hackathon 2025",
+      "description": "Built an AI-driven medical triage engine."
+    },
+    {
+      "id": "2",
+      "title": "Top 1% Algorithmic Coder",
+      "description": "Solved 500+ data structure problems across platforms."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_1786969847224",
+      "title": "QUANTUM-AI RETRIEVAL ENGINE",
+      "category": "AI & RAG",
+      "description": "Production multi-modal vector search and autonomous agent retrieval engine.",
+      "techStack": [
+        "Python",
+        "Pinecone",
+        "LangChain",
+        "Next.js"
+      ],
+      "image": "/assets/project1.png",
+      "liveUrl": "",
+      "githubUrl": "",
+      "featured": true,
+      "published": true,
+      "caseStudy": {
+        "problem": "",
+        "solution": "",
+        "architecture": "",
+        "challenges": "",
+        "results": ""
+      },
+      "createdAt": "2026-08-17T12:30:47.224Z",
+      "updatedAt": "2026-08-17T12:30:47.224Z"
+    },
+    {
+      "id": "proj_1786562879845",
+      "title": "Test Mongo connection",
+      "category": "FULL-STACK DEVELOPMENT",
+      "description": "Testing MongoDB Atlas write and Next.js frontend rendering",
+      "techStack": [],
+      "image": "/assets/project1.png",
+      "liveUrl": "",
+      "githubUrl": "",
+      "featured": true,
+      "published": true,
+      "caseStudy": {
+        "problem": "",
+        "solution": "",
+        "architecture": "",
+        "challenges": "",
+        "results": ""
+      },
+      "createdAt": "2026-08-12T19:27:59.845Z",
+      "updatedAt": "2026-08-12T19:27:59.845Z"
+    },
+    {
+      "id": "proj_1",
+      "title": "NEURAL-SYNC AI RAG ENGINE",
+      "category": "ARTIFICIAL INTELLIGENCE / RAG",
+      "description": "An enterprise-grade Retrieval-Augmented Generation (RAG) platform powered by vector search embeddings and LLMs for real-time document context querying.",
+      "techStack": [
+        "Python",
+        "LangChain",
+        "Pinecone DB",
+        "OpenAI API",
+        "FastAPI",
+        "React.js"
+      ],
+      "image": "/assets/project1.png",
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "featured": true,
+      "published": true,
+      "createdAt": "2026-08-11T22:18:30.128Z"
+    },
+    {
+      "id": "proj_2",
+      "title": "PRESCRIPTO HEALTHCARE PLATFORM",
+      "category": "FULL-STACK APPLICATION",
+      "description": "A comprehensive doctor appointment scheduling system with admin analytics, doctor schedule management, patient dashboard, and automated booking notifications.",
+      "techStack": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT Auth",
+        "REST API"
+      ],
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "featured": true,
+      "published": true,
+      "createdAt": "2026-08-11T22:18:30.128Z"
+    },
+    {
+      "id": "proj_3",
+      "title": "EV BATTERY HEALTH & RANGE PREDICTOR",
+      "category": "MACHINE LEARNING / ANALYTICS",
+      "description": "Predictive analytics platform utilizing ML regression models to forecast Electric Vehicle battery State-of-Health (SoH) and real-time range degradation.",
+      "techStack": [
+        "Python",
+        "Scikit-learn",
+        "PyTorch",
+        "Pandas",
+        "Flask",
+        "Chart.js"
+      ],
+      "image": "/assets/project3.png",
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "featured": true,
+      "published": true,
+      "createdAt": "2026-08-11T22:18:30.128Z"
+    },
+    {
+      "id": "proj_4",
+      "title": "AUTONOMOUS CODE REVIEWER AGENT",
+      "category": "DEVELOPER TOOL / AI AGENT",
+      "description": "Automated GitHub pull request reviewer using LLM AST parsing to identify security vulnerabilities, style infractions, and performance bottlenecks in codebases.",
+      "techStack": [
+        "Python",
+        "Gemini API",
+        "Docker",
+        "GitHub Actions",
+        "Node.js"
+      ],
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+      "liveUrl": "https://github.com",
+      "githubUrl": "https://github.com",
+      "featured": true,
+      "published": true,
+      "createdAt": "2026-08-11T22:18:30.128Z"
+    }
+  ],
+  "articles": [
+    {
+      "id": "art_1786970687182",
+      "title": "test article ",
+      "slug": "test-article",
+      "excerpt": "test article",
+      "content": "test",
+      "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "category": "TECHNICAL INSIGHTS",
+      "tags": [
+        "AI"
+      ],
+      "published": true,
+      "createdAt": "2026-08-17T12:44:47.182Z",
+      "updatedAt": "2026-08-17T12:44:47.182Z"
+    },
+    {
+      "id": "art_1",
+      "title": "Building Enterprise RAG Architectures with LangChain & Pinecone",
+      "slug": "building-enterprise-rag-architectures",
+      "excerpt": "A deep dive into chunking strategies, vector embeddings, and prompt optimization for real-time document context engines.",
+      "content": "# Building Enterprise RAG Architectures\n\nRetrieval-Augmented Generation (RAG) unlocks real-time domain knowledge for LLMs...\n",
+      "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "category": "AI & ML",
+      "tags": [
+        "RAG",
+        "LangChain",
+        "Python",
+        "Vector Search"
+      ],
+      "published": true,
+      "createdAt": "2026-08-11T22:18:30.128Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg_1786970743633",
+      "name": "test",
+      "email": "test@test.com",
+      "subject": "Freelance Engineering Systems",
+      "message": "sdfwe",
+      "status": "UNREAD",
+      "createdAt": "2026-08-17T12:45:43.633Z"
+    },
+    {
+      "id": "msg_1786882736540",
+      "name": "Test User",
+      "email": "test@example.com",
+      "subject": "Full-Stack Development / AI Project",
+      "message": "Hello, testing the transmitter form channel.",
+      "status": "UNREAD",
+      "createdAt": "2026-08-16T12:18:56.540Z"
+    },
+    {
+      "id": "msg_1786564916920",
+      "name": "Arjun",
+      "email": "arjunghuge644@gmail.com",
+      "subject": "General Engineering Query",
+      "message": "tell me about your project",
+      "status": "REPLIED",
+      "createdAt": "2026-08-12T20:01:56.920Z"
+    },
+    {
+      "id": "msg_1786487329553",
+      "name": "Alex Mercer",
+      "email": "alex@techventures.io",
+      "subject": "Summer 2026 AI Internship Offer",
+      "message": "Hi Arjun, we saw your Neural-Sync RAG project and would love to invite you for an interview!",
+      "status": "UNREAD",
+      "createdAt": "2026-08-11T22:28:49.553Z"
+    },
+    {
+      "id": "msg_1",
+      "name": "Sarah Connor",
+      "email": "sarah@cyberdyne.com",
+      "subject": "AI Systems Engineering Role Inquiry",
+      "message": "Hi Arjun, loved your Neural-Sync RAG project! We are looking for an AI Engineering intern for Summer 2026.",
+      "status": "READ",
+      "createdAt": "2026-08-11T18:18:30.128Z"
+    }
+  ],
+  "media": [
+    {
+      "id": "med_1786563016371",
+      "originalName": "Landing Page-1.png",
+      "filename": "1786563016364_landing_page_1_png.png",
+      "mimeType": "image/png",
+      "size": 1195331,
+      "url": "/uploads/1786563016364_landing_page_1_png.png",
+      "uploadedAt": "2026-08-12T19:30:16.371Z"
+    }
+  ],
+  "seo": {
+    "siteTitle": "Arjun — IT Engineer & AI Builder Portfolio",
+    "metaDescription": "Editorial digital portfolio of Arjun, featuring Full-Stack Web Development, Artificial Intelligence systems, RAG engines, and Machine Learning models.",
+    "ogImage": "/assets/portrait.png",
+    "canonicalUrl": "https://arjun.dev"
+  },
+  "visitsCount": 176,
+  "lastVisitedAt": "2026-08-17T13:13:27.356Z"
+}

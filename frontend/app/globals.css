@@ -1,0 +1,441 @@
+/* ==========================================================================
+   STARK INDUSTRIES × IRON MAN HUD DESIGN SYSTEM — GHOST OBSIDIAN THEME
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+  /* Core Palette */
+  --bg-primary: #050608;
+  --bg-secondary: #0d1117;
+  --bg-panel: #11161c;
+
+  --text-primary: #f5f7fa;
+  --text-secondary: #8b95a5;
+  --text-muted: #58616d;
+
+  --border-primary: #252b33;
+  --border-thin: #252b33;
+  --border-accent: rgba(0, 217, 255, 0.35);
+  --border-active: #00d9ff;
+
+  --accent-cyan: #00d9ff;
+  --accent-cyan-muted: rgba(0, 217, 255, 0.12);
+  --accent-cyan-glow: rgba(0, 217, 255, 0.35);
+
+  --accent-gold: #ffc857;
+  --accent-gold-muted: rgba(255, 200, 87, 0.15);
+
+  --accent-red: #ed1d24;
+  --accent-red-muted: rgba(237, 29, 36, 0.15);
+
+  --status-success: #00e676;
+  --status-warning: #ffc857;
+  --status-danger: #ed1d24;
+
+  --btn-primary-bg: #00d9ff;
+  --btn-primary-text: #050608;
+  --nav-bg: rgba(13, 17, 23, 0.88);
+
+  /* Typography */
+  --font-display: var(--font-heading), 'Rajdhani', sans-serif;
+  --font-body: var(--font-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: var(--font-mono), 'JetBrains Mono', monospace;
+
+  /* HUD Sharp Radii */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="light"] {
+  /* Stark Tactical Light Blueprint Theme */
+  --bg-primary: #f4f6fa;
+  --bg-secondary: #ffffff;
+  --bg-panel: #e9eef6;
+
+  --text-primary: #0a0f18;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --border-primary: #cbd5e1;
+  --border-thin: #cbd5e1;
+  --border-accent: rgba(0, 136, 182, 0.4);
+  --border-active: #0088b6;
+
+  --accent-cyan: #0088b6;
+  --accent-cyan-muted: rgba(0, 136, 182, 0.12);
+  --accent-cyan-glow: rgba(0, 136, 182, 0.25);
+
+  --accent-gold: #d97706;
+  --accent-gold-muted: rgba(217, 119, 6, 0.15);
+
+  --accent-red: #dc2626;
+  --accent-red-muted: rgba(220, 38, 38, 0.15);
+
+  --status-success: #16a34a;
+  --status-warning: #d97706;
+  --status-danger: #dc2626;
+
+  --btn-primary-bg: #0088b6;
+  --btn-primary-text: #ffffff;
+  --nav-bg: rgba(244, 246, 250, 0.92);
+}
+
+/* Reset & Global Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tactical HUD Scanline & Grid Background Effects */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    linear-gradient(var(--accent-cyan-muted) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent-cyan-muted) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle CRT Scanline Animation */
+.hud-scanlines {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.15)
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.4;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* Text Selection */
+::selection {
+  background-color: var(--accent-cyan);
+  color: #050608;
+}
+
+/* Typography Utilities */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Technical Telemetry Label */
+.section-label,
+.hud-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent-cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.section-label::before,
+.hud-status-dot {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-cyan);
+  animation: hud-blink 2s infinite ease-in-out;
+}
+
+@keyframes hud-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.heading-editorial {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-lime,
+.text-cyan {
+  color: var(--accent-cyan) !important;
+}
+
+.text-gold {
+  color: var(--accent-gold) !important;
+}
+
+.text-red {
+  color: var(--accent-red) !important;
+}
+
+/* Base Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+.section-padding {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  border-bottom: 1px solid var(--border-primary);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+/* Reusable HUD Frame & Corner Brackets */
+.hud-panel {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  position: relative;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hud-panel:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.08);
+}
+
+/* HUD Corner Brackets Overlay */
+.hud-corner-brackets {
+  position: relative;
+}
+
+.hud-corner-brackets::before,
+.hud-corner-brackets::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hud-corner-brackets::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--accent-cyan);
+  border-left: 2px solid var(--accent-cyan);
+}
+
+.hud-corner-brackets::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--accent-cyan);
+  border-right: 2px solid var(--accent-cyan);
+}
+
+/* Buttons & HUD Action Controls */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--accent-cyan);
+  color: var(--btn-primary-text);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent-cyan);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  box-shadow: 0 0 12px var(--accent-cyan-muted);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: #33e1ff;
+  border-color: #33e1ff;
+  box-shadow: 0 0 25px var(--accent-cyan-glow);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--bg-panel);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  background-color: var(--bg-secondary);
+  box-shadow: 0 0 12px var(--accent-cyan-muted);
+}
+
+/* Circular HUD Arc Reactor Interactive Badge */
+.circle-cta {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-cyan-muted) 0%, var(--bg-primary) 70%);
+  border: 1px solid var(--border-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  position: relative;
+  transition: transform var(--transition-smooth), border-color var(--transition-fast);
+  animation: arc-pulse 3s infinite ease-in-out;
+}
+
+.circle-cta:hover {
+  transform: scale(1.06);
+  border-color: var(--accent-cyan);
+  background: var(--accent-cyan);
+  color: #050608;
+  box-shadow: 0 0 30px var(--accent-cyan-glow);
+}
+
+@keyframes arc-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--accent-cyan-muted);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--accent-cyan-glow);
+  }
+}
+
+/* Custom Cursor Hide Default Browser Cursor */
+@media (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active *,
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

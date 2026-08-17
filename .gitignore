@@ -1,0 +1,81 @@
+# Dependencies & Modules
+node_modules/
+**/node_modules/
+.pnpm-store/
+
+# Next.js & Frontend Build Outputs
+.next/
+**/ .next/
+out/
+**/out/
+frontend/.next/
+frontend/out/
+
+# Vite, Admin & Desktop Build Outputs
+dist/
+**/dist/
+build/
+**/build/
+release/
+**/release/
+desktop/dist/
+desktop/release/
+*.asar
+
+# Environment & Credentials (Secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!.env.example
+
+# Runtime & Uploads (Transient Data)
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/data/*.tmp
+*.tmp
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# System, OS & Editor Junk
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Cache & Diagnostics
+.eslintcache
+.turbo/
+*.tsbuildinfo
+
+# Python & Jupyter Junk (if applicable)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+.ipynb_checkpoints/
