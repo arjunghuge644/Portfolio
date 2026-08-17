@@ -140,4 +140,4 @@ npm run seed:atlas
 ## 📄 License & Author
 
 * **Author**: [Arjun Ghuge](https://github.com/arjunghuge644)
-* **License**: MIT
+
