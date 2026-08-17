@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Sun, Moon, Lock, Volume2, VolumeX, Terminal } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sun, Moon, Volume2, VolumeX, Terminal } from 'lucide-react';
 import { hudAudio } from '../lib/hudAudio';
 import HUDConsoleModal from './HUDConsoleModal';
 
@@ -306,30 +306,6 @@ export default function Navbar() {
             >
               {theme === 'dark' ? <Sun size={15} className="text-cyan" /> : <Moon size={15} className="text-cyan" />}
             </button>
-
-            {/* Admin CMS Lock Link */}
-            <a
-              href={process.env.NEXT_PUBLIC_ADMIN_URL || 'http://localhost:5173'}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: 'var(--radius-sm)',
-                backgroundColor: 'var(--bg-secondary)',
-                border: '1px solid var(--border-primary)',
-                color: 'var(--accent-cyan)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                textDecoration: 'none'
-              }}
-              data-cursor="ADMIN"
-              title="Admin CMS Dashboard"
-            >
-              <Lock size={14} />
-            </a>
 
             {/* Contact CTA */}
             <a
