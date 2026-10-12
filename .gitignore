@@ -30,6 +30,7 @@ desktop/release/
 .env.production.local
 *.env
 !.env.example
+.backup/
 
 # Runtime & Uploads (Transient Data)
 backend/uploads/*
