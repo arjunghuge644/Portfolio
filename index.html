@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arjun — Personal Portfolio Website</title>
+  <meta name="description" content="Personal portfolio website designed in Figma featuring product design, full stack development, and AI engineering." />
+  <meta name="keywords" content="Portfolio, Product Design, Full Stack Architect, AI Engineer, UI/UX, Webflow, React, Python" />
+  <meta property="og:title" content="Personal Portfolio Website" />
+  <meta property="og:description" content="Personal portfolio website based on the Figma Community design." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/figma/hero-illustration.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  
+  <!-- Modern Typography (Inter & Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="nav-container">
+      <a href="#home" class="logo" id="siteLogo" aria-label="Arjun Ghuge Portfolio">
+        <img src="/assets/logo.png" alt="Arjun Ghuge - Software Engineer" class="brand-logo-img" id="siteLogoImg" />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="#home" class="nav-item active" id="navHome">Home</a>
+        <a href="#portfolio" class="nav-item" id="navPortfolio">Portfolio</a>
+        <a href="#about" class="nav-item" id="navAbout">About me</a>
+        <a href="#testimonials" class="nav-item" id="navTestimonials">Testimonials</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <!-- Interactive Mode Toggle: Figma Design vs Arjun Live Data -->
+        <button class="mode-toggle-btn arjun-active" id="modeToggleBtn" title="Switch between original Figma sample content and Arjun's live portfolio data">
+          <span class="toggle-pill" id="togglePillIndicator"></span>
+          <span class="toggle-option" id="optFigma">Figma View</span>
+          <span class="toggle-option active" id="optArjun">Arjun View</span>
+        </button>
+
+        <a href="#contact" class="btn btn-outline" id="navContactBtn">Contact Me</a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="#home" class="mobile-nav-link active">Home</a>
+      <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
+      <a href="#about" class="mobile-nav-link">About me</a>
+      <a href="#testimonials" class="mobile-nav-link">Testimonials</a>
+      <a href="#contact" class="mobile-nav-link">Contact Me</a>
+      <div class="mobile-drawer-footer">
+        <p class="mobile-mode-label">Display Mode:</p>
+        <button class="btn btn-secondary btn-block" id="mobileModeToggleBtn">Switch to Arjun's Data</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-container">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <p class="hero-greeting" id="heroGreeting">Hey, I am Arjun</p>
+          <h1 class="hero-title" id="heroTitle">
+            I architect <span class="highlight-purple" id="heroTitleHighlight">scalable full stack</span><br />
+            & autonomous AI systems
+          </h1>
+          <p class="hero-description" id="heroDescription">
+            IT engineering student building scalable software, AI systems, and creative digital web applications with minimal clutter and maximum visual impact.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary" id="heroCtaBtn">Get In Touch</a>
+          </div>
+        </div>
+
+        <!-- Hero Graphic / Illustration -->
+        <div class="hero-visual" id="heroVisual">
+          <div class="hero-frame-wrapper">
+            <!-- Decorative Sparkles -->
+            <div class="sparkle sparkle-teal sparkle-tl" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M24 0L27 18L45 21L27 24L24 42L21 24L3 21L21 18L24 0Z" fill="#006b60" />
+                <path d="M38 28L40 37L49 38.5L40 40L38 49L36 40L27 38.5L36 37L38 28Z" fill="#008a79" opacity="0.8" />
+              </svg>
+            </div>
+            <div class="sparkle sparkle-purple sparkle-tr" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <path d="M16 0L18.5 12.5L31 15L18.5 17.5L16 30L13.5 17.5L1 15L13.5 12.5L16 0Z" fill="#5e3bee" />
+              </svg>
+            </div>
+            <div class="sparkle sparkle-purple sparkle-ml" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 0L14 9.5L23.5 11.5L14 13.5L12 23L10 13.5L0.5 11.5L10 9.5L12 0Z" fill="#5e3bee" />
+              </svg>
+            </div>
+            <div class="sparkle sparkle-teal sparkle-bl" aria-hidden="true">
+              <svg viewBox="0 0 36 36" fill="none">
+                <path d="M18 0L20.5 14L34.5 16.5L20.5 19L18 33L15.5 19L1.5 16.5L15.5 14L18 0Z" fill="#006b60" />
+              </svg>
+            </div>
+            <div class="sparkle sparkle-purple sparkle-br" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none">
+                <path d="M14 0L16 11L27 13L16 15L14 26L12 15L1 13L12 11L14 0Z" fill="#5e3bee" />
+              </svg>
+            </div>
+
+            <!-- Portrait Presentation Frame -->
+            <div class="hero-portrait-card">
+              <img
+                src="/assets/arjun-hero.png"
+                alt="Portrait of Arjun Ghuge - Software Engineer"
+                class="hero-img"
+                id="heroImage"
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Skills / My Expertise Section -->
+    <section class="section section-expertise" id="expertise">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag" id="expertiseTag">My Skills</p>
+          <h2 class="section-title" id="expertiseTitle">My Expertise</h2>
+        </div>
+
+        <div class="expertise-grid" id="expertiseGrid">
+          <!-- Card 1 -->
+          <div class="expertise-card active">
+            <div class="expertise-icon-box">
+              <!-- Strategy & Direction Icon -->
+              <svg viewBox="0 0 32 32" fill="none" class="expertise-icon">
+                <rect x="11" y="11" width="10" height="10" rx="2" stroke="#006b60" stroke-width="2" />
+                <path d="M16 6V11M16 21V26M6 16H11M21 16H26" stroke="#006b60" stroke-width="2" stroke-linecap="round" />
+                <circle cx="16" cy="6" r="2" fill="#006b60" />
+                <circle cx="16" cy="26" r="2" fill="#006b60" />
+                <circle cx="6" cy="16" r="2" fill="#006b60" />
+                <circle cx="26" cy="16" r="2" fill="#006b60" />
+              </svg>
+            </div>
+            <h3 class="expertise-name">Strategy & Direction</h3>
+            <p class="expertise-desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="expertise-card">
+            <div class="expertise-icon-box">
+              <!-- Branding & Logo Icon -->
+              <svg viewBox="0 0 32 32" fill="none" class="expertise-icon">
+                <path d="M19.5 5.5L26.5 12.5L13.5 25.5L6.5 18.5L19.5 5.5Z" stroke="#006b60" stroke-width="2" stroke-linejoin="round" />
+                <path d="M21 10C21.5523 10 22 9.55228 22 9C22 8.44772 21.5523 8 21 8C20.4477 8 20 8.44772 20 9C20 9.55228 20.4477 10 21 10Z" fill="#006b60" />
+                <path d="M13 18L14 15L17 14L14.5 12.5L15 10L12.5 11L10 9.5L11 12.5L9 14.5L12 15L13 18Z" fill="#006b60" />
+              </svg>
+            </div>
+            <h3 class="expertise-name">Branding & Logo</h3>
+            <p class="expertise-desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="expertise-card">
+            <div class="expertise-icon-box">
+              <!-- UI & UX Design Icon -->
+              <svg viewBox="0 0 32 32" fill="none" class="expertise-icon">
+                <path d="M25 6C18 7 11 14 9 21L11 23C18 21 25 14 26 7L25 6Z" stroke="#006b60" stroke-width="2" stroke-linejoin="round" />
+                <path d="M9 21L6 26L11 23" stroke="#006b60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M13 19L21 11" stroke="#006b60" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="expertise-name">UI & UX Design</h3>
+            <p class="expertise-desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="expertise-card">
+            <div class="expertise-icon-box">
+              <!-- Webflow Development Icon -->
+              <svg viewBox="0 0 32 32" fill="none" class="expertise-icon">
+                <path d="M11 11L5 16L11 21M21 11L27 16L21 21M18 8L14 24" stroke="#006b60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="expertise-name">Webflow Development</h3>
+            <p class="expertise-desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. About Me Section -->
+    <section class="section section-about" id="about">
+      <div class="container about-container">
+        <!-- Artistic Brush Splash Portrait -->
+        <div class="about-visual">
+          <div class="about-portrait-wrapper" id="aboutPortraitWrapper">
+            <img
+              src="/assets/about-arjun-layered.png?v=white-bg"
+              alt="About Arjun Ghuge - Background Story"
+              class="about-img"
+              id="aboutImage"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- About Text Info -->
+        <div class="about-content">
+          <p class="section-tag" id="aboutTag">About</p>
+          <h2 class="section-title" id="aboutTitle">About Me</h2>
+          
+          <div class="about-paragraphs" id="aboutParagraphs">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris duis. Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in amet pellentesque.
+            </p>
+            <p>
+              Sit turpis pretium eget maecenas. Vestibulum dolor mattis consectetur eget commodo vitae. Amet pellentesque sit pulvinar lorem mi a, euismod risus r.
+            </p>
+          </div>
+
+          <div class="about-actions">
+            <a href="#contact" class="btn btn-primary" id="aboutCtaBtn">Let's Connect</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Portfolio Section -->
+    <section class="section section-portfolio" id="portfolio">
+      <div class="container">
+        <!-- Portfolio Header with Dribbble / External Action Button -->
+        <div class="portfolio-header">
+          <div>
+            <p class="section-tag" id="portfolioTag">Recent Projects</p>
+            <h2 class="section-title" id="portfolioTitle">My Portfolio</h2>
+          </div>
+          
+          <a
+            href="https://dribbble.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-dribbble"
+            id="portfolioSocialBtn"
+          >
+            <!-- Dribbble Icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.2c2.408 0 4.622.868 6.347 2.308-1.026 1.488-2.483 2.658-4.184 3.344-1.298-2.673-2.883-4.595-3.076-4.825.297-.04.603-.06.913-.06zm-3.23 1.258c.24.28 1.83 2.19 3.12 4.88-3.924 1.205-8.118 1.154-8.87 1.14 1.056-2.73 3.178-4.887 5.75-6.02zm-6.52 7.822c.45.006 4.394.04 8.275-1.127.348.742.67 1.507.962 2.29-4.22 1.34-7.854 4.54-8.082 4.743-.76-1.674-1.155-3.553-1.155-5.906zm2.467 7.228c.39-.34 3.77-3.29 7.9-4.57 1.06 2.8 1.76 5.86 1.95 6.78-1.74.83-3.69 1.3-5.75 1.3-1.53 0-2.98-.26-4.1-.71zm11.776-.874c-.21-.99-.87-3.86-1.89-6.53 1.63-.67 3.35-.99 5.09-1.02-.32 3.14-1.72 5.89-3.2 7.55zm-1.1-9.256c-1.68.04-3.34.35-4.94.99-.27-.72-.56-1.42-.88-2.1 1.61-.64 3-1.73 4-3.11 1.09 1.09 1.82 2.58 1.82 4.22z"/>
+            </svg>
+            <span id="portfolioBtnText">Visit My Dribbble</span>
+          </a>
+        </div>
+
+        <!-- 3-Column Portfolio Cards Grid -->
+        <div class="portfolio-grid" id="portfolioGrid">
+          <!-- Project 1: Ahuse -->
+          <article class="portfolio-card" data-project="ahuse">
+            <div class="portfolio-media">
+              <img
+                src="/assets/figma/portfolio-ahuse.png"
+                alt="Ahuse Real Estate Platform"
+                class="portfolio-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-info">
+              <h3 class="portfolio-name">Ahuse</h3>
+              <p class="portfolio-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+              </p>
+              <a href="#" class="portfolio-link" data-modal="ahuse">
+                <span>View In Dribbble</span>
+                <svg viewBox="0 0 16 16" fill="none" class="link-arrow">
+                  <path d="M4.5 11.5L11.5 4.5M11.5 4.5H6.5M11.5 4.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: App Dashboard -->
+          <article class="portfolio-card" data-project="dashboard">
+            <div class="portfolio-media">
+              <img
+                src="/assets/figma/portfolio-dashboard.png"
+                alt="App Dashboard Settings"
+                class="portfolio-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-info">
+              <h3 class="portfolio-name">App Dashboard</h3>
+              <p class="portfolio-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+              </p>
+              <a href="#" class="portfolio-link" data-modal="dashboard">
+                <span>View In Dribbble</span>
+                <svg viewBox="0 0 16 16" fill="none" class="link-arrow">
+                  <path d="M4.5 11.5L11.5 4.5M11.5 4.5H6.5M11.5 4.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Easy Rent -->
+          <article class="portfolio-card" data-project="easyrent">
+            <div class="portfolio-media">
+              <img
+                src="/assets/figma/portfolio-easyrent.png"
+                alt="Easy Rent Laptop Mockup"
+                class="portfolio-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="portfolio-info">
+              <h3 class="portfolio-name">Easy Rent</h3>
+              <p class="portfolio-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+              </p>
+              <a href="#" class="portfolio-link" data-modal="easyrent">
+                <span>View In Dribbble</span>
+                <svg viewBox="0 0 16 16" fill="none" class="link-arrow">
+                  <path d="M4.5 11.5L11.5 4.5M11.5 4.5H6.5M11.5 4.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Testimonials Section -->
+    <section class="section section-testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag" id="testimonialsTag">Clients Feedback</p>
+          <h2 class="section-title" id="testimonialsTitle">Customer testimonials</h2>
+        </div>
+
+        <div class="testimonials-grid" id="testimonialsGrid">
+          <!-- Testimonial 1: Dianne Russell -->
+          <div class="testimonial-card">
+            <!-- 5 Star Rating -->
+            <div class="rating-stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."
+            </blockquote>
+            <div class="client-info">
+              <img src="/assets/figma/avatar-dianne.png" alt="Dianne Russell" class="client-avatar" />
+              <div>
+                <h4 class="client-name">Dianne Russell</h4>
+                <p class="client-company">Starbucks</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2: Kristin Watson -->
+          <div class="testimonial-card">
+            <div class="rating-stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."
+            </blockquote>
+            <div class="client-info">
+              <img src="/assets/figma/avatar-kristin.png" alt="Kristin Watson" class="client-avatar" />
+              <div>
+                <h4 class="client-name">Kristin Watson</h4>
+                <p class="client-company">Louis Vuitton</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3: Kathryn Murphy -->
+          <div class="testimonial-card">
+            <div class="rating-stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <blockquote class="testimonial-quote">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."
+            </blockquote>
+            <div class="client-info">
+              <img src="/assets/figma/avatar-kathryn.png" alt="Kathryn Murphy" class="client-avatar" />
+              <div>
+                <h4 class="client-name">Kathryn Murphy</h4>
+                <p class="client-company">McDonald's</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact Me Section -->
+    <section class="section section-contact" id="contact">
+      <div class="container contact-container">
+        <div class="section-header text-center">
+          <p class="section-tag" id="contactTag">Get In Touch</p>
+          <h2 class="section-title" id="contactTitle">Contact me</h2>
+          <p class="section-subtitle" id="contactSubtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First name</label>
+              <input type="text" id="firstName" name="firstName" required placeholder="John" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input type="text" id="lastName" name="lastName" required placeholder="Doe" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="name@company.com" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="topic">Choose a topic</label>
+            <div class="select-wrapper">
+              <select id="topic" name="topic" required>
+                <option value="" disabled selected>Select one...</option>
+                <option value="Product Design">Product Design</option>
+                <option value="Webflow & Full-Stack">Webflow & Full-Stack Development</option>
+                <option value="AI & RAG Systems">AI & RAG Vector Systems</option>
+                <option value="Consulting">Consulting & Architecture</option>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 16 16" fill="none">
+                <path d="M4 6L8 10L12 6" stroke="#282938" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Type your message..."></textarea>
+          </div>
+
+          <div class="form-checkbox">
+            <label class="checkbox-label" for="terms">
+              <input type="checkbox" id="terms" name="terms" required />
+              <span class="custom-checkbox"></span>
+              <span class="checkbox-text">I accept the terms</span>
+            </label>
+          </div>
+
+          <div class="form-actions text-center">
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+              <span class="btn-text">Submit</span>
+              <span class="btn-loader" style="display: none;"></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. Footer Section -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <!-- Top Row: Logo, Nav, Socials -->
+      <div class="footer-top">
+        <a href="#home" class="logo" aria-label="Arjun Ghuge Portfolio">
+          <img src="/assets/logo.png" alt="Arjun Ghuge - Software Engineer" class="brand-logo-img footer-logo-img" id="footerLogoImg" />
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+
+        <div class="footer-socials">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="social-icon" id="footerTwitterLink">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon" id="footerLinkedinLink">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <!-- Bottom Row: Copyright, Terms -->
+      <div class="footer-bottom">
+        <p class="copyright" id="footerCopyright">
+          Made with 💖 by Airdokan
+        </p>
+        <div class="footer-legal">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#cookies">Cookies Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div class="project-modal" id="projectModal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification" role="alert" aria-live="polite">
+    <div class="toast-icon">✓</div>
+    <div class="toast-message" id="toastMessage">Your message has been sent successfully!</div>
+  </div>
+
+  <!-- Floating Back To Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M12 19V5M5 12L12 5L19 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

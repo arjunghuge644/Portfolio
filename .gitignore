@@ -30,7 +30,6 @@ desktop/release/
 .env.production.local
 *.env
 !.env.example
-.backup/
 
 # Runtime & Uploads (Transient Data)
 backend/uploads/*
@@ -80,3 +79,4 @@ env/
 venv/
 ENV/
 .ipynb_checkpoints/
+.backup/
