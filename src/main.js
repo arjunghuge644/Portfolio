@@ -129,24 +129,141 @@ const FIGMA_DATA = {
       tech: ['Webflow', 'Responsive Layout', 'Prototype']
     }
   ],
-  testimonials: [
+  beyondTag: 'Philosophy & Practice',
+  beyondTitle: 'Beyond the Code',
+  beyondSubtitle: 'The tools I use, the projects I build, and the principles that guide my engineering journey.',
+  beyondCards: [
     {
-      name: 'Dianne Russell',
-      company: 'Starbucks',
-      avatar: '/assets/figma/avatar-dianne.png',
-      quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."'
+      type: 'public',
+      badge: 'Design Systems & Open Source',
+      title: 'Building in Public',
+      desc: 'Explore template design systems, component libraries, and community UI kits.',
+      githubProfile: {
+        handle: '@figma-community',
+        meta: 'Sample Design Template',
+        url: 'https://github.com'
+      },
+      featuredRepos: [
+        {
+          name: 'Design-System-Tokens',
+          badge: 'Template',
+          url: 'https://github.com',
+          desc: 'Harmonious color palettes, typographic scales, and responsive design guidelines for modern web applications.',
+          tech: ['Figma', 'CSS Tokens', 'Style Dictionary']
+        },
+        {
+          name: 'Accessible-UI-Library',
+          badge: 'Template',
+          url: 'https://github.com',
+          desc: 'WCAG AAA compliant component primitives with semantic markup, focus rings, and high-contrast support.',
+          tech: ['Vanilla JS', 'Semantic HTML', 'WCAG 2.1'],
+          actionLabel: 'View Accessible-UI-Library template'
+        },
+        {
+          name: 'Developer-Showcase-Kit',
+          badge: 'Template',
+          url: 'https://github.com',
+          desc: 'Project discovery cards, deployment status indicators, and clean layout patterns for portfolio showcases.',
+          tech: ['Figma Kit', 'Design Tokens', 'Discovery UI'],
+          linkText: 'View Prototype',
+          actionLabel: 'View Developer-Showcase-Kit template'
+        }
+      ]
     },
     {
-      name: 'Kristin Watson',
-      company: 'Louis Vuitton',
-      avatar: '/assets/figma/avatar-kristin.png',
-      quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."'
+      type: 'toolkit',
+      badge: 'Design Stack & Workflow',
+      title: 'My Developer Toolkit',
+      desc: 'The languages, frameworks, databases, AI tools, and development environment I use to build software.',
+      groups: [
+        {
+          title: 'Design & Prototyping',
+          skills: [
+            { name: 'Figma', logo: '/assets/tech/figma.svg' },
+            { name: 'Auto Layout', logo: '/assets/tech/layout.svg' },
+            { name: 'Design Tokens', logo: '/assets/tech/components.svg' },
+            { name: 'Prototyping', logo: '/assets/tech/design.svg' },
+            { name: 'Component Variants', logo: '/assets/tech/components.svg' }
+          ]
+        },
+        {
+          title: 'Frontend Foundations',
+          skills: [
+            { name: 'HTML5', logo: '/assets/tech/html5.svg' },
+            { name: 'Vanilla CSS', logo: '/assets/tech/css3.svg' },
+            { name: 'JavaScript (ES6+)', logo: '/assets/tech/javascript.svg' },
+            { name: 'Responsive Layouts', logo: '/assets/tech/layout.svg' }
+          ]
+        },
+        {
+          title: 'Design Handoff & Tooling',
+          skills: [
+            { name: 'Git', logo: '/assets/tech/git.svg' },
+            { name: 'Vite Dev Server', logo: '/assets/tech/vite.svg' },
+            { name: 'SVG Optimization', logo: '/assets/tech/code.svg' },
+            { name: 'CSS Variables', logo: '/assets/tech/css3.svg' }
+          ]
+        },
+        {
+          title: 'Accessibility & QA',
+          skills: [
+            { name: 'Contrast Validation', logo: '/assets/tech/a11y.svg' },
+            { name: 'Keyboard Navigation', logo: '/assets/tech/a11y.svg' },
+            { name: 'Screen Reader Semantics', logo: '/assets/tech/a11y.svg' }
+          ]
+        }
+      ]
     },
     {
-      name: 'Kathryn Murphy',
-      company: "McDonald's",
-      avatar: '/assets/figma/avatar-kathryn.png',
-      quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."'
+      type: 'beyond',
+      badge: 'Community & Craft',
+      title: 'Beyond Programming',
+      desc: 'Exploring new technologies, learning through experimentation, and collaborating on engineering and community activities.',
+      activities: [
+        {
+          icon: 'star',
+          title: 'Design System Workshops',
+          text: 'Facilitating hands-on sessions on typography, component tokens, and responsive layout systems.'
+        },
+        {
+          icon: 'award',
+          title: 'Community Design Challenges',
+          text: 'Participating in UI/UX sprint challenges and publishing open-source Figma community resources.'
+        },
+        {
+          icon: 'wifi',
+          title: 'Interactive Micro-interactions',
+          text: 'Experimenting with lightweight CSS transitions, focus indicators, and state animations.'
+        },
+        {
+          icon: 'users',
+          title: 'Mentorship & Peer Feedback',
+          text: 'Reviewing interface designs and providing actionable accessibility feedback.'
+        }
+      ]
+    },
+    {
+      type: 'philosophy',
+      badge: 'Design Principles',
+      title: 'My Engineering Philosophy',
+      desc: 'I believe in understanding the problem, designing maintainable systems, validating solutions, and improving continuously.',
+      principles: [
+        {
+          num: '01',
+          title: 'Clarity before complexity.',
+          text: 'Design with purpose and clarity before adding embellishments. A clean hierarchy solves user problems directly.'
+        },
+        {
+          num: '02',
+          title: 'Reliability through testing.',
+          text: 'Verify designs across viewport sizes, keyboard navigation, and high-contrast environments.'
+        },
+        {
+          num: '03',
+          title: 'Continuous learning and improvement.',
+          text: 'Iterate based on real user feedback, track evolving web standards, and continuously hone craft.'
+        }
+      ]
     }
   ],
   copyright: 'Made with 💖 by Airdokan'
@@ -249,24 +366,148 @@ const ARJUN_DATA = {
       tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS']
     }
   ],
-  testimonials: [
+  beyondTag: 'Philosophy & Practice',
+  beyondTitle: 'Beyond the Code',
+  beyondSubtitle: 'The tools I use, the projects I build, and the principles that guide my engineering journey.',
+  beyondCards: [
     {
-      name: 'Academic Project Review',
-      company: 'P.E.S. Modern College of Engineering',
-      avatar: '/assets/figma/avatar-dianne.png',
-      quote: '"Arjun demonstrates exceptional discipline in software engineering, backend architectures, and research initiatives with real-time Wi-Fi signal sensing."'
+      type: 'public',
+      badge: 'Open Source & Code',
+      title: 'Building in Public',
+      desc: 'Explore my repositories, development activity, and open-source contributions.',
+      githubProfile: {
+        handle: '@arjunghuge644',
+        meta: 'Verified GitHub Account',
+        url: 'https://github.com/arjunghuge644'
+      },
+      featuredRepos: [
+        {
+          name: 'CareerPulse',
+          badge: 'Public',
+          url: 'https://github.com/arjunghuge644/CareerPulse',
+          desc: 'AI-driven career development platform that analyzes student skill profiles, identifies competency gaps, and generates structured learning roadmaps.',
+          tech: ['React', 'TypeScript', 'FastAPI']
+        },
+        {
+          name: 'prescripto',
+          badge: 'Public',
+          url: 'https://github.com/arjunghuge644/prescripto',
+          desc: 'Hospital management and doctor appointment scheduling system with patient booking workflows, doctor schedules, and role-based access.',
+          tech: ['Node.js', 'Express', 'MongoDB'],
+          actionLabel: 'View Prescripto repository on GitHub'
+        },
+        {
+          name: 'deployed.site',
+          badge: 'Live Platform',
+          url: 'https://www.deployed.site',
+          desc: 'A developer showcase platform for publishing and discovering deployed projects, featuring deployment status badges and project discovery.',
+          tech: [],
+          linkText: 'View Platform',
+          actionLabel: 'View deployed.site platform'
+        }
+      ]
     },
     {
-      name: 'Healthcare Platform Mentorship',
-      company: 'Neeraj Healthcare Solutions',
-      avatar: '/assets/figma/avatar-kristin.png',
-      quote: '"Delivered reliable backend REST APIs and real-time WebRTC communication workflows. Strong understanding of role-based security and database structures."'
+      type: 'toolkit',
+      badge: 'Core Stack & Workflow',
+      title: 'My Developer Toolkit',
+      desc: 'The languages, frameworks, databases, AI tools, and development environment I use to build software.',
+      groups: [
+        {
+          title: 'Languages & Frameworks',
+          skills: [
+            { name: 'Python', logo: '/assets/tech/python.svg' },
+            { name: 'Node.js', logo: '/assets/tech/nodejs.svg' },
+            { name: 'Express.js', logo: '/assets/tech/express.svg' },
+            { name: 'React.js', logo: '/assets/tech/react.svg' },
+            { name: 'TypeScript', logo: '/assets/tech/typescript.svg' },
+            { name: 'JavaScript', logo: '/assets/tech/javascript.svg' },
+            { name: 'HTML5', logo: '/assets/tech/html5.svg' },
+            { name: 'CSS3', logo: '/assets/tech/css3.svg' }
+          ]
+        },
+        {
+          title: 'Databases & Caching',
+          skills: [
+            { name: 'MongoDB', logo: '/assets/tech/mongodb.svg' },
+            { name: 'PostgreSQL', logo: '/assets/tech/postgresql.svg' },
+            { name: 'MySQL', logo: '/assets/tech/mysql.svg' },
+            { name: 'Redis', logo: '/assets/tech/redis.svg' }
+          ]
+        },
+        {
+          title: 'AI & ML Engineering',
+          skills: [
+            { name: 'FastAPI', logo: '/assets/tech/fastapi.svg' },
+            { name: 'Scikit-learn', logo: '/assets/tech/scikit-learn.svg' },
+            { name: 'RAG Architectures', logo: '/assets/tech/rag.svg' },
+            { name: 'LLM Integration', logo: '/assets/tech/llm.svg' },
+            { name: 'Streamlit', logo: '/assets/tech/streamlit.svg' }
+          ]
+        },
+        {
+          title: 'DevOps & Tools',
+          skills: [
+            { name: 'Git', logo: '/assets/tech/git.svg' },
+            { name: 'GitHub', logo: '/assets/tech/github.svg' },
+            { name: 'Docker', logo: '/assets/tech/docker.svg' },
+            { name: 'Postman', logo: '/assets/tech/postman.svg' },
+            { name: 'Vite', logo: '/assets/tech/vite.svg' },
+            { name: 'Linux / Bash', logo: '/assets/tech/linux.svg' }
+          ]
+        }
+      ]
     },
     {
-      name: 'Peer & Project Collaborators',
-      company: 'Student Engineering Cohort',
-      avatar: '/assets/figma/avatar-kathryn.png',
-      quote: '"Great team partner on full-stack web and AI initiatives. Writes clean, modular code and consistently focuses on pragmatic, user-centric implementation."'
+      type: 'beyond',
+      badge: 'Leadership & Community',
+      title: 'Beyond Programming',
+      desc: 'Exploring new technologies, learning through experimentation, and collaborating on engineering and community activities.',
+      activities: [
+        {
+          icon: 'star',
+          title: 'NSS Design Co-Head',
+          text: 'Led creative direction and design initiatives for college community outreach, social welfare campaigns, and awareness drives.'
+        },
+        {
+          icon: 'award',
+          title: 'IDEA FORGE — 2nd Prize Winner',
+          text: 'Awarded second prize in college inter-department engineering innovation competition for building practical technical solutions.'
+        },
+        {
+          icon: 'wifi',
+          title: 'Hardware & Signal Sensing Research',
+          text: 'Prototyping with ESP32 microcontrollers and Wi-Fi Channel State Information (CSI) for device-free indoor motion sensing.'
+        },
+        {
+          icon: 'users',
+          title: 'Cohort Mentorship & Peer Code Reviews',
+          text: 'Collaborating with fellow IT engineers at P.E.S. Modern College of Engineering on full-stack architecture, API reviews, and open discussions.'
+        }
+      ]
+    },
+    {
+      type: 'philosophy',
+      badge: 'Engineering Principles',
+      title: 'My Engineering Philosophy',
+      desc: 'I believe in understanding the problem, designing maintainable systems, validating solutions, and improving continuously.',
+      principles: [
+        {
+          num: '01',
+          title: 'Clarity before complexity.',
+          text: 'Focus on deep problem understanding and clean architecture before introducing abstractions. The most elegant solution is often the most direct one.'
+        },
+        {
+          num: '02',
+          title: 'Reliability through testing.',
+          text: 'Build dependable systems with automated verification, edge-case coverage, and honest failure states rather than assuming optimistic paths.'
+        },
+        {
+          num: '03',
+          title: 'Continuous learning and improvement.',
+          text: 'Stay curious with emerging AI and systems engineering, iterate rapidly through hands-on experimentation, and consistently refine engineering craft.'
+        }
+      ]
     }
   ],
   copyright: 'Made with 💖 by Arjun • Pune, India'
@@ -275,7 +516,7 @@ const ARJUN_DATA = {
 // Dynamic DOM Elements References
 let modeToggleBtn, mobileModeToggleBtn, optFigma, optArjun;
 let heroGreeting, heroTitleHighlight, heroTitle, heroDescription, heroImage, aboutImage, aboutParagraphs;
-let portfolioSocialBtn, portfolioGrid, expertiseGrid, testimonialsGrid, footerCopyright;
+let portfolioSocialBtn, portfolioGrid, expertiseGrid, beyondGrid, beyondTag, beyondTitle, beyondSubtitle, footerCopyright;
 let contactForm, formStatusNotice, toastNotification, toastMessage, toastIcon, toastCloseBtn;
 let backToTopBtn, mobileMenuToggle, mobileDrawer, projectModal, modalBody, modalCloseBtn, modalBackdrop, siteHeader;
 
@@ -296,7 +537,10 @@ function refreshDOMElements() {
   portfolioSocialBtn = document.getElementById('portfolioSocialBtn');
   portfolioGrid = document.getElementById('portfolioGrid');
   expertiseGrid = document.getElementById('expertiseGrid');
-  testimonialsGrid = document.getElementById('testimonialsGrid');
+  beyondGrid = document.getElementById('beyondGrid');
+  beyondTag = document.getElementById('beyondTag');
+  beyondTitle = document.getElementById('beyondTitle');
+  beyondSubtitle = document.getElementById('beyondSubtitle');
   footerCopyright = document.getElementById('footerCopyright');
 
   contactForm = document.getElementById('contactForm');
@@ -321,6 +565,7 @@ function init() {
   setupEventListeners();
   setupScrollSpy();
   toggleMode('arjun', true);
+  initToolkitCarousels();
 }
 
 // Render dynamic content according to current mode
@@ -436,35 +681,407 @@ function renderContent(data) {
     });
   }
 
-  // Render Testimonials
-  if (testimonialsGrid && data.testimonials) {
-    testimonialsGrid.innerHTML = data.testimonials.map(t => `
-      <div class="testimonial-card">
-        <div class="rating-stars" aria-label="5 out of 5 stars">
-          ${Array(5).fill(`
-            <svg viewBox="0 0 20 20" fill="#006b60" class="star-icon" aria-hidden="true">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-          `).join('')}
-        </div>
-        <blockquote class="testimonial-quote">
-          ${t.quote}
-        </blockquote>
-        <div class="client-info">
-          <img src="${t.avatar}" alt="Portrait of ${t.name}" class="client-avatar" loading="lazy" />
-          <div>
-            <h4 class="client-name">${t.name}</h4>
-            <p class="client-company">${t.company}</p>
-          </div>
-        </div>
-      </div>
-    `).join('');
+  // Render Beyond the Code Section
+  if (beyondTag && data.beyondTag) beyondTag.textContent = data.beyondTag;
+  if (beyondTitle && data.beyondTitle) beyondTitle.textContent = data.beyondTitle;
+  if (beyondSubtitle && data.beyondSubtitle) beyondSubtitle.textContent = data.beyondSubtitle;
+
+  if (beyondGrid && data.beyondCards) {
+    beyondGrid.innerHTML = renderBeyondCardsHtml(data.beyondCards);
+    initToolkitCarousels();
   }
 
   // Copyright
   if (footerCopyright && data.copyright) {
     footerCopyright.textContent = data.copyright;
   }
+}
+
+// Render HTML for the 4 Beyond the Code Cards
+function renderBeyondCardsHtml(cards) {
+  if (!cards || !Array.isArray(cards)) return '';
+
+  return cards.map(card => {
+    if (card.type === 'public') {
+      return `
+        <article class="beyond-card" aria-labelledby="cardTitlePublic">
+          <div class="beyond-card-header">
+            <div class="beyond-card-top">
+              <div class="beyond-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                  <line x1="6" y1="3" x2="6" y2="15"></line>
+                  <circle cx="18" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path d="M18 9a9 9 0 0 1-9 9"></path>
+                </svg>
+              </div>
+              <span class="beyond-badge">${card.badge}</span>
+            </div>
+            <h3 class="beyond-card-title" id="cardTitlePublic">${card.title}</h3>
+            <p class="beyond-card-desc">${card.desc}</p>
+          </div>
+
+          <div class="beyond-card-body">
+            <div class="beyond-github-profile">
+              <div class="profile-info">
+                <span class="profile-handle">${card.githubProfile.handle}</span>
+                <span class="profile-meta">${card.githubProfile.meta}</span>
+              </div>
+              <a href="${card.githubProfile.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary beyond-profile-btn" aria-label="Visit ${card.githubProfile.handle} profile on GitHub (opens in a new tab)">
+                <span>View GitHub Profile</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" class="external-icon" aria-hidden="true" width="16" height="16">
+                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+
+            <div class="beyond-repos-list">
+              <h4 class="beyond-subheading">Featured Repositories</h4>
+              <div class="beyond-repo-cards">
+                ${card.featuredRepos.map(repo => `
+                  <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="beyond-repo-item" aria-label="${repo.actionLabel || `View ${repo.name} repository on GitHub`} (opens in a new tab)">
+                    <div class="repo-header">
+                      <span class="repo-name">${repo.name}</span>
+                      <span class="repo-badge">${repo.badge}</span>
+                    </div>
+                    <p class="repo-desc">${repo.desc}</p>
+                    ${repo.tech && repo.tech.length ? `
+                      <div class="repo-tech-pills">
+                        ${repo.tech.map(t => `<span class="repo-tech-pill">${t}</span>`).join('')}
+                      </div>
+                    ` : ''}
+                    ${repo.linkText ? `
+                      <div class="repo-action-row">
+                        <span class="repo-action-link">
+                          <span>${repo.linkText}</span>
+                          <svg viewBox="0 0 16 16" fill="none" class="link-arrow" aria-hidden="true" width="12" height="12">
+                            <path d="M4.5 11.5L11.5 4.5M11.5 4.5H6.5M11.5 4.5V9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                      </div>
+                    ` : ''}
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    if (card.type === 'toolkit') {
+      const carouselDirections = ['left', 'right', 'left', 'right'];
+      const carouselDurations = ['30s', '26s', '32s', '28s'];
+
+      return `
+        <article class="beyond-card" aria-labelledby="cardTitleToolkit">
+          <div class="beyond-card-header">
+            <div class="beyond-card-top">
+              <div class="beyond-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <span class="beyond-badge">${card.badge}</span>
+            </div>
+            <h3 class="beyond-card-title" id="cardTitleToolkit">${card.title}</h3>
+            <p class="beyond-card-desc">${card.desc}</p>
+          </div>
+
+          <div class="beyond-card-body">
+            <div class="toolkit-groups">
+              ${card.groups.map((g, idx) => {
+                const titleId = `toolkit-group-title-${idx + 1}`;
+                const dir = carouselDirections[idx % carouselDirections.length];
+                const duration = carouselDurations[idx % carouselDurations.length];
+
+                // If a category has fewer items, repeat them so the track comfortably overflows the viewport
+                const numSkills = g.skills.length;
+                const repeatCount = Math.max(1, Math.ceil(8 / numSkills));
+
+                const buildTileHtml = (s, isDecorative = false) => {
+                  const name = typeof s === 'object' ? s.name : s;
+                  const logo = typeof s === 'object' ? s.logo : '';
+                  const decorativeAttr = isDecorative ? ' tabindex="-1" aria-hidden="true"' : '';
+                  return `
+                    <div class="toolkit-tile toolkit-pill" title="${name}"${decorativeAttr}>
+                      ${logo ? `
+                        <div class="toolkit-tile-icon-wrap"${isDecorative ? ' aria-hidden="true"' : ''}>
+                          <img src="${logo}" alt="" aria-hidden="true" class="toolkit-tile-icon" width="34" height="34" loading="lazy" onerror="this.onerror=null; this.src='/assets/tech/code.svg';" />
+                        </div>
+                      ` : ''}
+                      <span class="toolkit-tile-label"${isDecorative ? ' aria-hidden="true"' : ''}>${name}</span>
+                    </div>
+                  `;
+                };
+
+                // Primary group: first pass is accessible; subsequent repeats (if any) are decorative
+                let primaryTilesHtml = '';
+                for (let r = 0; r < repeatCount; r++) {
+                  primaryTilesHtml += g.skills.map(s => buildTileHtml(s, r > 0)).join('');
+                }
+
+                // Duplicate group: completely decorative for seamless infinite loop
+                let duplicateTilesHtml = '';
+                for (let r = 0; r < repeatCount; r++) {
+                  duplicateTilesHtml += g.skills.map(s => buildTileHtml(s, true)).join('');
+                }
+
+                return `
+                  <div class="toolkit-group">
+                    <div class="toolkit-group-header">
+                      <h4 class="toolkit-group-title" id="${titleId}">${g.title}</h4>
+                      <div class="toolkit-carousel-controls" aria-label="${g.title} navigation">
+                        <button type="button" class="toolkit-nav-btn toolkit-nav-prev" aria-label="Previous ${g.title} technologies" title="Scroll left" disabled aria-disabled="true">
+                          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                          </svg>
+                        </button>
+                        <button type="button" class="toolkit-nav-btn toolkit-nav-next" aria-label="Next ${g.title} technologies" title="Scroll right">
+                          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="toolkit-carousel" role="region" aria-labelledby="${titleId}" tabindex="0" aria-label="${g.title} technologies (auto-scrolling carousel, pause on hover)">
+                      <div class="toolkit-track" data-direction="${dir}" style="--duration: ${duration};">
+                        <div class="toolkit-track-group toolkit-track-primary toolkit-tiles toolkit-tags">
+                          ${primaryTilesHtml}
+                        </div>
+                        <div class="toolkit-track-group toolkit-track-duplicate toolkit-tiles toolkit-tags" aria-hidden="true">
+                          ${duplicateTilesHtml}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    if (card.type === 'beyond') {
+      const getIconSvg = (iconName) => {
+        if (iconName === 'star') {
+          return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`;
+        }
+        if (iconName === 'award') {
+          return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>`;
+        }
+        if (iconName === 'wifi') {
+          return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>`;
+        }
+        return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`;
+      };
+
+      return `
+        <article class="beyond-card" aria-labelledby="cardTitleBeyond">
+          <div class="beyond-card-header">
+            <div class="beyond-card-top">
+              <div class="beyond-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </div>
+              <span class="beyond-badge">${card.badge}</span>
+            </div>
+            <h3 class="beyond-card-title" id="cardTitleBeyond">${card.title}</h3>
+            <p class="beyond-card-desc">${card.desc}</p>
+          </div>
+
+          <div class="beyond-card-body">
+            <div class="beyond-activity-list">
+              ${card.activities.map(act => `
+                <div class="beyond-activity-item">
+                  <div class="activity-icon-wrap" aria-hidden="true">
+                    ${getIconSvg(act.icon)}
+                  </div>
+                  <div class="activity-content">
+                    <h4 class="activity-title">${act.title}</h4>
+                    <p class="activity-text">${act.text}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    if (card.type === 'philosophy') {
+      return `
+        <article class="beyond-card" aria-labelledby="cardTitlePhilosophy">
+          <div class="beyond-card-header">
+            <div class="beyond-card-top">
+              <div class="beyond-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <span class="beyond-badge">${card.badge}</span>
+            </div>
+            <h3 class="beyond-card-title" id="cardTitlePhilosophy">${card.title}</h3>
+            <p class="beyond-card-desc">${card.desc}</p>
+          </div>
+
+          <div class="beyond-card-body">
+            <div class="philosophy-principles">
+              ${card.principles.map(p => `
+                <div class="philosophy-item">
+                  <div class="principle-number" aria-hidden="true">${p.num}</div>
+                  <div class="principle-content">
+                    <h4 class="principle-heading">${p.title}</h4>
+                    <p class="principle-desc">${p.text}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    return '';
+  }).join('');
+}
+
+// Global reference to ResizeObserver for cleanup
+let toolkitResizeObserver = null;
+
+// Initialize continuous infinite auto-scrolling carousels for technology toolkit categories
+function initToolkitCarousels() {
+  const groups = document.querySelectorAll('.toolkit-group');
+  if (!groups.length) return;
+
+  // Clean up any existing observer to prevent duplicate observers/leaks
+  if (toolkitResizeObserver) {
+    toolkitResizeObserver.disconnect();
+    toolkitResizeObserver = null;
+  }
+
+  const prefersReducedMotion = (typeof window !== 'undefined' && window.matchMedia)
+    ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    : false;
+
+  function updateTrackLoopDistance(track) {
+    const primaryGroup = track.querySelector('.toolkit-track-primary');
+    if (!primaryGroup) return;
+
+    const gap = 10;
+    // In headless test environments offsetWidth might be 0, calculate based on tiles
+    const tileCount = primaryGroup.querySelectorAll('.toolkit-tile').length;
+    const fallbackWidth = tileCount > 0 ? (tileCount * 84 + (tileCount - 1) * gap) : 752;
+    const measuredWidth = primaryGroup.offsetWidth || fallbackWidth;
+    const loopDist = Math.round(measuredWidth + gap);
+
+    track.style.setProperty('--loop-dist', `${loopDist}px`);
+  }
+
+  function updateAllLoopDistances() {
+    document.querySelectorAll('.toolkit-track').forEach(updateTrackLoopDistance);
+  }
+
+  // Initial calculation of loop distances
+  updateAllLoopDistances();
+
+  // Setup ResizeObserver for dynamic recalculation on viewport change
+  if (typeof ResizeObserver !== 'undefined') {
+    toolkitResizeObserver = new ResizeObserver(() => {
+      updateAllLoopDistances();
+    });
+
+    document.querySelectorAll('.toolkit-carousel').forEach(carousel => {
+      toolkitResizeObserver.observe(carousel);
+    });
+  }
+
+  // Setup controls and interaction listeners for each group
+  groups.forEach(group => {
+    const carousel = group.querySelector('.toolkit-carousel');
+    const track = group.querySelector('.toolkit-track');
+    const prevBtn = group.querySelector('.toolkit-nav-prev');
+    const nextBtn = group.querySelector('.toolkit-nav-next');
+
+    if (!carousel || !prevBtn || !nextBtn) return;
+
+    function updateControls() {
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      const atStart = carousel.scrollLeft <= 4;
+      const atEnd = maxScroll > 4 && carousel.scrollLeft >= maxScroll - 4;
+
+      prevBtn.disabled = atStart;
+      if (atStart) {
+        prevBtn.setAttribute('aria-disabled', 'true');
+      } else {
+        prevBtn.removeAttribute('aria-disabled');
+      }
+
+      nextBtn.disabled = atEnd;
+      if (atEnd) {
+        nextBtn.setAttribute('aria-disabled', 'true');
+      } else {
+        nextBtn.removeAttribute('aria-disabled');
+      }
+    }
+
+    const scrollStep = 188; // ~2 tiles
+
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({
+        left: -scrollStep,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({
+        left: scrollStep,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
+    });
+
+    // Keyboard horizontal navigation when carousel container is focused
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        carousel.scrollBy({
+          left: -94,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+        e.preventDefault();
+      } else if (e.key === 'ArrowRight') {
+        carousel.scrollBy({
+          left: 94,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+        e.preventDefault();
+      }
+    });
+
+    // Pause on hover or focus
+    if (track) {
+      carousel.addEventListener('pointerenter', () => {
+        carousel.classList.add('is-paused');
+      });
+      carousel.addEventListener('pointerleave', () => {
+        carousel.classList.remove('is-paused');
+      });
+      carousel.addEventListener('focusin', () => {
+        carousel.classList.add('is-paused');
+      });
+      carousel.addEventListener('focusout', () => {
+        carousel.classList.remove('is-paused');
+      });
+    }
+
+    carousel.addEventListener('scroll', updateControls, { passive: true });
+    updateControls();
+  });
 }
 
 // Toggle Display Mode
@@ -667,6 +1284,17 @@ function hideToast() {
   }
 }
 
+// Allowed Contact Form Topics
+const ALLOWED_TOPICS = [
+  'Job opportunity',
+  'Freelance project',
+  'Technical collaboration',
+  'AI / research discussion',
+  'General inquiry'
+];
+
+let isContactSubmitting = false;
+
 // Contact Form Client-Side Validation
 function validateContactForm(fields) {
   const errors = {};
@@ -686,19 +1314,25 @@ function validateContactForm(fields) {
   }
 
   if (fields.phone && fields.phone.trim().length > 0 && !phoneRegex.test(fields.phone.trim())) {
-    errors.phone = 'Please provide a valid phone number or leave blank.';
+    errors.phone = 'Please provide a valid phone number (7-20 digits) or leave blank.';
   }
 
   if (!fields.topic || fields.topic.trim() === '') {
     errors.topic = 'Please select a topic from the dropdown.';
+  } else if (!ALLOWED_TOPICS.includes(fields.topic.trim())) {
+    errors.topic = 'Please choose a valid topic from the options provided.';
   }
 
-  if (!fields.message || fields.message.trim().length < 10) {
+  if (!fields.message || fields.message.trim().length === 0) {
+    errors.message = 'Please provide a message.';
+  } else if (fields.message.trim().length < 10) {
     errors.message = 'Please provide a message with at least 10 characters.';
+  } else if (fields.message.trim().length > 2500) {
+    errors.message = 'Message cannot exceed 2,500 characters.';
   }
 
   if (!fields.terms) {
-    errors.terms = 'You must accept the terms before submitting.';
+    errors.terms = 'Please accept the consent terms to submit your inquiry.';
   }
 
   return {
@@ -741,6 +1375,18 @@ async function handleContactSubmit(e) {
   if (e && typeof e.preventDefault === 'function') e.preventDefault();
   if (!contactForm) return;
 
+  // Prevent duplicate submissions while a request is in flight
+  if (isContactSubmitting) return;
+
+  // Honeypot spam trap: if filled by a bot, silently discard without making a network request
+  const honeypotEl = document.getElementById('formHoneypot');
+  if (honeypotEl && honeypotEl.value.trim().length > 0) {
+    showToast('Thank you! Your message has been received.', 'success');
+    contactForm.reset();
+    ['firstName', 'lastName', 'email', 'phone', 'topic', 'message', 'terms'].forEach(clearFieldError);
+    return;
+  }
+
   const firstNameEl = document.getElementById('firstName');
   const lastNameEl = document.getElementById('lastName');
   const emailEl = document.getElementById('email');
@@ -764,68 +1410,117 @@ async function handleContactSubmit(e) {
 
   if (!validation.isValid) {
     applyFormErrors(validation.errors);
-    showToast('Please correct the highlighted fields and accept the terms.', 'error');
+    showToast('Please correct the highlighted fields and confirm your consent.', 'error');
     return;
   }
 
+  // Set submitting flag and show loading state
+  isContactSubmitting = true;
   const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+  const submitLoader = submitBtn ? submitBtn.querySelector('.btn-loader') : null;
   const originalText = btnText ? btnText.textContent : 'Submit';
-  if (btnText) btnText.textContent = 'Sending...';
-  if (submitBtn) submitBtn.disabled = true;
 
-  // Check if a live submission endpoint is configured in environment or window config
+  if (btnText) btnText.textContent = 'Sending...';
+  if (submitLoader) submitLoader.style.display = 'inline-block';
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.setAttribute('aria-busy', 'true');
+  }
+
+  // Check if a live submission endpoint or access key is configured in environment or window config
   const configuredEndpoint = (typeof window !== 'undefined' && window.PORTFOLIO_CONTACT_ENDPOINT)
     || (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_CONTACT_FORM_ENDPOINT)
     || null;
 
+  const configuredKey = (typeof window !== 'undefined' && window.PORTFOLIO_CONTACT_KEY)
+    || (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_WEB3FORMS_ACCESS_KEY)
+    || null;
+
+  // Build mailto fallback URL using verified recipient email
+  const recipientEmail = 'arjunghuge644@gmail.com';
+  const mailtoSubject = encodeURIComponent(`[Portfolio Inquiry] ${fields.topic} - from ${fields.firstName.trim()} ${fields.lastName.trim()}`);
+  const mailtoBody = encodeURIComponent(
+    `Hello Arjun,\n\n${fields.message.trim()}\n\n---\nSender Details:\nName: ${fields.firstName.trim()} ${fields.lastName.trim()}\nEmail: ${fields.email.trim()}\nPhone: ${fields.phone ? fields.phone.trim() : 'Not provided'}\nTopic: ${fields.topic}\nSent from Portfolio Website Contact Form`
+  );
+  const mailtoUrl = `mailto:${recipientEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
   try {
     if (configuredEndpoint) {
-      // Live remote submission service configured
-      const response = await fetch(configuredEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          firstName: fields.firstName.trim(),
-          lastName: fields.lastName.trim(),
-          email: fields.email.trim(),
-          phone: fields.phone.trim(),
-          topic: fields.topic,
-          message: fields.message.trim(),
-          submittedAt: new Date().toISOString()
-        })
-      });
+      // Offline check
+      if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+        throw new Error('OFFLINE_ERROR');
+      }
 
-      if (response.ok) {
-        showToast(`Thank you, ${fields.firstName}! Your message has been sent successfully.`, 'success');
+      // Live remote submission service configured (Formspree, Web3Forms, etc.)
+      const payload = {
+        name: `${fields.firstName.trim()} ${fields.lastName.trim()}`,
+        firstName: fields.firstName.trim(),
+        lastName: fields.lastName.trim(),
+        email: fields.email.trim(),
+        phone: fields.phone ? fields.phone.trim() : '',
+        topic: fields.topic,
+        message: fields.message.trim(),
+        _gotcha: '', // Formspree honeypot
+        botcheck: false, // Web3Forms honeypot
+        subject: `[Portfolio Inquiry] ${fields.topic} - from ${fields.firstName.trim()} ${fields.lastName.trim()}`,
+        submittedAt: new Date().toISOString()
+      };
+
+      if (configuredKey) {
+        payload.access_key = configuredKey;
+      }
+
+      // Timeout handler (15 seconds)
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+      let response;
+      try {
+        response = await fetch(configuredEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+      } finally {
+        clearTimeout(timeoutId);
+      }
+
+      let responseData = null;
+      try {
+        responseData = await response.json();
+      } catch (err) {
+        // Fallback for non-JSON or empty response
+      }
+
+      const isSuccess = response.ok && (!responseData || (responseData.success !== false && responseData.ok !== false));
+
+      if (isSuccess) {
+        showToast(`Thank you, ${fields.firstName.trim()}! Your message has been sent successfully.`, 'success', 6000);
         contactForm.reset();
+        ['firstName', 'lastName', 'email', 'phone', 'topic', 'message', 'terms'].forEach(clearFieldError);
         if (formStatusNotice) {
           formStatusNotice.className = 'form-status-notice notice-success show';
-          formStatusNotice.innerHTML = `<strong>Message Sent:</strong> Thank you, ${fields.firstName}! Your message was successfully received.`;
+          formStatusNotice.innerHTML = `<strong>Message Sent:</strong> Thank you, ${fields.firstName.trim()}! Arjun will review your inquiry and respond to <strong>${fields.email.trim()}</strong> shortly.`;
         }
       } else {
-        throw new Error(`Submission failed with status: ${response.status}`);
+        const errorMsg = (responseData && (responseData.message || responseData.error)) || `Service responded with status ${response.status}`;
+        throw new Error(errorMsg);
       }
     } else {
-      // HONEST STATE: No remote backend submission service is configured in this repository.
-      // Do NOT display a false success message. Provide an immediate, reliable fallback via mailto
-      // and explicit feedback so the user's message is preserved and delivered.
-      const subject = encodeURIComponent(`[Portfolio Inquiry] ${fields.topic} - from ${fields.firstName} ${fields.lastName}`);
-      const body = encodeURIComponent(
-        `Hello Arjun,\n\n${fields.message.trim()}\n\n---\nSender Details:\nName: ${fields.firstName} ${fields.lastName}\nEmail: ${fields.email.trim()}\nPhone: ${fields.phone.trim() || 'Not provided'}\nTopic: ${fields.topic}\nSent from Portfolio Website`
-      );
-      const mailtoUrl = `mailto:arjunghuge644@gmail.com?subject=${subject}&body=${body}`;
-
-      showToast('No remote submission API configured. Launching email client to send directly to Arjun.', 'info', 5000);
+      // Direct Email Delivery: Default unconfigured static deployment state.
+      // Delivers via the visitor's mail client directly to arjunghuge644@gmail.com without false success claims.
+      showToast('Opening your email client to send your message directly to Arjun.', 'info', 6000);
 
       if (formStatusNotice) {
         formStatusNotice.className = 'form-status-notice notice-info show';
         formStatusNotice.innerHTML = `
-          <strong>Direct Form Service Notice:</strong> No third-party form handler is configured on this static build.
-          <br />Your message has been pre-packaged. 
-          <a href="${mailtoUrl}" style="color: #5e3bee; text-decoration: underline; font-weight: 700;">Click here to send directly via your email client to arjunghuge644@gmail.com</a>.
+          <strong>Direct Email Delivery:</strong> Thank you, ${fields.firstName.trim()}! Your message has been prepared for direct email delivery to <a href="mailto:${recipientEmail}">${recipientEmail}</a>.
+          <br />Your message details are preserved below. If your email application did not launch automatically:
+          <br /><a href="${mailtoUrl}" class="direct-email-link">Click here to send directly via email to ${recipientEmail}</a>
         `;
       }
 
@@ -835,17 +1530,38 @@ async function handleContactSubmit(e) {
       }
     }
   } catch (error) {
-    showToast('Failed to connect to the configured submission service. Please email arjunghuge644@gmail.com.', 'error', 6000);
+    let userMessage = 'Failed to connect to the configured submission service. Please email arjunghuge644@gmail.com.';
+    let statusDetails = 'Could not confirm message delivery through the configured service.';
+
+    if (error && error.name === 'AbortError') {
+      userMessage = 'Submission request timed out after 15 seconds. Please check your connection and retry.';
+      statusDetails = 'The request to the form delivery service timed out after 15 seconds.';
+    } else if ((error && error.message === 'OFFLINE_ERROR') || (typeof navigator !== 'undefined' && navigator.onLine === false)) {
+      userMessage = 'You appear to be offline. Please verify your internet connection and try again.';
+      statusDetails = 'Network connection is offline. Your message was not sent.';
+    } else if (error && error.message) {
+      userMessage = `Submission delivery issue: ${error.message}. Please retry or contact Arjun directly.`;
+      statusDetails = `Provider error: ${error.message}`;
+    }
+
+    showToast(userMessage, 'error', 7000);
+
     if (formStatusNotice) {
       formStatusNotice.className = 'form-status-notice notice-error show';
       formStatusNotice.innerHTML = `
-        <strong>Submission Delivery Issue:</strong> Could not confirm message delivery through the configured service.
-        Please email Arjun directly at <a href="mailto:arjunghuge644@gmail.com" style="color: #c91f5e; font-weight: 700; text-decoration: underline;">arjunghuge644@gmail.com</a>.
+        <strong>Submission Delivery Issue:</strong> ${statusDetails}
+        <br />Your message has been preserved. You can retry or email Arjun directly at <a href="mailto:${recipientEmail}">${recipientEmail}</a>.
+        <br /><a href="${mailtoUrl}" class="direct-email-link">Click here to send directly via your email client</a>
       `;
     }
   } finally {
     if (btnText) btnText.textContent = originalText;
-    if (submitBtn) submitBtn.disabled = false;
+    if (submitLoader) submitLoader.style.display = 'none';
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.removeAttribute('aria-busy');
+    }
+    isContactSubmitting = false;
   }
 }
 
@@ -941,12 +1657,22 @@ function setupEventListeners() {
     });
   }
 
-  // Real-time form validation: clear error on input
+  // Real-time form validation: clear error and hide old status notice on input
   ['firstName', 'lastName', 'email', 'phone', 'topic', 'message', 'terms'].forEach(fieldId => {
     const el = document.getElementById(fieldId);
     if (el) {
-      el.addEventListener('input', () => clearFieldError(fieldId));
-      el.addEventListener('change', () => clearFieldError(fieldId));
+      el.addEventListener('input', () => {
+        clearFieldError(fieldId);
+        if (formStatusNotice && formStatusNotice.classList.contains('show')) {
+          formStatusNotice.classList.remove('show');
+        }
+      });
+      el.addEventListener('change', () => {
+        clearFieldError(fieldId);
+        if (formStatusNotice && formStatusNotice.classList.contains('show')) {
+          formStatusNotice.classList.remove('show');
+        }
+      });
     }
   });
 
@@ -1083,6 +1809,8 @@ export {
   setupEventListeners,
   setupScrollSpy,
   init,
+  initToolkitCarousels,
+  ALLOWED_TOPICS,
   ARJUN_DATA,
   FIGMA_DATA,
   LEGAL_CONTENT

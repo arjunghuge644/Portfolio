@@ -94,7 +94,9 @@ html {
 .modal-close:focus-visible,
 .social-icon:focus-visible,
 .portfolio-link:focus-visible,
-.footer-legal-btn:focus-visible {
+.footer-legal-btn:focus-visible,
+.beyond-profile-btn:focus-visible,
+.beyond-repo-item:focus-visible {
   outline: 2px solid var(--accent-purple);
   outline-offset: 3px;
 }
@@ -915,78 +917,620 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   6. CUSTOMER TESTIMONIALS SECTION
+   6. BEYOND THE CODE SECTION
    ========================================================================== */
-.section-testimonials {
+.section-beyond {
   background-color: var(--bg-ice-blue);
   padding: 100px 0 110px;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+.section-beyond .section-subtitle {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 720px;
 }
 
-.testimonial-card {
-  background-color: var(--bg-ice-blue);
-  border: 1.5px solid var(--accent-teal);
-  border-radius: var(--radius-sm);
-  padding: 40px 32px;
+.beyond-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: stretch;
+}
+
+.beyond-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 36px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: flex-start;
+  height: 100%;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  border-top: 3.5px solid transparent;
+  overflow: hidden;
 }
 
-.testimonial-card:hover {
+.beyond-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 107, 96, 0.08);
+  box-shadow: 0 16px 36px rgba(94, 59, 238, 0.08);
+  border-top-color: var(--accent-purple);
 }
 
-.rating-stars {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+.beyond-card-header {
   margin-bottom: 24px;
 }
 
-.star-icon {
-  width: 22px;
-  height: 22px;
-}
-
-.testimonial-quote {
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--text-heading);
-  margin-bottom: 32px;
-  font-style: normal;
-}
-
-.client-info {
+.beyond-card-top {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 16px;
 }
 
-.client-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+.beyond-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-purple-tint);
+  color: var(--accent-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.client-name {
-  font-size: 18px;
+.beyond-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  background-color: rgba(94, 59, 238, 0.08);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.beyond-card-title {
+  font-size: 22px;
   font-weight: 700;
   color: var(--text-heading);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
-.client-company {
+.beyond-card-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.beyond-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Card 1: Building in Public */
+.beyond-github-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  background-color: var(--bg-ice-blue);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  margin-bottom: 24px;
+  gap: 12px 16px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.beyond-github-profile .profile-info {
+  min-width: 0;
+  flex: 1 1 140px;
+}
+
+.beyond-github-profile .profile-handle {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-heading);
+  display: block;
+}
+
+.beyond-github-profile .profile-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.beyond-profile-btn {
+  padding: 10px 18px;
   font-size: 14px;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.beyond-subheading {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.beyond-repos-list {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.beyond-repo-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.beyond-repo-item {
+  display: block;
+  padding: 14px 18px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.beyond-repo-item:hover {
+  border-color: var(--accent-purple);
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(94, 59, 238, 0.08);
+}
+
+.beyond-repo-item .repo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.beyond-repo-item .repo-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-purple);
+}
+
+.beyond-repo-item .repo-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background-color: var(--bg-frame-blue);
+  color: var(--accent-teal);
+}
+
+.beyond-repo-item .repo-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.beyond-repo-item .repo-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.beyond-repo-item .repo-tech-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: var(--bg-ice-blue);
+  color: var(--text-heading);
+  border: 1px solid var(--border-light);
+}
+
+.beyond-repo-item .repo-action-row {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.beyond-repo-item .repo-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent-purple);
+  transition: color 0.15s ease;
+}
+
+.beyond-repo-item .repo-action-link .link-arrow {
+  transition: transform 0.2s ease;
+}
+
+.beyond-repo-item:hover .repo-action-link {
+  color: var(--accent-purple-hover);
+}
+
+.beyond-repo-item:hover .repo-action-link .link-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Card 2: Developer Toolkit */
+.toolkit-groups {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 16px;
+  min-height: 0;
+}
+
+.toolkit-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.toolkit-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.toolkit-group-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.toolkit-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toolkit-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background-color: var(--bg-ice-blue);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  color: var(--text-heading);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+.toolkit-nav-btn:hover:not(:disabled) {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background-color: rgba(94, 59, 238, 0.08);
+}
+
+.toolkit-nav-btn:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 1px;
+}
+
+.toolkit-nav-btn:disabled,
+.toolkit-nav-btn[aria-disabled="true"] {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+.toolkit-nav-btn.hidden {
+  display: none;
+}
+
+.toolkit-carousel {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 2px 6px;
+  margin: -4px -2px -6px;
+  border-radius: var(--radius-sm);
+  contain: paint;
+}
+
+.toolkit-carousel:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.toolkit-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Infinite Marquee Track & Groups */
+.toolkit-track {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  gap: 10px;
+  width: max-content;
+  will-change: transform;
+  user-select: none;
+}
+
+.toolkit-track[data-direction="left"] {
+  animation: toolkit-loop-left var(--duration, 30s) linear infinite;
+}
+
+.toolkit-track[data-direction="right"] {
+  animation: toolkit-loop-right var(--duration, 26s) linear infinite;
+}
+
+.toolkit-track-group {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  gap: 10px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+/* Pause on hover, focus, or interactive state */
+.toolkit-group:hover .toolkit-track,
+.toolkit-group:focus-within .toolkit-track,
+.toolkit-carousel:hover .toolkit-track,
+.toolkit-carousel:focus-within .toolkit-track,
+.toolkit-carousel.is-paused .toolkit-track {
+  animation-play-state: paused !important;
+}
+
+/* Keyframes for seamless infinite loop */
+@keyframes toolkit-loop-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(-1 * var(--loop-dist, 752px)), 0, 0);
+  }
+}
+
+@keyframes toolkit-loop-right {
+  0% {
+    transform: translate3d(calc(-1 * var(--loop-dist, 752px)), 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.toolkit-tiles,
+.toolkit-tags {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  gap: 10px;
+  min-width: 0;
+}
+
+.toolkit-tile {
+  flex: 0 0 84px;
+  width: 84px;
+  min-height: 82px;
+  height: 82px;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 4px 8px;
+  background-color: var(--bg-ice-blue);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.toolkit-tile:hover {
+  border-color: var(--accent-purple);
+  background-color: rgba(94, 59, 238, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(94, 59, 238, 0.08);
+}
+
+.toolkit-tile-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.toolkit-tile-icon {
+  width: 32px;
+  height: 32px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.toolkit-tile-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-heading);
+  line-height: 1.25;
+  text-align: center;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toolkit-track,
+  .toolkit-track[data-direction="left"],
+  .toolkit-track[data-direction="right"] {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .toolkit-carousel {
+    scroll-behavior: auto !important;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(94, 59, 238, 0.25) transparent;
+  }
+
+  .toolkit-carousel::-webkit-scrollbar {
+    display: block;
+    height: 4px;
+  }
+
+  .toolkit-carousel::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .toolkit-carousel::-webkit-scrollbar-thumb {
+    background: rgba(94, 59, 238, 0.2);
+    border-radius: 4px;
+  }
+
+  .toolkit-carousel::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-purple);
+  }
+}
+
+/* Card 3: Beyond Programming */
+.beyond-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.beyond-activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px;
+  background-color: var(--bg-ice-blue);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.beyond-activity-item:hover {
+  border-color: rgba(94, 59, 238, 0.3);
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.activity-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-purple-tint);
+  color: var(--accent-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 3px;
+}
+
+.activity-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* Card 4: Engineering Philosophy */
+.philosophy-principles {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.philosophy-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--bg-ice-blue);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.philosophy-item:hover {
+  border-color: rgba(94, 59, 238, 0.3);
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.principle-number {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--accent-purple);
+  background-color: rgba(94, 59, 238, 0.1);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.principle-content {
+  flex: 1;
+}
+
+.principle-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+
+.principle-desc {
+  font-size: 13px;
+  line-height: 1.55;
   color: var(--text-muted);
 }
 
@@ -1130,8 +1674,59 @@ button, input, select, textarea {
 }
 
 .btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 16px 56px;
   font-size: 17px;
+  transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Accessible focus ring for checkbox */
+.checkbox-label input:focus-visible ~ .custom-checkbox {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 3px;
+  border-color: var(--accent-purple);
+}
+
+/* Honeypot spam trap (completely hidden from human view & assistive tech) */
+.form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Submit Button Loading Spinner */
+.btn-loader {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  vertical-align: -2px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: btnSpinner 0.7s linear infinite;
+}
+
+@keyframes btnSpinner {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Contact Form Validation & Status States */
@@ -1152,24 +1747,33 @@ button, input, select, textarea {
   box-shadow: 0 0 0 3px rgba(230, 40, 114, 0.15) !important;
 }
 
+/* Prevent layout shift: Reserve line-height space and transition opacity */
 .field-error {
-  display: none;
+  display: block;
+  min-height: 18px;
   font-size: 13px;
   font-weight: 600;
   color: #c91f5e;
-  margin-top: 5px;
+  margin-top: 4px;
   text-align: left;
+  line-height: 1.35;
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
 }
 
 .form-group.has-error .field-error,
 .form-checkbox.has-error .field-error {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .form-status-notice {
   display: none;
   margin-top: 20px;
-  padding: 14px 20px;
+  padding: 16px 22px;
   border-radius: var(--radius-sm);
   font-size: 14px;
   line-height: 1.6;
@@ -1199,10 +1803,22 @@ button, input, select, textarea {
   color: #881337;
 }
 
-.form-status-notice a {
+.form-status-notice a,
+.form-status-notice .direct-email-link {
   color: var(--accent-purple);
   text-decoration: underline;
   font-weight: 700;
+  display: inline-block;
+  margin-top: 4px;
+  word-break: break-all;
+}
+
+.form-status-notice code {
+  background-color: rgba(94, 59, 238, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
 }
 
 /* ==========================================================================
@@ -1493,8 +2109,7 @@ button, input, select, textarea {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .portfolio-grid,
-  .testimonials-grid {
+  .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1545,6 +2160,25 @@ button, input, select, textarea {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .beyond-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .beyond-card {
+    padding: 28px 22px;
+  }
+
+  .beyond-github-profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .beyond-profile-btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 680px) {
@@ -1561,9 +2195,32 @@ button, input, select, textarea {
   }
 
   .expertise-grid,
-  .portfolio-grid,
-  .testimonials-grid {
+  .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+
+  .toolkit-tile {
+    flex: 0 0 76px;
+    width: 76px;
+    min-height: 76px;
+    height: 76px;
+    padding: 8px 4px 6px;
+    gap: 4px;
+  }
+
+  .toolkit-tile-icon-wrap {
+    width: 30px;
+    height: 30px;
+  }
+
+  .toolkit-tile-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .toolkit-tile-label {
+    font-size: 10px;
+    line-height: 1.2;
   }
 
   .form-row {

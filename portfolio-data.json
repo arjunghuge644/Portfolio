@@ -203,6 +203,90 @@
       "published": true
     }
   ],
+  "beyondTheCode": {
+    "tag": "Philosophy & Practice",
+    "title": "Beyond the Code",
+    "subtitle": "The tools I use, the projects I build, and the principles that guide my engineering journey.",
+    "cards": {
+      "buildingInPublic": {
+        "title": "Building in Public",
+        "description": "Explore my repositories, development activity, and open-source contributions.",
+        "githubProfile": "https://github.com/arjunghuge644",
+        "verifiedRepos": [
+          {
+            "name": "CareerPulse",
+            "url": "https://github.com/arjunghuge644/CareerPulse"
+          },
+          {
+            "name": "prescripto",
+            "url": "https://github.com/arjunghuge644/prescripto"
+          },
+          {
+            "name": "deployed.site",
+            "url": "https://www.deployed.site",
+            "badge": "Live Platform",
+            "description": "A developer showcase platform for publishing and discovering deployed projects, featuring deployment status badges and project discovery."
+          }
+        ]
+      },
+      "toolkit": {
+        "title": "My Developer Toolkit",
+        "description": "The languages, frameworks, databases, AI tools, and development environment I use to build software.",
+        "categories": {
+          "languagesAndFrameworks": [
+            { "name": "Python", "logo": "/assets/tech/python.svg" },
+            { "name": "Node.js", "logo": "/assets/tech/nodejs.svg" },
+            { "name": "Express.js", "logo": "/assets/tech/express.svg" },
+            { "name": "React.js", "logo": "/assets/tech/react.svg" },
+            { "name": "TypeScript", "logo": "/assets/tech/typescript.svg" },
+            { "name": "JavaScript", "logo": "/assets/tech/javascript.svg" },
+            { "name": "HTML5", "logo": "/assets/tech/html5.svg" },
+            { "name": "CSS3", "logo": "/assets/tech/css3.svg" }
+          ],
+          "databasesAndCaching": [
+            { "name": "MongoDB", "logo": "/assets/tech/mongodb.svg" },
+            { "name": "PostgreSQL", "logo": "/assets/tech/postgresql.svg" },
+            { "name": "MySQL", "logo": "/assets/tech/mysql.svg" },
+            { "name": "Redis", "logo": "/assets/tech/redis.svg" }
+          ],
+          "aiAndMlEngineering": [
+            { "name": "FastAPI", "logo": "/assets/tech/fastapi.svg" },
+            { "name": "Scikit-learn", "logo": "/assets/tech/scikit-learn.svg" },
+            { "name": "RAG Architectures", "logo": "/assets/tech/rag.svg" },
+            { "name": "LLM Integration", "logo": "/assets/tech/llm.svg" },
+            { "name": "Streamlit", "logo": "/assets/tech/streamlit.svg" }
+          ],
+          "devOpsAndTools": [
+            { "name": "Git", "logo": "/assets/tech/git.svg" },
+            { "name": "GitHub", "logo": "/assets/tech/github.svg" },
+            { "name": "Docker", "logo": "/assets/tech/docker.svg" },
+            { "name": "Postman", "logo": "/assets/tech/postman.svg" },
+            { "name": "Vite", "logo": "/assets/tech/vite.svg" },
+            { "name": "Linux / Bash", "logo": "/assets/tech/linux.svg" }
+          ]
+        }
+      },
+      "beyondProgramming": {
+        "title": "Beyond Programming",
+        "description": "Exploring new technologies, learning through experimentation, and collaborating on engineering and community activities.",
+        "activities": [
+          "NSS Design Co-Head — Creative direction and outreach initiatives for community welfare",
+          "IDEA FORGE 2nd Prize Winner — College inter-department engineering innovation",
+          "Hardware & Signal Sensing Research — ESP32 and Wi-Fi Channel State Information (CSI)",
+          "Cohort Mentorship & Peer Code Reviews — IT engineering collaboration at P.E.S. MCOE"
+        ]
+      },
+      "philosophy": {
+        "title": "My Engineering Philosophy",
+        "description": "I believe in understanding the problem, designing maintainable systems, validating solutions, and improving continuously.",
+        "principles": [
+          "Clarity before complexity.",
+          "Reliability through testing.",
+          "Continuous learning and improvement."
+        ]
+      }
+    }
+  },
   "seo": {
     "siteTitle": "Arjun Ghuge — Software Engineer & AI Builder Portfolio",
     "metaDescription": "Personal portfolio of Arjun Ghuge, featuring full-stack applications, machine learning systems, and IoT signal processing platforms.",

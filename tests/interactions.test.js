@@ -422,7 +422,7 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
         lastName: 'Developer',
         email: 'jane@example.com',
         phone: '+1 (555) 234-5678',
-        topic: 'Full-Stack Web',
+        topic: 'Job opportunity',
         message: 'I would like to discuss an engineering collaboration opportunity.',
         terms: true
       };
@@ -430,6 +430,82 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
       const result = mainModule.validateContactForm(validData);
       expect(result.isValid).toBe(true);
       expect(Object.keys(result.errors).length).toBe(0);
+    });
+
+    it('validates topic dropdown and rejects missing or unlisted topics', () => {
+      expect(mainModule.ALLOWED_TOPICS).toEqual([
+        'Job opportunity',
+        'Freelance project',
+        'Technical collaboration',
+        'AI / research discussion',
+        'General inquiry'
+      ]);
+
+      const missingTopic = mainModule.validateContactForm({
+        firstName: 'Jane',
+        lastName: 'Developer',
+        email: 'jane@example.com',
+        topic: '',
+        message: 'Valid message exceeding minimum length threshold.',
+        terms: true
+      });
+      expect(missingTopic.isValid).toBe(false);
+      expect(missingTopic.errors.topic).toContain('select a topic');
+
+      const invalidTopic = mainModule.validateContactForm({
+        firstName: 'Jane',
+        lastName: 'Developer',
+        email: 'jane@example.com',
+        topic: 'Invalid Category Not In List',
+        message: 'Valid message exceeding minimum length threshold.',
+        terms: true
+      });
+      expect(invalidTopic.isValid).toBe(false);
+      expect(invalidTopic.errors.topic).toContain('valid topic');
+
+      const validTopic = mainModule.validateContactForm({
+        firstName: 'Jane',
+        lastName: 'Developer',
+        email: 'jane@example.com',
+        topic: 'Technical collaboration',
+        message: 'Valid message exceeding minimum length threshold.',
+        terms: true
+      });
+      expect(validTopic.errors.topic).toBeUndefined();
+    });
+
+    it('validates message length for both short and excessively long messages', () => {
+      const shortMsg = mainModule.validateContactForm({
+        firstName: 'Jane',
+        lastName: 'Developer',
+        email: 'jane@example.com',
+        topic: 'Freelance project',
+        message: 'Too short',
+        terms: true
+      });
+      expect(shortMsg.isValid).toBe(false);
+      expect(shortMsg.errors.message).toContain('at least 10 characters');
+
+      const longMsg = mainModule.validateContactForm({
+        firstName: 'Jane',
+        lastName: 'Developer',
+        email: 'jane@example.com',
+        topic: 'Freelance project',
+        message: 'A'.repeat(2505),
+        terms: true
+      });
+      expect(longMsg.isValid).toBe(false);
+      expect(longMsg.errors.message).toContain('cannot exceed 2,500 characters');
+
+      const validMsg = mainModule.validateContactForm({
+        firstName: 'Jane',
+        lastName: 'Developer',
+        email: 'jane@example.com',
+        topic: 'Freelance project',
+        message: 'This is a perfectly sized inquiry regarding full-stack development architecture.',
+        terms: true
+      });
+      expect(validMsg.errors.message).toBeUndefined();
     });
 
     it('highlights invalid input fields in the DOM and focuses the first invalid field on submit', async () => {
@@ -455,7 +531,7 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
       document.getElementById('firstName').value = 'Alex';
       document.getElementById('lastName').value = 'Recruiter';
       document.getElementById('email').value = 'alex@techrecruiting.io';
-      document.getElementById('topic').value = 'Backend & APIs';
+      document.getElementById('topic').value = 'Job opportunity';
       document.getElementById('message').value = 'We have an immediate senior engineering opening at our team in Pune.';
       document.getElementById('terms').checked = true;
 
@@ -468,17 +544,20 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
       expect(toast.classList.contains('toast-success')).toBe(false);
       expect(toast.textContent).not.toContain('sent successfully');
 
-      // Must display honest user-facing info state
+      // Must display polished visitor-facing info state
       expect(toast.classList.contains('toast-info')).toBe(true);
-      expect(toast.textContent).toContain('No remote submission API configured');
+      expect(toast.textContent).toContain('Opening your email client to send your message directly to Arjun');
 
-      // Status notice provides direct fallback link
+      // Status notice provides direct fallback link without technical configuration jargon
       expect(formStatus.classList.contains('show')).toBe(true);
+      expect(formStatus.textContent).toContain('Direct Email Delivery');
+      expect(formStatus.innerHTML).not.toContain('VITE_CONTACT_FORM_ENDPOINT');
       expect(formStatus.innerHTML).toContain('mailto:arjunghuge644@gmail.com');
+      // Values preserved
+      expect(document.getElementById('email').value).toBe('alex@techrecruiting.io');
     });
 
-    it('SUCCESS ONLY WITH CONFIRMED SERVICE: displays success toast when configured endpoint returns HTTP 200', async () => {
-      // Configure mock endpoint
+    it('SUCCESS ONLY WITH CONFIRMED SERVICE: displays success toast when configured endpoint returns HTTP 200 and resets form', async () => {
       window.PORTFOLIO_CONTACT_ENDPOINT = 'https://api.formspree.io/f/mock-endpoint';
 
       global.fetch = vi.fn().mockResolvedValue({
@@ -490,7 +569,7 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
       document.getElementById('firstName').value = 'Jordan';
       document.getElementById('lastName').value = 'Lee';
       document.getElementById('email').value = 'jordan@cloudscale.net';
-      document.getElementById('topic').value = 'AI & ML';
+      document.getElementById('topic').value = 'AI / research discussion';
       document.getElementById('message').value = 'Loved your Wi-Fi CSI human sensing research and would love to connect.';
       document.getElementById('terms').checked = true;
 
@@ -498,32 +577,36 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
 
       await mainModule.handleContactSubmit(new Event('submit'));
 
-      // Verified fetch call
+      // Verified fetch call with structured payload including honeypot and clean fields
       expect(global.fetch).toHaveBeenCalledWith(
         'https://api.formspree.io/f/mock-endpoint',
         expect.objectContaining({
           method: 'POST',
-          headers: expect.objectContaining({ 'Content-Type': 'application/json' })
+          headers: expect.objectContaining({ 'Content-Type': 'application/json' }),
+          body: expect.stringContaining('"topic":"AI / research discussion"')
         })
       );
 
-      // Now confirms success
+      // Confirms success and form reset on verified success
       expect(toast.classList.contains('toast-success')).toBe(true);
       expect(toast.textContent).toContain('Thank you, Jordan! Your message has been sent successfully.');
+      expect(document.getElementById('firstName').value).toBe('');
+      expect(document.getElementById('message').value).toBe('');
     });
 
-    it('displays error notice when configured endpoint fails with server error', async () => {
+    it('preserves user form data and displays error notice when configured endpoint fails with server error', async () => {
       window.PORTFOLIO_CONTACT_ENDPOINT = 'https://api.formspree.io/f/mock-endpoint';
 
       global.fetch = vi.fn().mockResolvedValue({
         ok: false,
-        status: 500
+        status: 500,
+        json: async () => ({ error: 'Internal provider server error' })
       });
 
       document.getElementById('firstName').value = 'Morgan';
       document.getElementById('lastName').value = 'Taylor';
       document.getElementById('email').value = 'morgan@enterprise.org';
-      document.getElementById('topic').value = 'Full-Stack Web';
+      document.getElementById('topic').value = 'Freelance project';
       document.getElementById('message').value = 'Checking if you are available for consulting on a React architecture.';
       document.getElementById('terms').checked = true;
 
@@ -532,7 +615,509 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
       await mainModule.handleContactSubmit(new Event('submit'));
 
       expect(toast.classList.contains('toast-error')).toBe(true);
-      expect(toast.textContent).toContain('Failed to connect to the configured submission service');
+      expect(toast.textContent).toContain('Submission delivery issue');
+
+      // Form data MUST be preserved on failure!
+      expect(document.getElementById('firstName').value).toBe('Morgan');
+      expect(document.getElementById('message').value).toBe('Checking if you are available for consulting on a React architecture.');
+    });
+
+    it('handles request timeout gracefully and preserves form data', async () => {
+      window.PORTFOLIO_CONTACT_ENDPOINT = 'https://api.formspree.io/f/mock-endpoint';
+
+      const abortError = new Error('The user aborted a request.');
+      abortError.name = 'AbortError';
+      global.fetch = vi.fn().mockRejectedValue(abortError);
+
+      document.getElementById('firstName').value = 'Taylor';
+      document.getElementById('lastName').value = 'Swift';
+      document.getElementById('email').value = 'taylor@example.com';
+      document.getElementById('topic').value = 'General inquiry';
+      document.getElementById('message').value = 'Inquiring about your software engineering roadmap for 2027.';
+      document.getElementById('terms').checked = true;
+
+      const toast = document.getElementById('toastNotification');
+      const formStatus = document.getElementById('formStatusNotice');
+
+      await mainModule.handleContactSubmit(new Event('submit'));
+
+      expect(toast.classList.contains('toast-error')).toBe(true);
+      expect(toast.textContent).toContain('timed out');
+      expect(formStatus.textContent).toContain('timed out');
+
+      // User data preserved
+      expect(document.getElementById('message').value).toBe('Inquiring about your software engineering roadmap for 2027.');
+    });
+
+    it('handles offline network state with a helpful connection error notice and preserves form data', async () => {
+      window.PORTFOLIO_CONTACT_ENDPOINT = 'https://api.formspree.io/f/mock-endpoint';
+
+      // Simulate offline navigator
+      const originalOnLine = navigator.onLine;
+      Object.defineProperty(navigator, 'onLine', { value: false, configurable: true });
+
+      document.getElementById('firstName').value = 'Sam';
+      document.getElementById('lastName').value = 'Offline';
+      document.getElementById('email').value = 'sam@offline.com';
+      document.getElementById('topic').value = 'Technical collaboration';
+      document.getElementById('message').value = 'Testing offline network error handling behavior in unit test.';
+      document.getElementById('terms').checked = true;
+
+      const toast = document.getElementById('toastNotification');
+
+      await mainModule.handleContactSubmit(new Event('submit'));
+
+      expect(toast.classList.contains('toast-error')).toBe(true);
+      expect(toast.textContent).toContain('offline');
+
+      // Restored onLine property
+      Object.defineProperty(navigator, 'onLine', { value: originalOnLine, configurable: true });
+    });
+
+    it('prevents duplicate submissions when a request is pending (double-click protection)', async () => {
+      window.PORTFOLIO_CONTACT_ENDPOINT = 'https://api.formspree.io/f/mock-endpoint';
+
+      let resolveFetch;
+      const slowFetchPromise = new Promise(resolve => {
+        resolveFetch = resolve;
+      });
+
+      global.fetch = vi.fn().mockImplementation(() => slowFetchPromise);
+
+      document.getElementById('firstName').value = 'Fast';
+      document.getElementById('lastName').value = 'Clicker';
+      document.getElementById('email').value = 'fast@clicker.com';
+      document.getElementById('topic').value = 'Job opportunity';
+      document.getElementById('message').value = 'Testing rapid double-click submission debounce protection.';
+      document.getElementById('terms').checked = true;
+
+      // Submit first time
+      const submit1 = mainModule.handleContactSubmit(new Event('submit'));
+
+      // Submit second time immediately while pending
+      const submit2 = mainModule.handleContactSubmit(new Event('submit'));
+
+      // Ensure fetch was only called ONCE
+      expect(global.fetch).toHaveBeenCalledTimes(1);
+
+      // Resolve the request
+      resolveFetch({ ok: true, status: 200, json: async () => ({ success: true }) });
+      await Promise.all([submit1, submit2]);
+    });
+
+    it('silently discards spam submissions when honeypot field is filled without making an external request', async () => {
+      window.PORTFOLIO_CONTACT_ENDPOINT = 'https://api.formspree.io/f/mock-endpoint';
+      global.fetch = vi.fn();
+
+      const honeypot = document.getElementById('formHoneypot');
+      honeypot.value = 'I am a spam bot filling all hidden inputs';
+
+      document.getElementById('firstName').value = 'Spam';
+      document.getElementById('lastName').value = 'Bot';
+      document.getElementById('email').value = 'bot@spam.com';
+      document.getElementById('topic').value = 'Job opportunity';
+      document.getElementById('message').value = 'Buy generic cryptocurrency tokens at low price!';
+      document.getElementById('terms').checked = true;
+
+      await mainModule.handleContactSubmit(new Event('submit'));
+
+      // Must NOT call fetch
+      expect(global.fetch).not.toHaveBeenCalled();
+
+      // Reset honeypot for subsequent tests
+      honeypot.value = '';
+    });
+
+    it('never stores submitted personal information in localStorage or sessionStorage', async () => {
+      window.PORTFOLIO_CONTACT_ENDPOINT = 'https://api.formspree.io/f/mock-endpoint';
+      global.fetch = vi.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        json: async () => ({ success: true })
+      });
+
+      localStorage.clear();
+      sessionStorage.clear();
+
+      document.getElementById('firstName').value = 'Privacy';
+      document.getElementById('lastName').value = 'User';
+      document.getElementById('email').value = 'privacy@personal.io';
+      document.getElementById('topic').value = 'General inquiry';
+      document.getElementById('message').value = 'Testing privacy storage compliance in browser storage.';
+      document.getElementById('terms').checked = true;
+
+      await mainModule.handleContactSubmit(new Event('submit'));
+
+      // Check localStorage and sessionStorage
+      expect(localStorage.getItem('email')).toBeNull();
+      expect(localStorage.getItem('firstName')).toBeNull();
+      expect(localStorage.getItem('message')).toBeNull();
+      expect(sessionStorage.getItem('email')).toBeNull();
+      expect(sessionStorage.getItem('firstName')).toBeNull();
+      expect(sessionStorage.getItem('message')).toBeNull();
+    });
+  });
+
+  /* --------------------------------------------------------------------------
+     8. Beyond the Code Section, Navigation, Content & Dual-Mode
+     -------------------------------------------------------------------------- */
+  describe('Beyond the Code Section, Navigation & Content Integrity', () => {
+    it('renames navigation items and updates anchors to #beyond-the-code across header, mobile drawer and footer', () => {
+      const desktopNav = document.getElementById('navBeyond');
+      expect(desktopNav).not.toBeNull();
+      expect(desktopNav.textContent.trim()).toBe('Beyond the Code');
+      expect(desktopNav.getAttribute('href')).toBe('#beyond-the-code');
+
+      const mobileNav = document.querySelector('.mobile-nav-link[href="#beyond-the-code"]');
+      expect(mobileNav).not.toBeNull();
+      expect(mobileNav.textContent.trim()).toBe('Beyond the Code');
+
+      const footerNav = document.querySelector('.footer-nav a[href="#beyond-the-code"]');
+      expect(footerNav).not.toBeNull();
+      expect(footerNav.textContent.trim()).toBe('Beyond the Code');
+
+      // Verify no obsolete #testimonials nav links remain
+      expect(document.querySelector('a[href="#testimonials"]')).toBeNull();
+    });
+
+    it('renders the section container with correct id, heading, and introductory text', () => {
+      const section = document.getElementById('beyond-the-code');
+      expect(section).not.toBeNull();
+      expect(section.classList.contains('section-beyond')).toBe(true);
+
+      const title = document.getElementById('beyondTitle');
+      expect(title).not.toBeNull();
+      expect(title.textContent.trim()).toBe('Beyond the Code');
+
+      const subtitle = document.getElementById('beyondSubtitle');
+      expect(subtitle).not.toBeNull();
+      expect(subtitle.textContent).toBe('The tools I use, the projects I build, and the principles that guide my engineering journey.');
+    });
+
+    it('contains all four distinct cards with semantic headings and required descriptions', () => {
+      const grid = document.getElementById('beyondGrid');
+      expect(grid).not.toBeNull();
+
+      const cards = grid.querySelectorAll('.beyond-card');
+      expect(cards.length).toBe(4);
+
+      const titles = Array.from(cards).map(card => card.querySelector('.beyond-card-title').textContent.trim());
+      expect(titles).toContain('Building in Public');
+      expect(titles).toContain('My Developer Toolkit');
+      expect(titles).toContain('Beyond Programming');
+      expect(titles).toContain('My Engineering Philosophy');
+
+      // Card 1 Description
+      const desc1 = cards[0].querySelector('.beyond-card-desc').textContent;
+      expect(desc1).toBe('Explore my repositories, development activity, and open-source contributions.');
+
+      // Card 2 Description
+      const desc2 = cards[1].querySelector('.beyond-card-desc').textContent;
+      expect(desc2).toBe('The languages, frameworks, databases, AI tools, and development environment I use to build software.');
+
+      // Card 3 Description
+      const desc3 = cards[2].querySelector('.beyond-card-desc').textContent;
+      expect(desc3).toBe('Exploring new technologies, learning through experimentation, and collaborating on engineering and community activities.');
+
+      // Card 4 Description
+      const desc4 = cards[3].querySelector('.beyond-card-desc').textContent;
+      expect(desc4).toBe('I believe in understanding the problem, designing maintainable systems, validating solutions, and improving continuously.');
+    });
+
+    it('verifies Card 1 (Building in Public) links to verified GitHub and real repositories securely', () => {
+      const publicCard = document.getElementById('beyondGrid').children[0];
+
+      const profileLink = publicCard.querySelector('.beyond-profile-btn');
+      expect(profileLink).not.toBeNull();
+      expect(profileLink.getAttribute('href')).toBe('https://github.com/arjunghuge644');
+      expect(profileLink.getAttribute('target')).toBe('_blank');
+      expect(profileLink.getAttribute('rel')).toBe('noopener noreferrer');
+
+      const repoLinks = Array.from(publicCard.querySelectorAll('.beyond-repo-item'));
+      expect(repoLinks.length).toBe(3);
+
+      const repoUrls = repoLinks.map(l => l.getAttribute('href'));
+      expect(repoUrls).toContain('https://github.com/arjunghuge644/CareerPulse');
+      expect(repoUrls).toContain('https://github.com/arjunghuge644/prescripto');
+      expect(repoUrls).toContain('https://www.deployed.site');
+
+      const deployedCard = repoLinks.find(l => l.getAttribute('href') === 'https://www.deployed.site');
+      expect(deployedCard).not.toBeNull();
+      expect(deployedCard.querySelector('.repo-name').textContent.trim()).toBe('deployed.site');
+      expect(deployedCard.querySelector('.repo-badge').textContent.trim()).toBe('Live Platform');
+      expect(deployedCard.querySelector('.repo-desc').textContent).toBe(
+        'A developer showcase platform for publishing and discovering deployed projects, featuring deployment status badges and project discovery.'
+      );
+      expect(deployedCard.querySelector('.repo-action-link').textContent).toContain('View Platform');
+
+      repoLinks.forEach(link => {
+        expect(link.getAttribute('target')).toBe('_blank');
+        expect(link.getAttribute('rel')).toBe('noopener noreferrer');
+      });
+    });
+
+    it('verifies Card 2 (My Developer Toolkit) contains categorized, verified technologies', () => {
+      const toolkitCard = document.getElementById('beyondGrid').children[1];
+      const categories = Array.from(toolkitCard.querySelectorAll('.toolkit-group-title')).map(el => el.textContent.trim());
+
+      expect(categories).toContain('Languages & Frameworks');
+      expect(categories).toContain('Databases & Caching');
+      expect(categories).toContain('AI & ML Engineering');
+      expect(categories).toContain('DevOps & Tools');
+
+      const pillTexts = Array.from(toolkitCard.querySelectorAll('.toolkit-pill')).map(p => p.textContent.trim());
+      expect(pillTexts).toContain('Python');
+      expect(pillTexts).toContain('Node.js');
+      expect(pillTexts).toContain('FastAPI');
+      expect(pillTexts).toContain('MongoDB');
+      expect(pillTexts).toContain('PostgreSQL');
+      expect(pillTexts).toContain('Docker');
+    });
+
+    it('verifies technology tiles contain local SVG logos and accessible labels', () => {
+      const toolkitCard = document.getElementById('beyondGrid').children[1];
+      const tiles = Array.from(toolkitCard.querySelectorAll('.toolkit-tile'));
+      expect(tiles.length).toBeGreaterThanOrEqual(20);
+
+      tiles.forEach(tile => {
+        const icon = tile.querySelector('.toolkit-tile-icon');
+        const label = tile.querySelector('.toolkit-tile-label');
+
+        expect(icon).not.toBeNull();
+        expect(label).not.toBeNull();
+        expect(label.textContent.trim().length).toBeGreaterThan(0);
+
+        // Check image attributes
+        const src = icon.getAttribute('src');
+        expect(src).toMatch(/^\/assets\/tech\/[a-z0-9\-.]+\.svg$/);
+        expect(icon.getAttribute('alt')).toBe('');
+        expect(icon.getAttribute('aria-hidden')).toBe('true');
+
+        // Check physical file exists on disk
+        const localPath = path.resolve(__dirname, '../public', src.replace(/^\//, ''));
+        expect(fs.existsSync(localPath)).toBe(true);
+      });
+    });
+
+    it('verifies technology tiles in Figma View also resolve to valid local SVG assets', () => {
+      // Toggle to Figma View
+      const toggleBtn = document.getElementById('modeToggleBtn');
+      toggleBtn.click();
+
+      const toolkitCard = document.getElementById('beyondGrid').children[1];
+      const tiles = Array.from(toolkitCard.querySelectorAll('.toolkit-tile'));
+      expect(tiles.length).toBeGreaterThan(0);
+
+      const labels = tiles.map(t => t.querySelector('.toolkit-tile-label').textContent.trim());
+      expect(labels).toContain('Figma');
+      expect(labels).toContain('HTML5');
+
+      tiles.forEach(tile => {
+        const icon = tile.querySelector('.toolkit-tile-icon');
+        if (icon) {
+          const src = icon.getAttribute('src');
+          expect(src).toMatch(/^\/assets\/tech\/[a-z0-9\-.]+\.svg$/);
+          const localPath = path.resolve(__dirname, '../public', src.replace(/^\//, ''));
+          expect(fs.existsSync(localPath)).toBe(true);
+        }
+      });
+    });
+
+    it('verifies technology categories render as horizontal carousels with accessible controls', () => {
+      const scrollByMock = vi.fn();
+      Element.prototype.scrollBy = scrollByMock;
+
+      const toolkitCard = document.getElementById('beyondGrid').children[1];
+      const groups = toolkitCard.querySelectorAll('.toolkit-group');
+      expect(groups.length).toBe(4);
+
+      groups.forEach((group) => {
+        const carousel = group.querySelector('.toolkit-carousel');
+        const prevBtn = group.querySelector('.toolkit-nav-prev');
+        const nextBtn = group.querySelector('.toolkit-nav-next');
+        const header = group.querySelector('.toolkit-group-header');
+        const title = group.querySelector('.toolkit-group-title');
+
+        expect(carousel).not.toBeNull();
+        expect(prevBtn).not.toBeNull();
+        expect(nextBtn).not.toBeNull();
+        expect(header).not.toBeNull();
+        expect(title).not.toBeNull();
+
+        // Accessibility attributes
+        expect(carousel.getAttribute('role')).toBe('region');
+        expect(carousel.getAttribute('tabindex')).toBe('0');
+        expect(carousel.getAttribute('aria-label')).toBeTruthy();
+        expect(prevBtn.getAttribute('aria-label')).toBeTruthy();
+        expect(nextBtn.getAttribute('aria-label')).toBeTruthy();
+
+        // Next button click
+        nextBtn.disabled = false;
+        nextBtn.click();
+        expect(scrollByMock).toHaveBeenCalledWith(expect.objectContaining({ left: 188 }));
+
+        // Prev button click
+        prevBtn.disabled = false;
+        prevBtn.click();
+        expect(scrollByMock).toHaveBeenCalledWith(expect.objectContaining({ left: -188 }));
+
+        // Keyboard arrow navigation
+        const leftKeyEvent = new KeyboardEvent('keydown', { key: 'ArrowLeft', bubbles: true, cancelable: true });
+        carousel.dispatchEvent(leftKeyEvent);
+        expect(scrollByMock).toHaveBeenCalledWith(expect.objectContaining({ left: -94 }));
+
+        const rightKeyEvent = new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true, cancelable: true });
+        carousel.dispatchEvent(rightKeyEvent);
+        expect(scrollByMock).toHaveBeenCalledWith(expect.objectContaining({ left: 94 }));
+      });
+    });
+
+    it('verifies Card 3 (Beyond Programming) features authentic college and research activities', () => {
+      const beyondCard = document.getElementById('beyondGrid').children[2];
+      const titles = Array.from(beyondCard.querySelectorAll('.activity-title')).map(el => el.textContent.trim());
+
+      expect(titles).toContain('NSS Design Co-Head');
+      expect(titles).toContain('IDEA FORGE — 2nd Prize Winner');
+      expect(titles).toContain('Hardware & Signal Sensing Research');
+      expect(titles).toContain('Cohort Mentorship & Peer Code Reviews');
+    });
+
+    it('verifies Card 4 (My Engineering Philosophy) presents the three required principles', () => {
+      const philosophyCard = document.getElementById('beyondGrid').children[3];
+      const headings = Array.from(philosophyCard.querySelectorAll('.principle-heading')).map(el => el.textContent.trim());
+
+      expect(headings).toContain('Clarity before complexity.');
+      expect(headings).toContain('Reliability through testing.');
+      expect(headings).toContain('Continuous learning and improvement.');
+    });
+
+    it('preserves Beyond the Code in dual-mode switching and NEVER renders fictional testimonials', () => {
+      const modeBtn = document.getElementById('modeToggleBtn');
+
+      // Default Arjun Mode
+      expect(document.getElementById('beyondTitle').textContent).toBe('Beyond the Code');
+      expect(document.getElementById('beyondGrid').querySelectorAll('.beyond-card').length).toBe(4);
+      expect(document.body.textContent).not.toContain('Dianne Russell');
+      expect(document.body.textContent).not.toContain('Starbucks');
+      expect(document.body.textContent).not.toContain('Customer testimonials');
+
+      // Switch to Figma View
+      modeBtn.click();
+      expect(document.getElementById('beyondTitle').textContent).toBe('Beyond the Code');
+      expect(document.getElementById('beyondGrid').querySelectorAll('.beyond-card').length).toBe(4);
+      // Fictional client testimonials must not appear in Figma preview
+      expect(document.body.textContent).not.toContain('Dianne Russell');
+      expect(document.body.textContent).not.toContain('Customer testimonials');
+
+      // Switch back to Arjun View
+      modeBtn.click();
+      expect(document.getElementById('beyondTitle').textContent).toBe('Beyond the Code');
+      const publicCardAfter = document.getElementById('beyondGrid').children[0];
+      const profileLinkAfter = publicCardAfter.querySelector('.beyond-profile-btn');
+      expect(profileLinkAfter.getAttribute('href')).toBe('https://github.com/arjunghuge644');
+      expect(document.body.textContent).not.toContain('Dianne Russell');
+      expect(document.body.textContent).not.toContain('Customer testimonials');
+    });
+
+    it('verifies infinite auto-scrolling marquee structure, loop calculation, and duplicate accessibility hiding', () => {
+      const toolkitCard = document.getElementById('beyondGrid').children[1];
+      const tracks = Array.from(toolkitCard.querySelectorAll('.toolkit-track'));
+      expect(tracks.length).toBe(4);
+
+      const expectedDirections = ['left', 'right', 'left', 'right'];
+      tracks.forEach((track, idx) => {
+        // Direction and duration
+        expect(track.getAttribute('data-direction')).toBe(expectedDirections[idx]);
+        const style = track.getAttribute('style') || '';
+        expect(style).toContain('--duration:');
+        expect(style).toContain('--loop-dist:');
+
+        // Check primary and duplicate groups
+        const primaryGroup = track.querySelector('.toolkit-track-group.toolkit-track-primary');
+        const duplicateGroup = track.querySelector('.toolkit-track-group.toolkit-track-duplicate');
+
+        expect(primaryGroup).not.toBeNull();
+        expect(duplicateGroup).not.toBeNull();
+
+        // Duplicate group must be hidden from screen readers
+        expect(duplicateGroup.getAttribute('aria-hidden')).toBe('true');
+
+        // All duplicate tiles must be decorative
+        const dupTiles = duplicateGroup.querySelectorAll('.toolkit-tile');
+        dupTiles.forEach(tile => {
+          expect(tile.getAttribute('aria-hidden')).toBe('true');
+          expect(tile.getAttribute('tabindex')).toBe('-1');
+        });
+      });
+    });
+
+    it('verifies hover and focus pauses the auto-scrolling carousel via is-paused class', () => {
+      const carousel = document.querySelector('.toolkit-carousel');
+      expect(carousel).not.toBeNull();
+
+      expect(carousel.classList.contains('is-paused')).toBe(false);
+
+      // Pointer enter / leave
+      carousel.dispatchEvent(new Event('pointerenter'));
+      expect(carousel.classList.contains('is-paused')).toBe(true);
+
+      carousel.dispatchEvent(new Event('pointerleave'));
+      expect(carousel.classList.contains('is-paused')).toBe(false);
+
+      // Focus in / out
+      carousel.dispatchEvent(new Event('focusin'));
+      expect(carousel.classList.contains('is-paused')).toBe(true);
+
+      carousel.dispatchEvent(new Event('focusout'));
+      expect(carousel.classList.contains('is-paused')).toBe(false);
+    });
+
+    it('verifies parent grid balanced layout and GitHub profile button structure', () => {
+      const grid = document.getElementById('beyondGrid');
+      expect(grid).not.toBeNull();
+
+      const cards = grid.querySelectorAll('.beyond-card');
+      expect(cards.length).toBe(4);
+
+      const publicCard = cards[0];
+      const toolkitCard = cards[1];
+
+      expect(publicCard.querySelector('#cardTitlePublic')).not.toBeNull();
+      expect(toolkitCard.querySelector('#cardTitleToolkit')).not.toBeNull();
+
+      const githubProfile = publicCard.querySelector('.beyond-github-profile');
+      expect(githubProfile).not.toBeNull();
+      const profileInfo = githubProfile.querySelector('.profile-info');
+      expect(profileInfo).not.toBeNull();
+      const profileBtn = githubProfile.querySelector('.beyond-profile-btn');
+      expect(profileBtn).not.toBeNull();
+      expect(profileBtn.getAttribute('href')).toBe('https://github.com/arjunghuge644');
+    });
+
+    it('verifies seamless infinite loop persistence in Figma View', () => {
+      const modeBtn = document.getElementById('modeToggleBtn');
+      // Switch to Figma
+      modeBtn.click();
+
+      const toolkitCard = document.getElementById('beyondGrid').children[1];
+      const tracks = Array.from(toolkitCard.querySelectorAll('.toolkit-track'));
+      expect(tracks.length).toBe(4);
+
+      const expectedDirections = ['left', 'right', 'left', 'right'];
+      tracks.forEach((track, idx) => {
+        expect(track.getAttribute('data-direction')).toBe(expectedDirections[idx]);
+        const style = track.getAttribute('style') || '';
+        expect(style).toContain('--loop-dist:');
+
+        const primaryGroup = track.querySelector('.toolkit-track-group.toolkit-track-primary');
+        const duplicateGroup = track.querySelector('.toolkit-track-group.toolkit-track-duplicate');
+        expect(primaryGroup).not.toBeNull();
+        expect(duplicateGroup).not.toBeNull();
+        expect(duplicateGroup.getAttribute('aria-hidden')).toBe('true');
+      });
+
+      // Switch back to Arjun View
+      modeBtn.click();
     });
   });
 });
