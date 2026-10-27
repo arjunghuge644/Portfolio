@@ -156,50 +156,22 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
   });
 
   /* --------------------------------------------------------------------------
-     3. Dual-Mode Switcher (Arjun Live Mode vs. Figma Sample Mode)
+     3. Single-Mode Authentic Portfolio Architecture
      -------------------------------------------------------------------------- */
-  describe('Dual-Mode Switching', () => {
-    it('starts in Arjun Live Mode by default', () => {
+  describe('Single-Mode Authentic Portfolio Architecture', () => {
+    it('operates exclusively in Arjun Live Mode and eliminates template toggles', () => {
       expect(mainModule.getCurrentMode()).toBe('arjun');
       const heroGreeting = document.getElementById('heroGreeting');
       expect(heroGreeting.textContent).toContain('Hey, I am Arjun');
 
-      const toggleBtn = document.getElementById('modeToggleBtn');
-      expect(toggleBtn.getAttribute('aria-checked')).toBe('true');
-      expect(toggleBtn.classList.contains('arjun-active')).toBe(true);
+      // Mode toggles are completely removed from header and mobile drawer
+      expect(document.getElementById('modeToggleBtn')).toBeNull();
+      expect(document.getElementById('mobileModeToggleBtn')).toBeNull();
+      expect(document.getElementById('optFigma')).toBeNull();
+      expect(document.getElementById('optArjun')).toBeNull();
     });
 
-    it('switches to Figma View and updates DOM content and ARIA state', () => {
-      const toggleBtn = document.getElementById('modeToggleBtn');
-      toggleBtn.click();
-
-      expect(mainModule.getCurrentMode()).toBe('figma');
-      expect(toggleBtn.getAttribute('aria-checked')).toBe('false');
-      expect(toggleBtn.classList.contains('arjun-active')).toBe(false);
-
-      const heroGreeting = document.getElementById('heroGreeting');
-      expect(heroGreeting.textContent).toContain('Hey, I am John');
-
-      // Renders 3 Figma projects
-      const cards = document.querySelectorAll('.portfolio-card');
-      expect(cards.length).toBe(3);
-
-      // Social button changes to Dribbble
-      const socialBtn = document.getElementById('portfolioSocialBtn');
-      expect(socialBtn.href).toBe('https://dribbble.com/');
-    });
-
-    it('switches back to Arjun View when clicked again', () => {
-      const toggleBtn = document.getElementById('modeToggleBtn');
-      toggleBtn.click(); // to figma
-      toggleBtn.click(); // back to arjun
-
-      expect(mainModule.getCurrentMode()).toBe('arjun');
-      expect(toggleBtn.getAttribute('aria-checked')).toBe('true');
-
-      const heroGreeting = document.getElementById('heroGreeting');
-      expect(heroGreeting.textContent).toContain('Hey, I am Arjun');
-
+    it('renders authentic projects and verified GitHub links without template dummy data', () => {
       // Renders 6 Arjun projects
       const cards = document.querySelectorAll('.portfolio-card');
       expect(cards.length).toBe(6);
@@ -207,6 +179,27 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
       // Social button is GitHub
       const socialBtn = document.getElementById('portfolioSocialBtn');
       expect(socialBtn.href).toBe('https://github.com/arjunghuge644');
+
+      // Check authentic project titles exist
+      const titles = Array.from(document.querySelectorAll('.portfolio-name')).map(t => t.textContent.trim().toUpperCase());
+      expect(titles).toContain('CAREERPULSE');
+      expect(titles).toContain('AI WORKFORCE');
+      expect(titles).toContain('WIFI CSI LAB');
+      expect(titles).toContain('MATHTUBE AI');
+      expect(titles).toContain('PRESCRIPTO');
+      expect(titles).toContain('HIKERS JUNCTION');
+
+      // Ensure template dummy projects do not exist
+      expect(titles).not.toContain('AHUSE');
+      expect(titles).not.toContain('APP DASHBOARD');
+      expect(titles).not.toContain('EASY RENT');
+    });
+
+    it('promotes direct contact action in header instead of mode switcher', () => {
+      const navContactBtn = document.getElementById('navContactBtn');
+      expect(navContactBtn).not.toBeNull();
+      expect(navContactBtn.classList.contains('btn-primary')).toBe(true);
+      expect(navContactBtn.getAttribute('href')).toBe('#contact');
     });
   });
 
@@ -899,18 +892,15 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
       });
     });
 
-    it('verifies technology tiles in Figma View also resolve to valid local SVG assets', () => {
-      // Toggle to Figma View
-      const toggleBtn = document.getElementById('modeToggleBtn');
-      toggleBtn.click();
-
+    it('verifies all category rows in Developer Toolkit resolve to valid local SVG assets', () => {
       const toolkitCard = document.getElementById('beyondGrid').children[1];
       const tiles = Array.from(toolkitCard.querySelectorAll('.toolkit-tile'));
       expect(tiles.length).toBeGreaterThan(0);
 
       const labels = tiles.map(t => t.querySelector('.toolkit-tile-label').textContent.trim());
-      expect(labels).toContain('Figma');
-      expect(labels).toContain('HTML5');
+      expect(labels).toContain('Python');
+      expect(labels).toContain('FastAPI');
+      expect(labels).toContain('Docker');
 
       tiles.forEach(tile => {
         const icon = tile.querySelector('.toolkit-tile-icon');
@@ -991,32 +981,16 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
       expect(headings).toContain('Continuous learning and improvement.');
     });
 
-    it('preserves Beyond the Code in dual-mode switching and NEVER renders fictional testimonials', () => {
-      const modeBtn = document.getElementById('modeToggleBtn');
-
-      // Default Arjun Mode
+    it('ensures Beyond the Code renders all authentic cards and NEVER contains fictional testimonials', () => {
       expect(document.getElementById('beyondTitle').textContent).toBe('Beyond the Code');
       expect(document.getElementById('beyondGrid').querySelectorAll('.beyond-card').length).toBe(4);
       expect(document.body.textContent).not.toContain('Dianne Russell');
       expect(document.body.textContent).not.toContain('Starbucks');
       expect(document.body.textContent).not.toContain('Customer testimonials');
 
-      // Switch to Figma View
-      modeBtn.click();
-      expect(document.getElementById('beyondTitle').textContent).toBe('Beyond the Code');
-      expect(document.getElementById('beyondGrid').querySelectorAll('.beyond-card').length).toBe(4);
-      // Fictional client testimonials must not appear in Figma preview
-      expect(document.body.textContent).not.toContain('Dianne Russell');
-      expect(document.body.textContent).not.toContain('Customer testimonials');
-
-      // Switch back to Arjun View
-      modeBtn.click();
-      expect(document.getElementById('beyondTitle').textContent).toBe('Beyond the Code');
-      const publicCardAfter = document.getElementById('beyondGrid').children[0];
-      const profileLinkAfter = publicCardAfter.querySelector('.beyond-profile-btn');
-      expect(profileLinkAfter.getAttribute('href')).toBe('https://github.com/arjunghuge644');
-      expect(document.body.textContent).not.toContain('Dianne Russell');
-      expect(document.body.textContent).not.toContain('Customer testimonials');
+      const publicCard = document.getElementById('beyondGrid').children[0];
+      const profileLink = publicCard.querySelector('.beyond-profile-btn');
+      expect(profileLink.getAttribute('href')).toBe('https://github.com/arjunghuge644');
     });
 
     it('verifies infinite auto-scrolling marquee structure, loop calculation, and duplicate accessibility hiding', () => {
@@ -1094,11 +1068,7 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
       expect(profileBtn.getAttribute('href')).toBe('https://github.com/arjunghuge644');
     });
 
-    it('verifies seamless infinite loop persistence in Figma View', () => {
-      const modeBtn = document.getElementById('modeToggleBtn');
-      // Switch to Figma
-      modeBtn.click();
-
+    it('verifies seamless infinite loop configuration across all toolkit tracks', () => {
       const toolkitCard = document.getElementById('beyondGrid').children[1];
       const tracks = Array.from(toolkitCard.querySelectorAll('.toolkit-track'));
       expect(tracks.length).toBe(4);
@@ -1115,9 +1085,6 @@ describe('Portfolio Core Interactions & Accessibility Test Suite', () => {
         expect(duplicateGroup).not.toBeNull();
         expect(duplicateGroup.getAttribute('aria-hidden')).toBe('true');
       });
-
-      // Switch back to Arjun View
-      modeBtn.click();
     });
   });
 });

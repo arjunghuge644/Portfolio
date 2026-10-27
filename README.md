@@ -1,28 +1,28 @@
-# Personal Portfolio Website
+# Arjun Ghuge — Personal Portfolio Website
 
-A modern, high-performance portfolio web application faithfully implementing the **Figma Community Design (node-id: 10-521)** with modern typography, micro-interactions, responsive layouts, and seamless dual-mode support (Figma Showcase Mode and Arjun's Live Portfolio Data Mode).
+A modern, high-performance personal portfolio web application for **Arjun Ghuge** (Software Engineer & AI Solutions Developer), built with Vite, semantic HTML5, Vanilla CSS, and modern JavaScript. Designed for static deployment on Vercel, Netlify, or GitHub Pages.
 
 ---
 
-## 🎨 Design & Features
+## 🎨 Features & Architecture
 
-- **Pixel-Accurate Fidelity to Figma:**
-  - **Hero Section:** Greeting badge, headline with vivid royal purple highlight (`#5e3bee`), description copy, "Get In Touch" CTA, and rounded portrait frame with floating sparkle micro-animations.
-  - **Expertise / Skills:** 4-card grid featuring Strategy & Direction, Branding & Logo, UI & UX Design, and Full-Stack Development with custom icons, hover elevation, and purple bottom indicator bars.
-  - **About Me:** 2-column layout with the artistic purple paint-splash portrait and editorial biography copy.
-  - **Portfolio:** 3-column project showcase cards with hover zoom, high-res previews, and pink "Visit My Dribbble" button.
-  - **Customer Testimonials:** Emerald teal outlined cards (`#006b60`) with 5-star ratings, quotes, and client profile avatars.
-  - **Contact Form:** Two-column input layout with custom dropdown, textarea, terms checkbox, and interactive submission toast notifications.
-  - **Footer:** Brand logo, navigation links, social icons (Facebook, Instagram, X/Twitter, LinkedIn), and copyright.
-- **Dual Display Modes:**
-  - **Arjun View (Default):** Dynamic showcase of Arjun's portfolio data from `portfolio-data.json` (6 verified projects: CareerPulse, AI Workforce, WiFi CSI Lab, MathTube AI, Prescripto, and Hikers Junction with live status badges).
-  - **Figma View:** Original 1:1 Figma Community showcase layout and template data (Ahuse, App Dashboard, Easy Rent).
-- **Interactive Enhancements:**
-  - Sticky glassmorphic header with scroll spy and active link indicators.
-  - Interactive project detail modal/lightbox.
-  - Smooth scrolling navigation.
-  - Floating back-to-top button.
-  - Fully responsive mobile drawer navigation.
+- **Clean, Modern Visual Identity:**
+  - **Hero Section:** Greeting badge, headline with vivid royal purple highlight (`#5e3bee`), description copy, "Get In Touch" & "Explore Work" CTAs, and rounded portrait frame with floating sparkle micro-animations.
+  - **Expertise / Skills:** 4-card grid featuring Backend Systems, AI & Machine Learning, Databases & Cloud, and Frontend & Web with hover elevation and accent indicator bars.
+  - **About Me:** 2-column layout with portrait, education timeline (P.E.S. Modern College of Engineering), and editorial biography copy.
+  - **Portfolio Showcase:** 6 authentic engineering projects (CareerPulse, AI Workforce Management, Wi-Fi CSI Sensing Lab, MathTube AI, Prescripto, and Hikers Junction) with status tags, live repository links, and interactive lightbox preview modal.
+  - **Beyond the Code:** 4-card section featuring:
+    - *Building in Public:* Live featured platforms (deployed.site, CareerPulse, Prescripto) and direct GitHub profile button.
+    - *My Developer Toolkit:* 4-row continuous infinite auto-scrolling marquee with local SVG technology logo tiles and keyboard/touch carousel navigation.
+    - *Beyond Programming:* Research paper co-authorship and NSS Design Co-Head leadership.
+    - *Engineering Philosophy:* First-principles problem solving, reliability through testing, and continuous learning.
+  - **Contact Form:** Two-column input layout with custom dropdown, textarea, terms checkbox, inline validation, honeypot spam prevention, and hosted provider support (Formspree / Web3Forms) with mailto fallback.
+  - **Header & Footer:** Sticky glassmorphic header with scroll spy, direct "Contact Me" primary CTA button, mobile navigation drawer, and verified social links (GitHub, LinkedIn).
+
+- **Static & Production-Ready:**
+  - Zero heavy framework runtime (Vanilla JS + Vite).
+  - High Lighthouse performance and accessible ARIA attributes.
+  - 100% automated test coverage with Vitest.
 
 ---
 
@@ -48,11 +48,17 @@ npm run dev
 
 Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
-### Production Build
+### Production Build & Preview
 
 ```bash
 npm run build
 npm run preview
+```
+
+### Run Tests
+
+```bash
+npm test
 ```
 
 ---
@@ -62,37 +68,32 @@ npm run preview
 ```
 Portfolio/
 ├── index.html                 # Semantic HTML5 structure & SEO tags
-├── package.json               # Vite configuration and scripts
+├── package.json               # Vite configuration, scripts, and devDependencies
 ├── portfolio-data.json        # Arjun's verified portfolio datasets
 ├── public/
-│   └── assets/
-│       ├── figma/             # Cropped high-res Figma design assets
-│       │   ├── hero-illustration.png
-│       │   ├── about-person-full.png
-│       │   ├── portfolio-ahuse.png
-│       │   ├── portfolio-dashboard.png
-│       │   ├── portfolio-easyrent.png
-│       │   ├── avatar-dianne.png
-│       │   ├── avatar-kristin.png
-│       │   └── avatar-kathryn.png
-│       ├── careerpulse-preview.jpg
-│       ├── ai-workforce-preview.jpg
-│       ├── wificsi-preview.jpg
-│       ├── mathtube-preview.jpg
-│       ├── prescripto-preview.png
-│       └── hikers-junction-preview.jpg
+│   ├── assets/
+│   │   ├── tech/              # Local SVG technology logos (Python, Docker, React, etc.)
+│   │   ├── careerpulse-preview.jpg
+│   │   ├── ai-workforce-preview.jpg
+│   │   ├── wificsi-preview.jpg
+│   │   ├── mathtube-preview.jpg
+│   │   ├── prescripto-preview.png
+│   │   └── hikers-junction-preview.jpg
+│   └── favicon.svg
 ├── src/
-│   ├── style.css              # Custom Vanilla CSS design system & status pills
-│   └── main.js                # Core interactive JavaScript & mode toggles
+│   ├── style.css              # Custom Vanilla CSS design system & layout styles
+│   └── main.js                # Core interactive JavaScript, form handler & marquee logic
+├── tests/
+│   └── interactions.test.js   # Automated test suite (Vitest + JSDOM)
 └── README.md
 ```
 
 ---
 
-## 🛠️ Customization
+## 🛠️ Content Customization
 
-To edit personal details, add new projects, or update skills, simply modify `portfolio-data.json`.
-The portfolio dynamically reads and renders this data in **Arjun View**.
+To edit personal details, add new projects, or update skills, modify `portfolio-data.json`.
+The portfolio dynamically reads and renders this authentic data at runtime.
 
 ---
 

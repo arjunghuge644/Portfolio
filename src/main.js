@@ -39,8 +39,7 @@ const LEGAL_CONTENT = {
       <ul style="padding-left: 20px; margin-bottom: 16px; color: #5c6479; line-height: 1.8;">
         <li><strong>Intellectual Property:</strong> Code architecture, project showcases, and technical documentation are authored by Arjun Ghuge unless explicitly noted otherwise.</li>
         <li><strong>Open-Source Licensing:</strong> Individual projects featured on this portfolio are governed by their respective repository licenses hosted on GitHub.</li>
-        <li><strong>Showcase Demonstration:</strong> The "Figma View" is an interactive faithful recreation of a community design template for UX demonstration purposes.</li>
-      </ul>
+              </ul>
       <p style="color: #5c6479; line-height: 1.7;">
         You are free to review the source code for learning and educational evaluation.
       </p>
@@ -54,7 +53,7 @@ const LEGAL_CONTENT = {
       </p>
       <ul style="padding-left: 20px; margin-bottom: 16px; color: #5c6479; line-height: 1.8;">
         <li><strong>No Tracking Cookies:</strong> No third-party profiling or advertising cookies are planted in your browser.</li>
-        <li><strong>Session State:</strong> Any UI state (such as the active Figma vs. Arjun portfolio display view) is handled in local memory.</li>
+        <li><strong>Zero Storage Tracking:</strong> This portfolio does not set tracking cookies or store personal inquiry data in browser storage.</li>
       </ul>
       <p style="color: #5c6479; line-height: 1.7;">
         You can browse the entire portfolio with all cookies disabled without any degradation of functionality.
@@ -63,212 +62,7 @@ const LEGAL_CONTENT = {
   }
 };
 
-// Datasets
-const FIGMA_DATA = {
-  logo: 'logoipsum',
-  greeting: 'Hey, I am John',
-  titleHighlight: 'product design',
-  titleSuffix: 'and brand experience',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
-  heroImage: '/assets/figma/hero-illustration.png',
-  aboutImage: '/assets/figma/about-person-full.png',
-  aboutTag: 'About',
-  aboutTitle: 'About Me',
-  aboutParagraphs: [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris duis. Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in amet pellentesque.',
-    'Sit turpis pretium eget maecenas. Vestibulum dolor mattis consectetur eget commodo vitae. Amet pellentesque sit pulvinar lorem mi a, euismod risus r.'
-  ],
-  socialBtnText: 'Visit My Dribbble',
-  socialBtnUrl: 'https://dribbble.com',
-  socialBtnClass: 'btn-dribbble',
-  socialIconSvg: `<svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.2c2.408 0 4.622.868 6.347 2.308-1.026 1.488-2.483 2.658-4.184 3.344-1.298-2.673-2.883-4.595-3.076-4.825.297-.04.603-.06.913-.06zm-3.23 1.258c.24.28 1.83 2.19 3.12 4.88-3.924 1.205-8.118 1.154-8.87 1.14 1.056-2.73 3.178-4.887 5.75-6.02zm-6.52 7.822c.45.006 4.394.04 8.275-1.127.348.742.67 1.507.962 2.29-4.22 1.34-7.854 4.54-8.082 4.743-.76-1.674-1.155-3.553-1.155-5.906zm2.467 7.228c.39-.34 3.77-3.29 7.9-4.57 1.06 2.8 1.76 5.86 1.95 6.78-1.74.83-3.69 1.3-5.75 1.3-1.53 0-2.98-.26-4.1-.71zm11.776-.874c-.21-.99-.87-3.86-1.89-6.53 1.63-.67 3.35-.99 5.09-1.02-.32 3.14-1.72 5.89-3.2 7.55zm-1.1-9.256c-1.68.04-3.34.35-4.94.99-.27-.72-.56-1.42-.88-2.1 1.61-.64 3-1.73 4-3.11 1.09 1.09 1.82 2.58 1.82 4.22z"/></svg>`,
-  skills: [
-    {
-      name: 'Strategy & Direction',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
-    },
-    {
-      name: 'Branding & Logo',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
-    },
-    {
-      name: 'UI & UX Design',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
-    },
-    {
-      name: 'Webflow Development',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.'
-    }
-  ],
-  projects: [
-    {
-      id: 'ahuse',
-      name: 'Ahuse',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
-      image: '/assets/figma/portfolio-ahuse.png',
-      linkLabel: 'View In Dribbble',
-      linkUrl: 'https://dribbble.com',
-      tech: ['Figma', 'UI/UX', 'Real Estate Web']
-    },
-    {
-      id: 'dashboard',
-      name: 'App Dashboard',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
-      image: '/assets/figma/portfolio-dashboard.png',
-      linkLabel: 'View In Dribbble',
-      linkUrl: 'https://dribbble.com',
-      tech: ['SaaS UI', 'Design System', 'Dashboard']
-    },
-    {
-      id: 'easyrent',
-      name: 'Easy Rent',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.',
-      image: '/assets/figma/portfolio-easyrent.png',
-      linkLabel: 'View In Dribbble',
-      linkUrl: 'https://dribbble.com',
-      tech: ['Webflow', 'Responsive Layout', 'Prototype']
-    }
-  ],
-  beyondTag: 'Philosophy & Practice',
-  beyondTitle: 'Beyond the Code',
-  beyondSubtitle: 'The tools I use, the projects I build, and the principles that guide my engineering journey.',
-  beyondCards: [
-    {
-      type: 'public',
-      badge: 'Design Systems & Open Source',
-      title: 'Building in Public',
-      desc: 'Explore template design systems, component libraries, and community UI kits.',
-      githubProfile: {
-        handle: '@figma-community',
-        meta: 'Sample Design Template',
-        url: 'https://github.com'
-      },
-      featuredRepos: [
-        {
-          name: 'Design-System-Tokens',
-          badge: 'Template',
-          url: 'https://github.com',
-          desc: 'Harmonious color palettes, typographic scales, and responsive design guidelines for modern web applications.',
-          tech: ['Figma', 'CSS Tokens', 'Style Dictionary']
-        },
-        {
-          name: 'Accessible-UI-Library',
-          badge: 'Template',
-          url: 'https://github.com',
-          desc: 'WCAG AAA compliant component primitives with semantic markup, focus rings, and high-contrast support.',
-          tech: ['Vanilla JS', 'Semantic HTML', 'WCAG 2.1'],
-          actionLabel: 'View Accessible-UI-Library template'
-        },
-        {
-          name: 'Developer-Showcase-Kit',
-          badge: 'Template',
-          url: 'https://github.com',
-          desc: 'Project discovery cards, deployment status indicators, and clean layout patterns for portfolio showcases.',
-          tech: ['Figma Kit', 'Design Tokens', 'Discovery UI'],
-          linkText: 'View Prototype',
-          actionLabel: 'View Developer-Showcase-Kit template'
-        }
-      ]
-    },
-    {
-      type: 'toolkit',
-      badge: 'Design Stack & Workflow',
-      title: 'My Developer Toolkit',
-      desc: 'The languages, frameworks, databases, AI tools, and development environment I use to build software.',
-      groups: [
-        {
-          title: 'Design & Prototyping',
-          skills: [
-            { name: 'Figma', logo: '/assets/tech/figma.svg' },
-            { name: 'Auto Layout', logo: '/assets/tech/layout.svg' },
-            { name: 'Design Tokens', logo: '/assets/tech/components.svg' },
-            { name: 'Prototyping', logo: '/assets/tech/design.svg' },
-            { name: 'Component Variants', logo: '/assets/tech/components.svg' }
-          ]
-        },
-        {
-          title: 'Frontend Foundations',
-          skills: [
-            { name: 'HTML5', logo: '/assets/tech/html5.svg' },
-            { name: 'Vanilla CSS', logo: '/assets/tech/css3.svg' },
-            { name: 'JavaScript (ES6+)', logo: '/assets/tech/javascript.svg' },
-            { name: 'Responsive Layouts', logo: '/assets/tech/layout.svg' }
-          ]
-        },
-        {
-          title: 'Design Handoff & Tooling',
-          skills: [
-            { name: 'Git', logo: '/assets/tech/git.svg' },
-            { name: 'Vite Dev Server', logo: '/assets/tech/vite.svg' },
-            { name: 'SVG Optimization', logo: '/assets/tech/code.svg' },
-            { name: 'CSS Variables', logo: '/assets/tech/css3.svg' }
-          ]
-        },
-        {
-          title: 'Accessibility & QA',
-          skills: [
-            { name: 'Contrast Validation', logo: '/assets/tech/a11y.svg' },
-            { name: 'Keyboard Navigation', logo: '/assets/tech/a11y.svg' },
-            { name: 'Screen Reader Semantics', logo: '/assets/tech/a11y.svg' }
-          ]
-        }
-      ]
-    },
-    {
-      type: 'beyond',
-      badge: 'Community & Craft',
-      title: 'Beyond Programming',
-      desc: 'Exploring new technologies, learning through experimentation, and collaborating on engineering and community activities.',
-      activities: [
-        {
-          icon: 'star',
-          title: 'Design System Workshops',
-          text: 'Facilitating hands-on sessions on typography, component tokens, and responsive layout systems.'
-        },
-        {
-          icon: 'award',
-          title: 'Community Design Challenges',
-          text: 'Participating in UI/UX sprint challenges and publishing open-source Figma community resources.'
-        },
-        {
-          icon: 'wifi',
-          title: 'Interactive Micro-interactions',
-          text: 'Experimenting with lightweight CSS transitions, focus indicators, and state animations.'
-        },
-        {
-          icon: 'users',
-          title: 'Mentorship & Peer Feedback',
-          text: 'Reviewing interface designs and providing actionable accessibility feedback.'
-        }
-      ]
-    },
-    {
-      type: 'philosophy',
-      badge: 'Design Principles',
-      title: 'My Engineering Philosophy',
-      desc: 'I believe in understanding the problem, designing maintainable systems, validating solutions, and improving continuously.',
-      principles: [
-        {
-          num: '01',
-          title: 'Clarity before complexity.',
-          text: 'Design with purpose and clarity before adding embellishments. A clean hierarchy solves user problems directly.'
-        },
-        {
-          num: '02',
-          title: 'Reliability through testing.',
-          text: 'Verify designs across viewport sizes, keyboard navigation, and high-contrast environments.'
-        },
-        {
-          num: '03',
-          title: 'Continuous learning and improvement.',
-          text: 'Iterate based on real user feedback, track evolving web standards, and continuously hone craft.'
-        }
-      ]
-    }
-  ],
-  copyright: 'Made with 💖 by Airdokan'
-};
-
+// Arjun's Verified Portfolio Dataset
 const ARJUN_DATA = {
   logo: 'Arjun.',
   greeting: 'Hey, I am Arjun',
@@ -514,18 +308,12 @@ const ARJUN_DATA = {
 };
 
 // Dynamic DOM Elements References
-let modeToggleBtn, mobileModeToggleBtn, optFigma, optArjun;
 let heroGreeting, heroTitleHighlight, heroTitle, heroDescription, heroImage, aboutImage, aboutParagraphs;
 let portfolioSocialBtn, portfolioGrid, expertiseGrid, beyondGrid, beyondTag, beyondTitle, beyondSubtitle, footerCopyright;
 let contactForm, formStatusNotice, toastNotification, toastMessage, toastIcon, toastCloseBtn;
 let backToTopBtn, mobileMenuToggle, mobileDrawer, projectModal, modalBody, modalCloseBtn, modalBackdrop, siteHeader;
 
 function refreshDOMElements() {
-  modeToggleBtn = document.getElementById('modeToggleBtn');
-  mobileModeToggleBtn = document.getElementById('mobileModeToggleBtn');
-  optFigma = document.getElementById('optFigma');
-  optArjun = document.getElementById('optArjun');
-
   heroGreeting = document.getElementById('heroGreeting');
   heroTitleHighlight = document.getElementById('heroTitleHighlight');
   heroTitle = document.getElementById('heroTitle');
@@ -564,7 +352,7 @@ function init() {
   refreshDOMElements();
   setupEventListeners();
   setupScrollSpy();
-  toggleMode('arjun', true);
+  renderContent(ARJUN_DATA);
   initToolkitCarousels();
 }
 
@@ -576,7 +364,7 @@ function renderContent(data) {
     if (data.titleHtml) {
       heroTitle.innerHTML = data.titleHtml;
     } else {
-      heroTitle.innerHTML = `I ${currentMode === 'arjun' ? 'architect' : 'create'} <span class="highlight-purple" id="heroTitleHighlight">${data.titleHighlight}</span><br />${data.titleSuffix}`;
+      heroTitle.innerHTML = 'Building the future with<br /><span class="highlight-purple" id="heroTitleHighlight">code, AI & innovation.</span>';
     }
   }
 
@@ -1084,39 +872,6 @@ function initToolkitCarousels() {
   });
 }
 
-// Toggle Display Mode
-function toggleMode(targetMode, silent = false) {
-  currentMode = targetMode || (currentMode === 'figma' ? 'arjun' : 'figma');
-
-  if (currentMode === 'arjun') {
-    if (modeToggleBtn) {
-      modeToggleBtn.classList.add('arjun-active');
-      modeToggleBtn.setAttribute('aria-checked', 'true');
-    }
-    if (optFigma) optFigma.classList.remove('active');
-    if (optArjun) optArjun.classList.add('active');
-    if (mobileModeToggleBtn) {
-      mobileModeToggleBtn.textContent = 'Switch to Figma Template';
-      mobileModeToggleBtn.setAttribute('aria-label', 'Switch to Figma sample view');
-    }
-    renderContent(ARJUN_DATA);
-    if (!silent) showToast("Switched to Arjun's Live Portfolio Data!", 'info');
-  } else {
-    if (modeToggleBtn) {
-      modeToggleBtn.classList.remove('arjun-active');
-      modeToggleBtn.setAttribute('aria-checked', 'false');
-    }
-    if (optFigma) optFigma.classList.add('active');
-    if (optArjun) optArjun.classList.remove('active');
-    if (mobileModeToggleBtn) {
-      mobileModeToggleBtn.textContent = "Switch to Arjun's Data";
-      mobileModeToggleBtn.setAttribute('aria-label', "Switch to Arjun's portfolio view");
-    }
-    renderContent(FIGMA_DATA);
-    if (!silent) showToast('Switched to Original Figma Template View!', 'info');
-  }
-}
-
 // Modal Details Handler
 function openProjectModal(project) {
   if (!projectModal || !modalBody) return;
@@ -1567,19 +1322,6 @@ async function handleContactSubmit(e) {
 
 // Setup Event Listeners
 function setupEventListeners() {
-  // Mode switcher desktop
-  if (modeToggleBtn) {
-    modeToggleBtn.addEventListener('click', () => toggleMode());
-  }
-
-  // Mode switcher mobile
-  if (mobileModeToggleBtn) {
-    mobileModeToggleBtn.addEventListener('click', () => {
-      toggleMode();
-      closeMobileDrawer();
-    });
-  }
-
   // Mobile menu toggle
   if (mobileMenuToggle && mobileDrawer) {
     mobileMenuToggle.addEventListener('click', () => {
@@ -1798,7 +1540,6 @@ function getCurrentMode() {
 export {
   currentMode,
   getCurrentMode,
-  toggleMode,
   openProjectModal,
   closeProjectModal,
   openLegalModal,
@@ -1812,6 +1553,5 @@ export {
   initToolkitCarousels,
   ALLOWED_TOPICS,
   ARJUN_DATA,
-  FIGMA_DATA,
   LEGAL_CONTENT
 };

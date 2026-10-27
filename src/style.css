@@ -88,7 +88,6 @@ html {
 }
 
 .btn:focus-visible,
-.mode-toggle-btn:focus-visible,
 .hamburger-btn:focus-visible,
 .back-to-top:focus-visible,
 .modal-close:focus-visible,
@@ -357,56 +356,6 @@ button, input, select, textarea {
   gap: 16px;
 }
 
-/* Mode Switcher Pill (Figma vs Arjun Live Data) */
-.mode-toggle-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  background-color: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-pill);
-  padding: 4px;
-  cursor: pointer;
-  box-shadow: var(--shadow-subtle);
-  transition: var(--transition-smooth);
-}
-
-.mode-toggle-btn:hover {
-  border-color: var(--accent-purple);
-}
-
-.toggle-option {
-  position: relative;
-  z-index: 2;
-  padding: 6px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-muted);
-  border-radius: var(--radius-pill);
-  transition: color 0.25s ease;
-  user-select: none;
-}
-
-.toggle-option.active {
-  color: #ffffff;
-}
-
-.toggle-pill {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: calc(50% - 4px);
-  height: calc(100% - 8px);
-  background-color: var(--accent-purple);
-  border-radius: var(--radius-pill);
-  z-index: 1;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.mode-toggle-btn.arjun-active .toggle-pill {
-  transform: translateX(100%);
-}
-
 /* Hamburger button for mobile */
 .hamburger-btn {
   display: none;
@@ -463,17 +412,6 @@ button, input, select, textarea {
 
 .mobile-nav-link.active {
   color: var(--accent-purple);
-}
-
-.mobile-drawer-footer {
-  margin-top: 24px;
-}
-
-.mobile-mode-label {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-muted);
-  margin-bottom: 8px;
 }
 
 /* ==========================================================================
