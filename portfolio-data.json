@@ -1,147 +1,174 @@
 {
-  "version": "1.0.0",
-  "exportedAt": "2026-10-12T19:37:49.663Z",
+  "version": "1.1.0",
+  "exportedAt": "2026-10-26T18:30:00.000Z",
   "profile": {
-    "name": "Arjun",
-    "title": "FULL STACK ARCHITECT & AI ENGINEER",
-    "status": "AVAILABLE FOR SUMMER 2026 INTERNSHIPS & ROLES",
-    "subtext": "Engineering autonomous AI agents, RAG vector systems, and scalable cloud architectures.//",
-    "bio": "IT engineering student building scalable software, AI systems, and creative digital web applications with minimal clutter and maximum visual impact.",
+    "name": "Arjun Ghuge",
+    "title": "Building the future with code, AI & innovation.",
+    "status": "AVAILABLE FOR 2026-2027 ROLES & COLLABORATIONS",
+    "subtext": "Building scalable applications and intelligent solutions through software engineering and AI.",
+    "bio": "I’m a Software Engineer and final-year Information Technology student at P.E.S. Modern College of Engineering, Pune. I specialize in building scalable backend systems, REST APIs, machine learning solutions, and AI-powered full-stack applications using Python, Node.js, Express, React, and MongoDB.",
+    "about": [
+      "I’m a Software Engineer and final-year Information Technology student at P.E.S. Modern College of Engineering, Pune. I specialize in building scalable backend systems, REST APIs, machine learning solutions, and AI-powered full-stack applications using Python, Node.js, Express, React, and MongoDB.",
+      "I enjoy solving complex problems, designing reliable software architectures, and transforming innovative ideas into practical, impactful applications."
+    ],
     "email": "arjunghuge644@gmail.com",
-    "location": "MUMBAI // INDIA",
-    "github": " htpps://arjunghuge04.github.com",
-    "linkedin": "https://linkedin.com",
+    "phone": "+91 9921136545",
+    "location": "PUNE // MAHARASHTRA // INDIA",
+    "github": "https://github.com/arjunghuge644",
+    "linkedin": "https://in.linkedin.com/in/arjun-ghuge-18903a2b8",
     "twitter": "https://twitter.com"
   },
   "skills": [
     {
       "id": "1",
-      "category": "FULL-STACK",
-      "name": "React.js / Node.js / Express",
-      "level": 95
+      "category": "BACKEND",
+      "name": "Node.js / Express.js / REST APIs / WebSockets",
+      "level": 92
     },
     {
       "id": "2",
       "category": "AI & ML",
-      "name": "Python / LangChain / RAG / Pinecone",
-      "level": 90
+      "name": "Python / FastAPI / Machine Learning / RAG",
+      "level": 88
     },
     {
       "id": "3",
       "category": "DATABASES",
-      "name": "MongoDB / PostgreSQL / Redis",
-      "level": 88
+      "name": "MongoDB / MySQL / PostgreSQL / SQL",
+      "level": 85
     },
     {
       "id": "4",
-      "category": "CLOUD & INFRA",
-      "name": "AWS / Docker / GitHub Actions",
-      "level": 85
+      "category": "FRONTEND & WEB",
+      "name": "React.js / Tailwind CSS / TypeScript",
+      "level": 88
     }
   ],
   "education": [
     {
       "id": "1",
-      "degree": "B.Tech in Information Technology",
-      "institution": "University College of Engineering",
+      "degree": "Bachelor of Engineering in Information Technology",
+      "institution": "P.E.S. Modern College of Engineering, Pune",
       "period": "2023 - 2027",
-      "grade": "8.8/10 CGPA"
+      "grade": "8.78/10 CGPA"
     }
   ],
   "experience": [
     {
       "id": "1",
-      "role": "Full-Stack & AI Engineering Intern",
-      "company": "Tech Innovation Labs",
-      "period": "Jan 2026 - Present",
-      "description": "Engineered RAG search pipeline and microservices dashboard."
+      "role": "Backend Developer Intern",
+      "company": "Neeraj Healthcare Solutions",
+      "period": "2026 - Present",
+      "description": "Developing backend functionality for healthcare platform using Node.js, Express.js, REST APIs, and WebRTC/Socket.IO communication."
+    },
+    {
+      "id": "2",
+      "role": "Machine Learning Intern",
+      "company": "Shell India Market Pvt. Ltd. (Edunet)",
+      "period": "Dec 2025 - Jan 2026",
+      "description": "Developed machine learning models for EV Battery Health Index prediction and charging-abuse detection with a Streamlit dashboard."
     }
   ],
   "achievements": [
     {
       "id": "1",
-      "title": "Winner - National Hackathon 2025",
-      "description": "Built an AI-driven medical triage engine."
+      "title": "2nd Prize – IDEA FORGE Inter Department Competition",
+      "description": "Awarded second prize for engineering innovative technical solutions."
     },
     {
       "id": "2",
-      "title": "Top 1% Algorithmic Coder",
-      "description": "Solved 500+ data structure problems across platforms."
+      "title": "NSS Design Co-Head",
+      "description": "Led creative direction and design initiatives for college community outreach."
     }
   ],
   "projects": [
     {
-      "id": "proj_1786969847224",
-      "title": "QUANTUM-AI RETRIEVAL ENGINE",
-      "category": "AI & RAG",
-      "description": "Production multi-modal vector search and autonomous agent retrieval engine.",
+      "id": "careerpulse",
+      "title": "CAREERPULSE",
+      "category": "AI-POWERED CAREER PLATFORM",
+      "status": "In Progress",
+      "description": "AI-driven career development platform that analyzes student skill profiles, identifies competency gaps, and generates structured learning roadmaps.",
       "techStack": [
-        "Python",
-        "Pinecone",
-        "LangChain",
-        "Next.js"
-      ],
-      "image": "/assets/project1.png",
-      "liveUrl": "",
-      "githubUrl": "",
-      "featured": true,
-      "published": true,
-      "caseStudy": {
-        "problem": "",
-        "solution": "",
-        "architecture": "",
-        "challenges": "",
-        "results": ""
-      },
-      "createdAt": "2026-08-17T12:30:47.224Z",
-      "updatedAt": "2026-08-17T12:30:47.224Z"
-    },
-    {
-      "id": "proj_1786562879845",
-      "title": "Test Mongo connection",
-      "category": "FULL-STACK DEVELOPMENT",
-      "description": "Testing MongoDB Atlas write and Next.js frontend rendering",
-      "techStack": [],
-      "image": "/assets/project1.png",
-      "liveUrl": "",
-      "githubUrl": "",
-      "featured": true,
-      "published": true,
-      "caseStudy": {
-        "problem": "",
-        "solution": "",
-        "architecture": "",
-        "challenges": "",
-        "results": ""
-      },
-      "createdAt": "2026-08-12T19:27:59.845Z",
-      "updatedAt": "2026-08-12T19:27:59.845Z"
-    },
-    {
-      "id": "proj_1",
-      "title": "NEURAL-SYNC AI RAG ENGINE",
-      "category": "ARTIFICIAL INTELLIGENCE / RAG",
-      "description": "An enterprise-grade Retrieval-Augmented Generation (RAG) platform powered by vector search embeddings and LLMs for real-time document context querying.",
-      "techStack": [
-        "Python",
-        "LangChain",
-        "Pinecone DB",
-        "OpenAI API",
+        "React",
+        "TypeScript",
+        "Node.js",
         "FastAPI",
-        "React.js"
+        "PostgreSQL",
+        "Tailwind CSS"
       ],
-      "image": "/assets/project1.png",
-      "liveUrl": "https://github.com",
-      "githubUrl": "https://github.com",
+      "image": "/assets/careerpulse-preview.jpg",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/arjunghuge644/CareerPulse",
       "featured": true,
-      "published": true,
-      "createdAt": "2026-08-11T22:18:30.128Z"
+      "published": true
     },
     {
-      "id": "proj_2",
-      "title": "PRESCRIPTO HEALTHCARE PLATFORM",
-      "category": "FULL-STACK APPLICATION",
-      "description": "A comprehensive doctor appointment scheduling system with admin analytics, doctor schedule management, patient dashboard, and automated booking notifications.",
+      "id": "ai-workforce",
+      "title": "AI WORKFORCE",
+      "category": "MULTI-AGENT WORKFLOW ORCHESTRATION",
+      "status": "Proof of Concept",
+      "description": "Workforce-as-a-Service (WaaS) platform for creating, configuring, and coordinating virtual AI employees with role templates and task DAG dependency workflows.",
+      "techStack": [
+        "FastAPI",
+        "Python",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Redis",
+        "Docker"
+      ],
+      "image": "/assets/ai-workforce-preview.jpg",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/arjunghuge644",
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "wifi-csi-lab",
+      "title": "WIFI CSI LAB",
+      "category": "IOT & SENSING EXPERIMENTATION",
+      "status": "Proof of Concept",
+      "description": "ESP32 human motion sensing platform for acquiring, visualizing, processing, and classifying Wi-Fi Channel State Information (CSI) in real time.",
+      "techStack": [
+        "Python",
+        "FastAPI",
+        "PySerial",
+        "WebSockets",
+        "React",
+        "ESP32"
+      ],
+      "image": "/assets/wificsi-preview.jpg",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/arjunghuge644",
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "mathtube-ai",
+      "title": "MATHTUBE AI",
+      "category": "AI VIDEO GENERATION ENGINE",
+      "status": "Proof of Concept",
+      "description": "Automated mathematical educational video generation engine utilizing SymPy for formula validation and Manim for programmatic mathematical animation.",
+      "techStack": [
+        "Python",
+        "LLMs",
+        "RAG",
+        "SymPy",
+        "Manim",
+        "FastAPI"
+      ],
+      "image": "/assets/mathtube-preview.jpg",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/arjunghuge644",
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "prescripto",
+      "title": "PRESCRIPTO",
+      "category": "FULL-STACK HEALTHCARE PLATFORM",
+      "status": "Completed",
+      "description": "Hospital management and doctor appointment scheduling system with patient booking workflows, doctor schedule management, and role-based access.",
       "techStack": [
         "React.js",
         "Node.js",
@@ -150,106 +177,36 @@
         "JWT Auth",
         "REST API"
       ],
-      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-      "liveUrl": "https://github.com",
-      "githubUrl": "https://github.com",
+      "image": "/assets/prescripto-preview.png",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/arjunghuge644/prescripto",
       "featured": true,
-      "published": true,
-      "createdAt": "2026-08-11T22:18:30.128Z"
+      "published": true
     },
     {
-      "id": "proj_3",
-      "title": "EV BATTERY HEALTH & RANGE PREDICTOR",
-      "category": "MACHINE LEARNING / ANALYTICS",
-      "description": "Predictive analytics platform utilizing ML regression models to forecast Electric Vehicle battery State-of-Health (SoH) and real-time range degradation.",
+      "id": "hikers-junction",
+      "title": "HIKERS JUNCTION",
+      "category": "TREKKING & COMMUNITY PLATFORM",
+      "status": "In Progress",
+      "description": "Outdoor adventure and mountain trail discovery platform providing hikers with elevation profiles, route itineraries, and community trek coordination.",
       "techStack": [
-        "Python",
-        "Scikit-learn",
-        "PyTorch",
-        "Pandas",
-        "Flask",
-        "Chart.js"
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Tailwind CSS"
       ],
-      "image": "/assets/project3.png",
-      "liveUrl": "https://github.com",
-      "githubUrl": "https://github.com",
+      "image": "/assets/hikers-junction-preview.jpg",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/arjunghuge644",
       "featured": true,
-      "published": true,
-      "createdAt": "2026-08-11T22:18:30.128Z"
-    },
-    {
-      "id": "proj_4",
-      "title": "AUTONOMOUS CODE REVIEWER AGENT",
-      "category": "DEVELOPER TOOL / AI AGENT",
-      "description": "Automated GitHub pull request reviewer using LLM AST parsing to identify security vulnerabilities, style infractions, and performance bottlenecks in codebases.",
-      "techStack": [
-        "Python",
-        "Gemini API",
-        "Docker",
-        "GitHub Actions",
-        "Node.js"
-      ],
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-      "liveUrl": "https://github.com",
-      "githubUrl": "https://github.com",
-      "featured": true,
-      "published": true,
-      "createdAt": "2026-08-11T22:18:30.128Z"
-    }
-  ],
-  "articles": [
-    {
-      "id": "art_1786970687182",
-      "title": "test article ",
-      "slug": "test-article",
-      "excerpt": "test article",
-      "content": "test",
-      "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "category": "TECHNICAL INSIGHTS",
-      "tags": [
-        "AI"
-      ],
-      "published": true,
-      "createdAt": "2026-08-17T12:44:47.182Z",
-      "updatedAt": "2026-08-17T12:44:47.182Z"
-    },
-    {
-      "id": "art_1",
-      "title": "Building Enterprise RAG Architectures with LangChain & Pinecone",
-      "slug": "building-enterprise-rag-architectures",
-      "excerpt": "A deep dive into chunking strategies, vector embeddings, and prompt optimization for real-time document context engines.",
-      "content": "# Building Enterprise RAG Architectures\n\nRetrieval-Augmented Generation (RAG) unlocks real-time domain knowledge for LLMs...\n",
-      "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-      "category": "AI & ML",
-      "tags": [
-        "RAG",
-        "LangChain",
-        "Python",
-        "Vector Search"
-      ],
-      "published": true,
-      "createdAt": "2026-08-11T22:18:30.128Z"
-    }
-  ],
-  "media": [
-    {
-      "id": "med_1786563016371",
-      "originalName": "Landing Page-1.png",
-      "filename": "1786563016364_landing_page_1_png.png",
-      "mimeType": "image/png",
-      "size": 1195331,
-      "url": "/uploads/1786563016364_landing_page_1_png.png",
-      "uploadedAt": "2026-08-12T19:30:16.371Z"
+      "published": true
     }
   ],
   "seo": {
-    "siteTitle": "Arjun — IT Engineer & AI Builder Portfolio",
-    "metaDescription": "Editorial digital portfolio of Arjun, featuring Full-Stack Web Development, Artificial Intelligence systems, RAG engines, and Machine Learning models.",
-    "ogImage": "/assets/portrait.png",
-    "canonicalUrl": "https://arjun.dev"
-  },
-  "metadata": {
-    "visitsCount": 178,
-    "lastVisitedAt": "2026-08-17T17:31:28.601Z"
+    "siteTitle": "Arjun Ghuge — Software Engineer & AI Builder Portfolio",
+    "metaDescription": "Personal portfolio of Arjun Ghuge, featuring full-stack applications, machine learning systems, and IoT signal processing platforms.",
+    "ogImage": "/assets/arjun-hero.png",
+    "canonicalUrl": "https://arjunghuge.me"
   }
 }

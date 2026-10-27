@@ -53,8 +53,56 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+}
+
+/* Accessible Skip Navigation Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: var(--accent-purple);
+  color: #ffffff;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 15px;
+  z-index: 9999;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: top 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skip-link:focus {
+  top: 20px;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Global Keyboard Focus Indicators */
+:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 3px;
+}
+
+.btn:focus-visible,
+.mode-toggle-btn:focus-visible,
+.hamburger-btn:focus-visible,
+.back-to-top:focus-visible,
+.modal-close:focus-visible,
+.social-icon:focus-visible,
+.portfolio-link:focus-visible,
+.footer-legal-btn:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 3px;
+}
+
+.checkbox-label input:focus-visible ~ .custom-checkbox {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 3px;
+  border-color: var(--accent-purple);
 }
 
 body {
@@ -452,9 +500,9 @@ button, input, select, textarea {
 }
 
 .hero-title {
-  font-size: clamp(38px, 4.4vw, 56px);
+  font-size: clamp(32px, 3.8vw, 48px);
   font-weight: 800;
-  line-height: 1.18;
+  line-height: 1.2;
   color: var(--text-heading);
   letter-spacing: -0.025em;
   margin-bottom: 24px;
@@ -760,6 +808,38 @@ button, input, select, textarea {
   flex-grow: 1;
 }
 
+.portfolio-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.portfolio-status.status-completed {
+  background-color: rgba(0, 107, 96, 0.1);
+  color: #006b60;
+  border: 1px solid rgba(0, 107, 96, 0.2);
+}
+
+.portfolio-status.status-in-progress {
+  background-color: rgba(94, 59, 238, 0.08);
+  color: var(--accent-purple);
+  border: 1px solid rgba(94, 59, 238, 0.2);
+}
+
+.portfolio-status.status-poc {
+  background-color: rgba(230, 40, 114, 0.08);
+  color: #c91f5e;
+  border: 1px solid rgba(230, 40, 114, 0.2);
+}
+
 .portfolio-name {
   font-size: 24px;
   font-weight: 700;
@@ -816,6 +896,22 @@ button, input, select, textarea {
 
 .portfolio-link:hover .link-arrow {
   transform: translate(2px, -2px);
+}
+
+.portfolio-media[role="button"],
+.portfolio-name[role="button"] {
+  cursor: pointer;
+}
+
+.portfolio-media[role="button"]:focus-visible {
+  outline: 3px solid var(--accent-purple);
+  outline-offset: -3px;
+}
+
+.portfolio-name[role="button"]:focus-visible {
+  outline: 2px solid var(--accent-purple);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* ==========================================================================
@@ -1038,6 +1134,77 @@ button, input, select, textarea {
   font-size: 17px;
 }
 
+/* Contact Form Validation & Status States */
+.required-indicator {
+  color: var(--accent-pink);
+  margin-left: 2px;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea,
+.form-group.has-error select {
+  border-color: var(--accent-pink) !important;
+  box-shadow: 0 0 0 3px rgba(230, 40, 114, 0.15) !important;
+}
+
+.form-checkbox.has-error .custom-checkbox {
+  border-color: var(--accent-pink) !important;
+  box-shadow: 0 0 0 3px rgba(230, 40, 114, 0.15) !important;
+}
+
+.field-error {
+  display: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c91f5e;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.form-group.has-error .field-error,
+.form-checkbox.has-error .field-error {
+  display: block;
+}
+
+.form-status-notice {
+  display: none;
+  margin-top: 20px;
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.form-status-notice.show {
+  display: block;
+}
+
+.form-status-notice.notice-info {
+  background-color: #f5f3ff;
+  border: 1.5px solid rgba(94, 59, 238, 0.3);
+  color: #3b2a82;
+}
+
+.form-status-notice.notice-success {
+  background-color: #ecfdf5;
+  border: 1.5px solid rgba(0, 107, 96, 0.3);
+  color: #064e3b;
+}
+
+.form-status-notice.notice-error {
+  background-color: #fff1f2;
+  border: 1.5px solid rgba(230, 40, 114, 0.3);
+  color: #881337;
+}
+
+.form-status-notice a {
+  color: var(--accent-purple);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
 /* ==========================================================================
    8. FOOTER SECTION
    ========================================================================== */
@@ -1127,12 +1294,22 @@ button, input, select, textarea {
   gap: 24px;
 }
 
-.footer-legal a {
+.footer-legal a,
+.footer-legal-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 14px;
   color: var(--text-heading);
   opacity: 0.85;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: inline-block;
 }
 
-.footer-legal a:hover {
+.footer-legal a:hover,
+.footer-legal-btn:hover {
   opacity: 1;
   color: var(--accent-purple);
 }
@@ -1239,6 +1416,37 @@ button, input, select, textarea {
   justify-content: center;
   font-weight: 700;
   font-size: 14px;
+  flex-shrink: 0;
+}
+
+.toast-notification.toast-error {
+  background-color: #c91f5e;
+}
+
+.toast-notification.toast-info {
+  background-color: var(--accent-purple);
+}
+
+.toast-notification.toast-success {
+  background-color: #006b60;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 0 4px;
+  margin-left: 8px;
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toast-close:hover {
+  opacity: 1;
 }
 
 /* Floating Back to Top */

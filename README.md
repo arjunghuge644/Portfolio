@@ -15,8 +15,8 @@ A modern, high-performance portfolio web application faithfully implementing the
   - **Contact Form:** Two-column input layout with custom dropdown, textarea, terms checkbox, and interactive submission toast notifications.
   - **Footer:** Brand logo, navigation links, social icons (Facebook, Instagram, X/Twitter, LinkedIn), and copyright.
 - **Dual Display Modes:**
-  - **Figma View:** Original 1:1 Figma Community showcase layout and data.
-  - **Arjun View:** Dynamic switch to Arjun's live portfolio data from `portfolio-data.json` (Real projects: Neural-Sync AI RAG Engine, Volt-Mind EV Battery Predictor, Prescripto Healthcare, GitHub link, real bio and skills).
+  - **Arjun View (Default):** Dynamic showcase of Arjun's portfolio data from `portfolio-data.json` (6 verified projects: CareerPulse, AI Workforce, WiFi CSI Lab, MathTube AI, Prescripto, and Hikers Junction with live status badges).
+  - **Figma View:** Original 1:1 Figma Community showcase layout and template data (Ahuse, App Dashboard, Easy Rent).
 - **Interactive Enhancements:**
   - Sticky glassmorphic header with scroll spy and active link indicators.
   - Interactive project detail modal/lightbox.
@@ -63,7 +63,7 @@ npm run preview
 Portfolio/
 ├── index.html                 # Semantic HTML5 structure & SEO tags
 ├── package.json               # Vite configuration and scripts
-├── portfolio-data.json        # Arjun's portfolio datasets
+├── portfolio-data.json        # Arjun's verified portfolio datasets
 ├── public/
 │   └── assets/
 │       ├── figma/             # Cropped high-res Figma design assets
@@ -75,11 +75,14 @@ Portfolio/
 │       │   ├── avatar-dianne.png
 │       │   ├── avatar-kristin.png
 │       │   └── avatar-kathryn.png
-│       ├── portrait.png       # Arjun's personal portrait
-│       ├── project1.png       # Neural-Sync AI Engine screenshot
-│       └── project3.png       # Volt-Mind Battery Predictor screenshot
+│       ├── careerpulse-preview.jpg
+│       ├── ai-workforce-preview.jpg
+│       ├── wificsi-preview.jpg
+│       ├── mathtube-preview.jpg
+│       ├── prescripto-preview.png
+│       └── hikers-junction-preview.jpg
 ├── src/
-│   ├── style.css              # Custom Vanilla CSS design system
+│   ├── style.css              # Custom Vanilla CSS design system & status pills
 │   └── main.js                # Core interactive JavaScript & mode toggles
 └── README.md
 ```
